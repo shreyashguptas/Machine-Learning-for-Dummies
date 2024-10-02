@@ -89,12 +89,9 @@ def create_venv():
     # Upgrade pip
     subprocess.run([str(python_executable), "-m", "pip", "install", "--upgrade", "pip"])
 
-    # Update requirements.txt with current package versions
-    update_requirements()
-
     print(f"Virtual environment created at {venv_path}")
 
-    # Activate the virtual environment
+    # Activate the virtual environment and install requirements
     if sys.platform == "win32":
         activate_command = str(activate_script)
     else:
@@ -105,42 +102,6 @@ def create_venv():
     subprocess.run(shell_command, shell=True)
 
     print("Virtual environment has been activated and requirements have been installed.")
-
-def update_requirements():
-    # Read existing requirements
-    try:
-        with open("requirements.txt", "r") as f:
-            existing_requirements = f.read().splitlines()
-    except FileNotFoundError:
-        existing_requirements = []
-
-    # Get installed packages
-    result = subprocess.run(
-        [sys.executable, "-m", "pip", "freeze"],
-        capture_output=True,
-        text=True
-    )
-
-    # Filter out packages that are typically not needed in requirements.txt
-    packages_to_exclude = {'pip', 'setuptools', 'wheel', 'distribute'}
-    installed_packages = [
-        line for line in result.stdout.split('\n')
-        if line and not any(package in line for package in packages_to_exclude)
-    ]
-
-    # Merge existing requirements with installed packages
-    updated_requirements = list(set(existing_requirements + installed_packages))
-    updated_requirements.sort()
-
-    # Ensure Python 3.11 is specified
-    python_requirement = "python==3.11.*"
-    if python_requirement not in updated_requirements:
-        updated_requirements.insert(0, python_requirement)
-
-    with open("requirements.txt", "w") as f:
-        f.write("\n".join(updated_requirements))
-
-    print("requirements.txt has been updated with current package versions.")
 
 if __name__ == "__main__":
     create_venv()
