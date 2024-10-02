@@ -5,7 +5,9 @@ from pathlib import Path
 
 def create_venv():
     venv_path = Path(".venv")
-    venv.create(venv_path, with_pip=True)
+    
+    # Create virtual environment with Python 3.11.9
+    subprocess.run([sys.executable, "-m", "venv", "--python=python3.11.9", str(venv_path)])
 
     # Determine the path to the Python executable in the virtual environment
     if sys.platform == "win32":
@@ -21,15 +23,19 @@ def create_venv():
     # Update requirements.txt with current package versions
     update_requirements()
 
-    # Install requirements
-    subprocess.run([str(python_executable), "-m", "pip", "install", "-r", "requirements.txt"])
-
     print(f"Virtual environment created at {venv_path}")
-    print(f"To activate the environment:")
+
+    # Activate the virtual environment
     if sys.platform == "win32":
-        print(f"    {activate_script}")
+        activate_command = str(activate_script)
     else:
-        print(f"    source {activate_script}")
+        activate_command = f"source {activate_script}"
+
+    # Use a shell to run the activation command and then install requirements
+    shell_command = f"{activate_command} && {str(python_executable)} -m pip install -r requirements.txt"
+    subprocess.run(shell_command, shell=True)
+
+    print("Virtual environment has been activated and requirements have been installed.")
 
 def update_requirements():
     # Read existing requirements
@@ -45,7 +51,7 @@ def update_requirements():
         capture_output=True,
         text=True
     )
-    
+
     # Filter out packages that are typically not needed in requirements.txt
     packages_to_exclude = {'pip', 'setuptools', 'wheel', 'distribute'}
     installed_packages = [
@@ -56,6 +62,11 @@ def update_requirements():
     # Merge existing requirements with installed packages
     updated_requirements = list(set(existing_requirements + installed_packages))
     updated_requirements.sort()
+
+    # Ensure Python 3.11.9 is specified
+    python_requirement = "python==3.11.9"
+    if python_requirement not in updated_requirements:
+        updated_requirements.insert(0, python_requirement)
 
     with open("requirements.txt", "w") as f:
         f.write("\n".join(updated_requirements))
