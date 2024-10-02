@@ -2,12 +2,81 @@ import venv
 import subprocess
 import sys
 from pathlib import Path
+import platform
+import os
+import shutil
+
+def check_python_version():
+    required_version = "3.11"
+    current_version = platform.python_version()
+    return current_version.startswith(required_version)
+
+def find_python_executable():
+    python_executables = ["python3.11", "python3", "python"]
+    for executable in python_executables:
+        if shutil.which(executable):
+            return executable
+    return None
+
+def install_homebrew():
+    print("Homebrew is not installed. Installing Homebrew...")
+    homebrew_install_cmd = '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+    try:
+        subprocess.run(homebrew_install_cmd, shell=True, check=True)
+        print("Homebrew has been successfully installed.")
+        # Add Homebrew to PATH for the current session
+        os.environ["PATH"] = f"/opt/homebrew/bin:/usr/local/bin:{os.environ['PATH']}"
+    except subprocess.CalledProcessError:
+        print("Failed to install Homebrew. Please install it manually and try again.")
+        sys.exit(1)
+
+def install_python():
+    required_version = "3.11"
+    system = platform.system().lower()
+    
+    if system == "darwin":  # macOS
+        # Check if Python 3.11 is already installed
+        python_executable = find_python_executable()
+        if python_executable:
+            result = subprocess.run([python_executable, "--version"], capture_output=True, text=True)
+            if result.stdout.startswith(f"Python {required_version}"):
+                print(f"Python {required_version} is already installed.")
+                return python_executable
+        
+        # Check if Homebrew is installed
+        if not shutil.which("brew"):
+            install_homebrew()
+        
+        # Install Python using Homebrew
+        try:
+            subprocess.run(["brew", "install", f"python@{required_version}"], check=True)
+            print(f"Python {required_version} has been installed successfully.")
+            return f"python{required_version}"
+        except subprocess.CalledProcessError:
+            print(f"Failed to install Python {required_version}. Please install it manually and try again.")
+            sys.exit(1)
+    elif system == "linux":
+        # This assumes a Debian-based system. Adjust for other distributions.
+        subprocess.run(["sudo", "apt", "update"])
+        subprocess.run(["sudo", "apt", "install", "-y", "software-properties-common"])
+        subprocess.run(["sudo", "add-apt-repository", "-y", "ppa:deadsnakes/ppa"])
+        subprocess.run(["sudo", "apt", "update"])
+        subprocess.run(["sudo", "apt", "install", "-y", f"python{required_version}"])
+        return f"python{required_version}"
+    else:
+        print(f"Unsupported operating system: {system}")
+        sys.exit(1)
 
 def create_venv():
+    python_executable = find_python_executable()
+    if not python_executable or not check_python_version():
+        print(f"Python 3.11 is not the current Python version. Attempting to install/use it...")
+        python_executable = install_python()
+    
     venv_path = Path(".venv")
     
-    # Create virtual environment with Python 3.11.9
-    subprocess.run([sys.executable, "-m", "venv", "--python=python3.11.9", str(venv_path)])
+    # Create virtual environment
+    subprocess.run([python_executable, "-m", "venv", str(venv_path)])
 
     # Determine the path to the Python executable in the virtual environment
     if sys.platform == "win32":
@@ -63,8 +132,8 @@ def update_requirements():
     updated_requirements = list(set(existing_requirements + installed_packages))
     updated_requirements.sort()
 
-    # Ensure Python 3.11.9 is specified
-    python_requirement = "python==3.11.9"
+    # Ensure Python 3.11 is specified
+    python_requirement = "python==3.11.*"
     if python_requirement not in updated_requirements:
         updated_requirements.insert(0, python_requirement)
 
