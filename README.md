@@ -22,6 +22,7 @@ As part of my deep learning journey, I will be following the Stanford CS229 Mach
 
 You can find the course lectures on YouTube:
 [Stanford CS229: Machine Learning Course](https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy)
+[CS229 Lecture Notes](https://cs229.stanford.edu/lectures-spring2022/main_notes.pdf)
 
 I'll be updating this repository with notes, code examples, and projects inspired by the course content, providing a practical, hands-on approach to understanding machine learning concepts.
 
@@ -42,11 +43,9 @@ conda activate ./.conda
 
 
 ### Machine Learning
-- [Linear Regression](./notebooks/05_linear_regression.ipynb)
-- [Logistic Regression](./notebooks/06_logistic_regression.ipynb)
-- [Decision Trees](./notebooks/07_decision_trees.ipynb)
-- [Random Forests](./notebooks/08_random_forests.ipynb)
-- [Support Vector Machines](./notebooks/09_support_vector_machines.ipynb)
+- [Linear Regression](./notebooks/supervised-learning/05_linear_regression.ipynb)
+- [Batch & Stochastic Gradient Descent](./notebooks/supervised-learning/06_batch_and_stochastic_gradient_descent.ipynb)
+- [Normal Equations](./notebooks/supervised-learning/07_normal_equation.ipynb)
 
 ### Deep Learning
 - [Introduction to PyTorch](./notebooks/01_introduction_to_pytorch.ipynb)
