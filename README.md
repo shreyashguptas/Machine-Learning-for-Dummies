@@ -33,3 +33,4 @@ I'll be updating this repository with notes, code examples, and projects inspire
 - [Convolutional Neural Networks (CNNs)](./notebooks/03_convolutional_neural_networks.ipynb)
 - [Recurrent Neural Networks (RNNs)](./notebooks/04_recurrent_neural_networks.ipynb)
 
+Note: We are not going to learn about the Mathematical formulas in this course. All this repo teaches you is the fundamental conceptual theories and then writing code to execute those fundamental topics.
