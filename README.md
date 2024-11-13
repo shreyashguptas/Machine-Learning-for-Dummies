@@ -65,6 +65,10 @@ Remember: Everyone learns differently. If this approach doesn't click with you, 
 
 
 
+### Here is how to go about the course
+
+[Introduction to Deep Learning with PyTorch.ipynb](notebooks/deep-learning/Introduction to Deep Learning with PyTorch.ipynb)
+
 ----
 
 # Additional things to add. 

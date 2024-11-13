@@ -2,16 +2,26 @@
 title: Learning Deep Learning with Analogies
 author: Shreyash Gupta
 copyright: "2024"
-logo: images/course-logo.svg  # Add a logo image if you have one
+logo: images/course-logo.svg
 
 # Force re-execution of notebooks on each build
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
+
+# Define the build settings
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  home_page_in_navbar: true
+
+# Important: Add these build settings
+sphinx:
+  config:
+    html_theme: sphinx_book_theme
+    html_static_path: ['_static']
+    html_css_files: []
 
 repository:
   url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
   branch: main
-
-html:
-  use_issues_button: true
-  use_repository_button: true
