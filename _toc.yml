@@ -1,0 +1,7 @@
+format: jb-book
+root: index
+chapters:
+- file: notebooks/deep-learning/Introduction to Deep Learning with PyTorch
+  title: Introduction to Deep Learning
+- file: notebooks/supervised-learning/code-file
+  title: Supervised Learning

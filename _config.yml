@@ -1,0 +1,17 @@
+# Book settings
+title: Learning Deep Learning with Analogies
+author: Shreyash Gupta
+copyright: "2024"
+logo: images/your-logo.png  # Add a logo image if you have one
+
+# Force re-execution of notebooks on each build
+execute:
+  execute_notebooks: force
+
+repository:
+  url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
