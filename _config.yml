@@ -2,7 +2,7 @@
 title: Learning Deep Learning with Analogies
 author: Shreyash Gupta
 copyright: "2024"
-logo: images/your-logo.png  # Add a logo image if you have one
+logo: images/course-logo.svg  # Add a logo image if you have one
 
 # Force re-execution of notebooks on each build
 execute:
