@@ -62,3 +62,11 @@ Ready to begin? Head to the first notebook in the `notebooks` folder!
 ---
 
 Remember: Everyone learns differently. If this approach doesn't click with you, that's okay! Check out other resources like MLU-Explain for visual learning.
+
+
+
+----
+
+# Additional things to add. 
+### 1. How do I know this is the right course for me to do? 
+### (...)
