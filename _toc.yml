@@ -1,11 +1,24 @@
 format: jb-book
 root: index
 parts:
+  - caption: Machine Learning
+    chapters:
+    - file: chapters/Chapter 1: Introduction to Machine Learning
+      title: Introduction to Machine Learning
+
+    - file: chapters/Chapter 2: Supervised Machine Learning
+      title: Supervised Machine Learning
+
+    - file: chapters/Chapter 3: Unsupervised Machine Learning
+      title: Unsupervised Machine Learning
+
   - caption: Deep Learning
     chapters:
-    - file: notebooks/deep-learning/Introduction to Deep Learning with PyTorch
+    - file: chapters/Chapter x: Introduction to Deep Learning
       title: Introduction to Deep Learning
-  - caption: Supervised Learning
-    chapters:
-    - file: notebooks/supervised-learning/code-file
-      title: Supervised Learning
+
+  # ------------------------------------------------------------
+  # - caption: Machine Learning
+  #   chapters:
+  #   - file: notebooks/supervised-learning/code-file
+  #     title: Introduction to Machine Learning
