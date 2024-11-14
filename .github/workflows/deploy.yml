@@ -17,6 +17,12 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    
+    # Add this environment block
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - uses: actions/checkout@v4
       
@@ -43,5 +49,6 @@ jobs:
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
+        id: deployment  # Add this id to reference in the environment url
         uses: actions/deploy-pages@v4
         if: github.ref == 'refs/heads/main'
