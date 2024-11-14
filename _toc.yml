@@ -4,12 +4,12 @@ parts:
   - caption: Machine Learning
     chapters:
       - file: "chapters/Chapter 1 - Introduction to Machine Learning"
-        title: Introduction to Machine Learning
+        title: Chapter 1 - Introduction to Machine Learning
       - file: "chapters/Chapter 2 - Supervised Machine Learning"
-        title: Supervised Machine Learning
+        title: Chapter 2 - Supervised Machine Learning
       - file: "chapters/Chapter 3 - Unsupervised Machine Learning"
-        title: Unsupervised Machine Learning
+        title: Chapter 3 - Unsupervised Machine Learning
   - caption: Deep Learning
     chapters:
       - file: "chapters/Chapter x - Introduction to Deep Learning"
-        title: Introduction to Deep Learning
+        title: Chapter x - Introduction to Deep Learning
