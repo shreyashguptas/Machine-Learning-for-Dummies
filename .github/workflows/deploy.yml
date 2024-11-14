@@ -1,50 +1,47 @@
 name: deploy-book
 
+# Only run this when the master branch changes
 on:
   push:
     branches:
-    - main
+      - main
+    # If your git repository has the Jupyter Book source in a subdirectory
+    # such as `source/`, add it here
     paths:
-    - 'notebooks/**'
-    - '_config.yml'
-    - '_toc.yml'
-    - 'requirements.txt'
-    - 'index.md'
+      - '**'
 
+# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       pages: write
       id-token: write
-    
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      
+      # Install dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          
+      # Build the book
+      - name: Build the book
+        run: |
+          jupyter-book build .
+          
+      # Upload artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-        cache: 'pip'
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        pip install jupyter-book sphinx-book-theme
-
-    - name: Build the book
-      run: |
-        jupyter-book config sphinx .  # Generate sphinx config
-        jupyter-book build . --all    # Build all files
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: "_build/html"
-
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main'
