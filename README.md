@@ -1,4 +1,4 @@
-# Learning Deep Learning with Analogies 🧠
+# Machine Learning for Dummies 🧠
 
 Ever felt overwhelmed by Machine Learning jargon? We get it! This course explains Deep Learning concepts using simple analogies and practical code examples using PyTorch.
 

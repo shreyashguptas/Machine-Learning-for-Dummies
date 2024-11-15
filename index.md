@@ -1,4 +1,4 @@
-# Understanding Machine Learning with Analogies 🧠
+# Machine Learning for Dummies 🧠
 
 Ever felt overwhelmed by Machine Learning jargon? We get it! This course explains Deep Learning concepts using simple analogies and practical code examples using PyTorch.
 
@@ -64,6 +64,10 @@ Ready to begin? Head to the first notebook in the `notebooks` folder!
 Remember: Everyone learns differently. If this approach doesn't click with you, that's okay! Check out other resources like MLU-Explain for visual learning.
 
 
+
+### Here is how to go about the course
+
+[Introduction to Deep Learning with PyTorch.ipynb](notebooks/deep-learning/Introduction to Deep Learning with PyTorch.ipynb)
 
 ----
 
