@@ -1,54 +1,53 @@
+# GitHub Actions workflow to build and deploy a Jupyter Book to GitHub Pages
+# This workflow runs when changes are pushed to the main branch
+# It sets up Python, installs dependencies, builds the book, and deploys it
+
 name: deploy-book
 
-# Only run this when the master branch changes
 on:
   push:
     branches:
       - main
-    # If your git repository has the Jupyter Book source in a subdirectory
-    # such as `source/`, add it here
     paths:
-      - '**'
+      - '**'  # Trigger on any file changes
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    # Required permissions for GitHub Pages deployment
     permissions:
-      pages: write
-      id-token: write
+      contents: write  # Needed to push to gh-pages branch
+      pages: write    # Needed for Pages deployment
+      id-token: write # Needed for Pages deployment
     
-    # Add this environment block
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}  # URL where site will be published
 
     steps:
+      # Check out the repository code
       - uses: actions/checkout@v4
       
-      # Install dependencies
+      # Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           
+      # Install required Python packages
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           
-      # Build the book
+      # Build the Jupyter Book
       - name: Build the book
         run: |
           jupyter-book build .
           
-      # Upload artifact
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _build/html
-
-      # Deploy to GitHub Pages
+      # Deploy the built book to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment  # Add this id to reference in the environment url
-        uses: actions/deploy-pages@v4
-        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html      # Directory containing the built site
+          force_orphan: true              # Keep only latest commit in gh-pages branch
