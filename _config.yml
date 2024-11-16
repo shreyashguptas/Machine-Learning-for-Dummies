@@ -8,6 +8,11 @@ logo: images/course-logo.svg
 execute:
   execute_notebooks: off
 
+# Launch button settings - simplified configuration
+launch_buttons:
+  notebook_interface: "classic"
+  colab_url: "https://colab.research.google.com"
+
 # Define the build settings
 html:
   use_issues_button: true
