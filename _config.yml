@@ -21,7 +21,12 @@ sphinx:
     html_theme: sphinx_book_theme
     html_static_path: ['_static']
     html_css_files: []
+    html_theme_options:
+      repository_url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
+      repository_branch: main
+      use_repository_button: true
 
 repository:
   url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
+  path_to_book: ""
   branch: main
