@@ -14,6 +14,7 @@ html:
   use_repository_button: true
   use_edit_page_button: true
   home_page_in_navbar: true
+  baseurl: /Machine-Learning-for-Dummies
 
 # Important: Add these build settings
 sphinx:
@@ -22,11 +23,11 @@ sphinx:
     html_static_path: ['_static']
     html_css_files: []
     html_theme_options:
-      repository_url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
+      repository_url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
       repository_branch: main
       use_repository_button: true
 
 repository:
-  url: https://github.com/shreyashgupta/Machine-Learning-Explained-With-Analogies
+  url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
   path_to_book: ""
   branch: main
