@@ -21,7 +21,16 @@ html:
   home_page_in_navbar: true
   baseurl: /Machine-Learning-for-Dummies
 
-# Important: Add these build settings
+parse:
+  myst_enable_extensions:
+    - html_image
+    - html_admonition
+    - colon_fence
+    - deflist
+    - dollarmath
+    - linkify
+    - substitution
+
 sphinx:
   config:
     html_theme: sphinx_book_theme
@@ -31,6 +40,7 @@ sphinx:
       repository_url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
       repository_branch: main
       use_repository_button: true
+    nb_execution_show_tb: True
 
 repository:
   url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies

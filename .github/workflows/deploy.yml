@@ -38,7 +38,10 @@ jobs:
           
       - name: Build the book
         run: |
-          jupyter-book build .
+          ls -la chapters/
+          jupyter-book config sphinx .
+          jupyter-book build . --verbose 2>&1 | tee build.log
+          cat build.log
           
       - name: Setup Pages
         uses: actions/configure-pages@v4

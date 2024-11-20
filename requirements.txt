@@ -1,6 +1,9 @@
 jupyter-book>=0.13.0
 ghp-import
 sphinx>=4.0
-jupyter-book
 sphinx-book-theme
 myst-nb
+myst-parser
+nbformat
+nbconvert
+linkify-it-py
