@@ -74,3 +74,6 @@ Remember: Everyone learns differently. If this approach doesn't click with you, 
 # Additional things to add. 
 ### 1. How do I know this is the right course for me to do? 
 ### (...)
+
+### 2. Here is how this course is structured and intended to be used. 
+This is important because if you go how it is intended you'll get the maximum amount of value out of this course.
