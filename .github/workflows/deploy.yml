@@ -26,24 +26,20 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-          
       - name: Setup Conda
         uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
           python-version: '3.11'
-          
-      - name: Install book building dependencies
-        run: |
-          conda env create -f requirements-book.yml
-          conda activate jupyter-book
+          activate-environment: jupyter-book
+          environment-file: requirements-book.yml
+          auto-activate-base: false
           
       - name: Build the book
+        shell: bash -l {0}  # This ensures conda environment is properly activated
         run: |
+          conda info
+          conda list
           ls -la chapters/
           jupyter-book config sphinx .
           jupyter-book build . --verbose 2>&1 | tee build.log
