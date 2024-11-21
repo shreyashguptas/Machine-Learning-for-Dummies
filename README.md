@@ -77,3 +77,27 @@ Remember: Everyone learns differently. If this approach doesn't click with you, 
 
 ### 2. Here is how this course is structured and intended to be used. 
 This is important because if you go how it is intended you'll get the maximum amount of value out of this course.
+
+## Installation 📦
+
+There are two ways to use this repository:
+
+1. **To run the code examples locally:**   ```bash
+   pip install -r requirements.txt   ```
+   This will install all the necessary ML/DL libraries needed to run the example code.
+
+2. **To build the book locally:**   ```bash
+   # Create and activate conda environment with book-building dependencies
+   conda env create -f requirements-book.yml
+   conda activate jupyter-book
+   
+   # Build the book
+   jupyter-book build . --all`
+
+The separation provides several benefits:
+1. Faster deployments since only necessary packages are installed
+2. Clearer separation of concerns between book building and code running
+3. Conda environment for book building helps avoid dependency conflicts
+4. Users can choose to install only what they need
+
+You might also want to add a `.gitignore` entry for the conda environment:
