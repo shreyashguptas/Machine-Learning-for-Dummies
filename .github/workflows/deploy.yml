@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   deploy-book:
@@ -34,11 +35,20 @@ jobs:
           activate-environment: jupyter-book
           environment-file: requirements-book.yml
           auto-activate-base: false
+          use-only-tar-bz2: true  # Helps with reproducibility
+          channel-priority: strict
+          conda-remove-defaults: true  # Explicitly remove defaults channel
+          
+      - name: Configure Conda
+        shell: bash -l {0}
+        run: |
+          conda config --set channel_priority strict
+          conda config --remove channels defaults || true
+          conda info
           
       - name: Build the book
-        shell: bash -l {0}  # This ensures conda environment is properly activated
+        shell: bash -l {0}
         run: |
-          conda info
           conda list
           ls -la chapters/
           jupyter-book config sphinx .

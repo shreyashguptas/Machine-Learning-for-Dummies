@@ -1,8 +1,10 @@
 name: jupyter-book
 channels:
   - conda-forge
+channel_priority: strict
 dependencies:
   - python=3.11
+  - pip
   - jupyter-book>=0.13.0
   - ghp-import
   - sphinx>=4.0
