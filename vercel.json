@@ -1,12 +1,15 @@
 {
-  "buildCommand": "python -m pip install -r requirements-book.yml --no-cache-dir && jupyter-book build . --builder html",
+  "buildCommand": "pip install -r requirements-book.yml && jupyter-book build . --builder html",
   "outputDirectory": "_build/html",
-  "installCommand": "python -m pip install --no-cache-dir jupyter-book",
+  "installCommand": "python -m pip install jupyter-book",
   "framework": null,
   "builds": [
     {
       "src": "**",
       "use": "@vercel/python"
     }
-  ]
+  ],
+  "crons": {
+    "maxDuration": 1800
+  }
 } 

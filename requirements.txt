@@ -1,3 +1,5 @@
+# This requirement .txt file is for when someone is trying to install a python local environment and install all the required libraries. 
+
 # Core ML/DL libraries
 torch==2.5.1
 numpy==2.1.3
