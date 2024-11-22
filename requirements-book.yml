@@ -3,15 +3,15 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11
-  - pip
-  - jupyter-book>=0.13.0
-  - sphinx>=4.0
-  - sphinx-book-theme
-  - myst-nb
-  - myst-parser
-  - nbformat
-  - nbconvert
-  - linkify-it-py
+  - pip>=23.0.0
+  - jupyter-book>=0.15.1
+  - sphinx>=7.0.0
+  - sphinx-book-theme>=1.0.0
+  - myst-nb>=1.0.0
+  - myst-parser>=2.0.0
+  - nbformat>=5.9.0
+  - nbconvert>=7.0.0
+  - linkify-it-py>=2.0.0
   - pip:
     - ghp-import
     - jupyter-book

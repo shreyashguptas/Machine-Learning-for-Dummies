@@ -1,11 +1,11 @@
 {
   "buildCommand": "python -m pip install -r requirements-book.yml && jupyter-book build .",
   "outputDirectory": "_build/html",
-  "installCommand": "python -m pip install jupyter-book",
+  "installCommand": "python -m pip install --upgrade pip && python -m pip install jupyter-book",
   "framework": null,
   "builds": [
     {
-      "src": ".",
+      "src": "**",
       "use": "@vercel/python"
     }
   ]

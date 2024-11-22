@@ -9,4 +9,9 @@ __pycache__
 .venv
 env/
 venv/
-.ipynb_checkpoints 
+.ipynb_checkpoints
+*.swp
+*.swo
+node_modules
+.cache
+.pytest_cache 

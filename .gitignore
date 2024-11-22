@@ -1,29 +1,33 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+# Build output
+_build/
+build/
+dist/
 
-# Ruby
-.bundle/
-vendor/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.env
+.venv
+env/
+venv/
+.conda/
+
+# System
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # Vercel
 .vercel
 
-.conda/
+# Jupyter
+.ipynb_checkpoints
 
-.github/
+# Book
+_build/
 
-.vscode/
-
-.env
-
-.DS_Store
-
-.venv/
-
-_layouts/
-*.jpg
-
-/_build
+/projects/
