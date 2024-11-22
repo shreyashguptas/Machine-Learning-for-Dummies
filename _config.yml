@@ -14,6 +14,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
+# Collections
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:name
+
 # Exclude files from processing
 exclude:
   - Gemfile
@@ -25,3 +31,5 @@ exclude:
   - README.md
   - requirements.txt
   - requirements-book.yml
+  - scripts
+  - chapters/*.ipynb

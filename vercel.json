@@ -1,6 +1,6 @@
 {
-  "buildCommand": "jekyll build",
+  "buildCommand": "python scripts/convert_notebooks.py && jekyll build",
   "outputDirectory": "_site",
   "framework": "jekyll",
-  "installCommand": "bundle install"
+  "installCommand": "pip install nbconvert nbformat && bundle install"
 } 
