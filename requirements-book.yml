@@ -1,0 +1,16 @@
+name: jupyter-book
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - jupyter-book>=0.13.0
+  - sphinx>=4.0
+  - sphinx-book-theme
+  - myst-nb
+  - myst-parser
+  - nbformat
+  - nbconvert
+  - linkify-it-py
+  - pip:
+    - ghp-import

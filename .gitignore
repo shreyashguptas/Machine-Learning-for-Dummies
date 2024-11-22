@@ -25,3 +25,5 @@ vendor/
 
 _layouts/
 *.jpg
+
+/_build

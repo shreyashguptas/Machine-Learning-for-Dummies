@@ -1,35 +1,45 @@
-# Update the existing _config.yml with Jekyll-specific settings
+# Book settings
 title: Machine Learning for Dummies
 author: Shreyash Gupta
-description: Learn Machine Learning concepts using simple analogies and practical code examples
-baseurl: ""
-url: ""
+copyright: "2024"
+logo: images/course-logo.svg
 
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
+# Force re-execution of notebooks on each build
+execute:
+  execute_notebooks: off
 
-# Collections
-collections:
-  chapters:
-    output: true
-    permalink: /:collection/:name
+# Launch button settings
+launch_buttons:
+  notebook_interface: "classic"
+  colab_url: "https://colab.research.google.com"
 
-# Exclude files from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .git
-  - .github
-  - README.md
-  - requirements.txt
-  - requirements-book.yml
-  - scripts
-  - chapters/*.ipynb
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  home_page_in_navbar: true
+
+parse:
+  myst_enable_extensions:
+    - html_image
+    - html_admonition
+    - colon_fence
+    - deflist
+    - dollarmath
+    - linkify
+    - substitution
+
+sphinx:
+  config:
+    html_theme: sphinx_book_theme
+    html_static_path: ['_static']
+    html_theme_options:
+      repository_url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
+      repository_branch: main
+      use_repository_button: true
+    nb_execution_show_tb: True
+
+repository:
+  url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
+  path_to_book: ""
+  branch: main
