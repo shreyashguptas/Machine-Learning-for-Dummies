@@ -2,5 +2,5 @@
   "buildCommand": "pip install -r requirements-book.yml && jupyter-book build .",
   "outputDirectory": "_build/html",
   "installCommand": "pip install jupyter-book",
-  "framework": "other"
+  "framework": null
 } 
