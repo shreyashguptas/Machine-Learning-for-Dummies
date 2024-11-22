@@ -16,4 +16,5 @@ node_modules
 .pytest_cache
 .conda
 requirements.txt
-requirements-book.yml 
+requirements-book.yml
+_build/ 
