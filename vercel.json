@@ -1,7 +1,7 @@
 {
-  "buildCommand": "python -m pip install -r requirements-book.yml && jupyter-book build .",
+  "buildCommand": "python -m pip install -r requirements-book.yml --no-cache-dir && jupyter-book build . --builder html",
   "outputDirectory": "_build/html",
-  "installCommand": "python -m pip install --upgrade pip && python -m pip install jupyter-book",
+  "installCommand": "python -m pip install --no-cache-dir jupyter-book",
   "framework": null,
   "builds": [
     {
