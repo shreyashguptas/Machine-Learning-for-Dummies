@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pip install -r requirements-book.yml && jupyter-book build . --builder html",
+  "buildCommand": "pip install -r requirements-book.txt && jupyter-book build . --builder html",
   "outputDirectory": "_build/html",
   "framework": null
 } 
