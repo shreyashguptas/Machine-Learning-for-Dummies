@@ -1,5 +1,4 @@
-# This file is for installing packages and libraries when deploying on Vercel.
-
+# This file is specifically for Vercel deployment
 name: jupyter-book
 channels:
   - conda-forge

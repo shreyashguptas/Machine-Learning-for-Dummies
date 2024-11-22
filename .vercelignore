@@ -1,7 +1,6 @@
 .git
 .github
 .gitignore
-.conda
 __pycache__
 *.pyc
 .DS_Store
@@ -14,4 +13,6 @@ venv/
 *.swo
 node_modules
 .cache
-.pytest_cache 
+.pytest_cache
+.conda
+requirements.txt 

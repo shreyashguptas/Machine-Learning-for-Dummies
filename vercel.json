@@ -1,17 +1,5 @@
 {
   "buildCommand": "pip install -r requirements-book.yml && jupyter-book build . --builder html",
   "outputDirectory": "_build/html",
-  "installCommand": "python -m pip install jupyter-book",
-  "framework": null,
-  "builds": [
-    {
-      "src": "**",
-      "use": "@vercel/python"
-    }
-  ],
-  "functions": {
-    "api/**": {
-      "maxDuration": 900
-    }
-  }
+  "framework": null
 } 
