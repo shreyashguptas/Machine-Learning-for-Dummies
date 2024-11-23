@@ -191,10 +191,6 @@ Each chapter should include:
 
 The course should progress from basic concepts to more complex topics, with each chapter building upon previous knowledge. Include practical exercises that demonstrate real-world applications while keeping mathematical complexity to a minimum[4].
 
-
-
-
-
 # Command to build the book
 ```bash
 jupyter-book build . --all
