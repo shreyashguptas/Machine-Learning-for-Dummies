@@ -1,11 +1,5 @@
 {
   "buildCommand": "python -m pip install -r requirements-book.txt && jupyter-book build . --builder html",
   "outputDirectory": "_build/html",
-  "framework": null,
-  "builds": [
-    {
-      "src": "**",
-      "use": "@vercel/python"
-    }
-  ]
+  "framework": null
 } 
