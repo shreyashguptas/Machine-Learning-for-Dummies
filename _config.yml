@@ -1,8 +1,14 @@
 # Book settings
-title: "ML4Dummy"
-author: "Your Name"
+title: Machine Learning for Dummies
+author: Shreyash Gupta
 copyright: "2024"
-logo: "images/course-logo.svg"
+logo: images/course-logo.svg
+
+# Repository settings (at root level)
+repository:
+  url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
+  path_to_book: ""
+  branch: main
 
 # Launch button settings
 launch_buttons:
@@ -29,3 +35,10 @@ html:
   use_issues_button: true
   use_edit_page_button: true
   favicon: "images/course-logo.svg"
+  home_page_in_navbar: true
+
+sphinx:
+  config:
+    html_theme: sphinx_book_theme
+    html_static_path: ['_static']
+    nb_execution_show_tb: True

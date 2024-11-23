@@ -92,7 +92,8 @@ There are two ways to use this repository:
    conda activate jupyter-book
    
    # Build the book
-   jupyter-book build . --all`
+   jupyter-book build . --all
+   ```
 
 The separation provides several benefits:
 1. Faster deployments since only necessary packages are installed
