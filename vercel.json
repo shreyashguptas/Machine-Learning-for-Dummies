@@ -1,5 +1,4 @@
 {
-    "version": 2,
-    "buildCommand": "jupyter-book build .",
-    "outputDirectory": "_build/html"
+  "version": 2,
+  "outputDirectory": "_build/html"
 }

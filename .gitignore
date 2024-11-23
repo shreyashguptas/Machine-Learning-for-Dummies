@@ -1,6 +1,4 @@
 # Build output
-_build/
-build/
 dist/
 
 # Python
