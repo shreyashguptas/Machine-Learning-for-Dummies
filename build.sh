@@ -17,12 +17,8 @@ jupyter-book build .
 echo "Contents of _build/html:"
 ls -R _build/html
 
-# Copy the contents of _build/html to the public directory
-mkdir -p public
-cp -R _build/html/* public/
+# Move the contents of _build/html to the root directory
+mv _build/html/* .
 
-# Create a simple index.html in the public directory
-echo "<meta http-equiv=\"refresh\" content=\"0; url=./README.html\">" > public/index.html
-
-echo "Final contents of public directory:"
-ls -R public
+echo "Final contents of root directory:"
+ls -la

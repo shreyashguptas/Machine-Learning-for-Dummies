@@ -1,8 +1,35 @@
-# Add these configurations to your existing _config.yml
+# Book settings
+title: Machine Learning for Dummies
+author: Shreyash Gupta
+copyright: "2024"
+logo: images/course-logo.svg
+
+# Force re-execution of notebooks on each build
 execute:
-  execute_notebooks: off  # This is already correct
-  timeout: 30  # Add timeout setting
-  allow_errors: false  # Don't build if there are notebook errors
+  execute_notebooks: off
+  timeout: 30
+  allow_errors: false
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: "classic"
+  colab_url: "https://colab.research.google.com"
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+  home_page_in_navbar: true
+
+parse:
+  myst_enable_extensions:
+    - html_image
+    - html_admonition
+    - colon_fence
+    - deflist
+    - dollarmath
+    - linkify
+    - substitution
 
 sphinx:
   config:
@@ -26,10 +53,10 @@ latex:
   latex_documents:
     targetname: book.tex
 
-# Add or update these lines in your _config.yml
-html:
-  use_repository_button: true
-  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+repository:
+  url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
+  path_to_book: ""
+  branch: main
 
 # Specify the output directory
-output_dir: _build/html
+output_dir: .
