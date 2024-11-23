@@ -42,3 +42,7 @@ sphinx:
     html_theme: sphinx_book_theme
     html_static_path: ['_static']
     nb_execution_show_tb: True
+
+# Build settings
+build:
+  build_dir: .
