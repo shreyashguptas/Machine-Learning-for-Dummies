@@ -1,2 +1,2 @@
-jupyter-book>=1.0.3
-sphinx-book-theme>=1.0.0
+jupyter-book==1.0.3
+sphinx-book-theme>=1.1.0
