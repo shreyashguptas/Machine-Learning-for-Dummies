@@ -1,0 +1,5 @@
+{
+    "buildCommand": "jupyter-book build .",
+    "outputDirectory": "_build/html",
+    "installCommand": "pip install -r requirements.txt"
+}

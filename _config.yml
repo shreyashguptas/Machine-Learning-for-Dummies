@@ -1,0 +1,31 @@
+# Book settings
+title: "ML4Dummy"
+author: "Your Name"
+copyright: "2024"
+logo: "images/course-logo.svg"
+
+# Launch button settings
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+  notebook_interface: "classic"
+
+# Execution settings
+execute:
+  execute_notebooks: "off"  # Don't execute notebooks during build
+  timeout: 30
+
+# Build settings
+only_build_toc_files: true  # Only build files listed in _toc.yml
+exclude_patterns: [
+  _build,
+  Thumbs.db,
+  .DS_Store,
+  "**.ipynb_checkpoints"
+]
+
+# HTML-specific settings
+html:
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+  favicon: "images/course-logo.svg"
