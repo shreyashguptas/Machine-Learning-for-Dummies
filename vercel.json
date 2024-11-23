@@ -8,7 +8,7 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/_build/html/$1" }
+    { "src": "/(.*)", "dest": "/public/$1" }
   ],
-  "outputDirectory": "_build/html"
+  "outputDirectory": "public"
 }

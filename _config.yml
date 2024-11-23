@@ -26,6 +26,7 @@ latex:
   latex_documents:
     targetname: book.tex
 
+# Add or update these lines in your _config.yml
 html:
   use_repository_button: true
   extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
