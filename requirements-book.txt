@@ -2,4 +2,7 @@
 jupyter-book>=0.15.1
 sphinx-book-theme>=1.0.0
 myst-parser>=2.0.0
-sphinx>=4.0.0 
+sphinx>=4.0.0
+ipykernel
+nbformat
+nbconvert 
