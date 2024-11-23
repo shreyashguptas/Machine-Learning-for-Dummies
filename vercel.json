@@ -1,5 +1,4 @@
 {
-    "buildCommand": "python -m pip install -r requirements.txt && jupyter-book build . --all",
-    "outputDirectory": "_build/html",
-    "installCommand": "python -m ensurepip && python -m pip install --upgrade pip"
+    "buildCommand": "python3 -m pip install -r requirements.txt && jupyter-book build .",
+    "outputDirectory": "_build/html"
 }
