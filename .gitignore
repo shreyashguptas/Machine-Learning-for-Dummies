@@ -27,7 +27,4 @@ venv/
 # Jupyter
 .ipynb_checkpoints
 
-# Book
-_build/
-
 /projects/
