@@ -25,3 +25,10 @@ bibtex_bibfiles:
 latex:
   latex_documents:
     targetname: book.tex
+
+html:
+  use_repository_button: true
+  extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+
+# Specify the output directory
+output_dir: _build/html
