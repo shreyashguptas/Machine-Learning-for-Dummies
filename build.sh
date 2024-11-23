@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Exit immediately if a command exits with a non-zero status
+set -ex  # Exit immediately if a command exits with a non-zero status and print commands
 
 echo "Current directory: $(pwd)"
 echo "Listing contents:"
@@ -22,3 +22,21 @@ mv _build/html/* .
 
 echo "Final contents of root directory:"
 ls -la
+
+# Create a simple index.html that redirects to the Jupyter Book's index
+cat << EOF > index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=./README.html">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <p>If you are not redirected automatically, follow this <a href="./README.html">link to the documentation</a>.</p>
+</body>
+</html>
+EOF
+
+echo "Created index.html:"
+cat index.html
