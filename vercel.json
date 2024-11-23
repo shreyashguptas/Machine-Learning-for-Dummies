@@ -1,7 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "python3 -m pip install -r requirements-book.txt && jupyter-book build . --builder html",
+  "buildCommand": "pip install -r requirements-book.txt && jupyter-book build .",
   "outputDirectory": "_build/html",
-  "framework": "other",
-  "cleanUrls": true
-} 
+  "framework": null
+}

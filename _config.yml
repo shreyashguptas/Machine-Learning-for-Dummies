@@ -1,33 +1,8 @@
-# Book settings
-title: Machine Learning for Dummies
-author: Shreyash Gupta
-copyright: "2024"
-logo: images/course-logo.svg
-
-# Force re-execution of notebooks on each build
+# Add these configurations to your existing _config.yml
 execute:
-  execute_notebooks: off
-
-# Launch button settings
-launch_buttons:
-  notebook_interface: "classic"
-  colab_url: "https://colab.research.google.com"
-
-html:
-  use_issues_button: true
-  use_repository_button: true
-  use_edit_page_button: true
-  home_page_in_navbar: true
-
-parse:
-  myst_enable_extensions:
-    - html_image
-    - html_admonition
-    - colon_fence
-    - deflist
-    - dollarmath
-    - linkify
-    - substitution
+  execute_notebooks: off  # This is already correct
+  timeout: 30  # Add timeout setting
+  allow_errors: false  # Don't build if there are notebook errors
 
 sphinx:
   config:
@@ -37,9 +12,16 @@ sphinx:
       repository_url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
       repository_branch: main
       use_repository_button: true
+      use_issues_button: true
+      use_edit_page_button: true
     nb_execution_show_tb: True
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-repository:
-  url: https://github.com/shreyashguptas/Machine-Learning-for-Dummies
-  path_to_book: ""
-  branch: main
+# Add bibtex support if you're using citations
+bibtex_bibfiles:
+  - references.bib
+
+# Ensure all paths are relative to the book root
+latex:
+  latex_documents:
+    targetname: book.tex
