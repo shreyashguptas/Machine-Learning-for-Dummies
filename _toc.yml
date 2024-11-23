@@ -8,24 +8,24 @@ parts:
   - caption: Foundations of Machine Learning
     chapters:
       - file: "chapters/Chapter 1 - Introduction to Machine Learning.ipynb"
-        title: Introduction to Machine Learning
+        title: Chapter 1 - Introduction to Machine Learning
       - file: "chapters/Chapter 2 - Data Fundamentals.ipynb"
-        title: Data Fundamentals
+        title: Chapter 2 - Data Fundamentals
       - file: "chapters/Chapter 3 - Supervised Learning.ipynb"
-        title: Supervised Learning
+        title: Chapter 3 - Supervised Learning
       - file: "chapters/Chapter 4 - Unsupervised Learning.ipynb"
-        title: Unsupervised Learning
+        title: Chapter 4 - Unsupervised Learning
   - caption: Deep Learning Fundamentals
     chapters:
       - file: "chapters/Chapter 5 - Neural Networks Basics.ipynb"
-        title: Neural Networks Basics
+        title: Chapter 5 - Neural Networks Basics
       - file: "chapters/Chapter 6 - Deep Learning Tools.ipynb"
-        title: Deep Learning Tools
+        title: Chapter 6 - Deep Learning Tools
   - caption: Advanced Deep Learning
     chapters:
       - file: "chapters/Chapter 7 - Convolutional Neural Networks.ipynb"
-        title: Convolutional Neural Networks
+        title: Chapter 7 - Convolutional Neural Networks
       - file: "chapters/Chapter 8 - Sequential Data and RNNs.ipynb"
-        title: Sequential Data and RNNs
+        title: Chapter 8 - Sequential Data and RNNs
       - file: "chapters/Chapter 9 - Modern Deep Learning.ipynb"
-        title: Modern Deep Learning
+        title: Chapter 9 - Modern Deep Learning
