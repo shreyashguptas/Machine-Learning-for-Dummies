@@ -2,7 +2,7 @@
 title: Machine Learning for Dummies
 author: Shreyash Gupta
 copyright: "2024"
-logo: images/course-logo.svg
+logo: images/course-logo.png
 
 # Repository settings (at root level)
 repository:
@@ -34,7 +34,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   use_edit_page_button: true
-  favicon: "images/course-logo.svg"
+  favicon: "images/course-logo.png"
   home_page_in_navbar: true
 
 sphinx:
