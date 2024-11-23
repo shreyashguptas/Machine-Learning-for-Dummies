@@ -1,5 +1,5 @@
 {
     "version": 2,
-    "buildCommand": "export PYTHONPATH=/vercel/.local/lib/python3.12/site-packages:$PYTHONPATH && python3 -m pip install --user -r requirements.txt && jupyter-book build .",
+    "buildCommand": "jupyter-book build .",
     "outputDirectory": "_build/html"
 }
