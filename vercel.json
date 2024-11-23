@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "framework": null,
-    "buildCommand": "pip install --upgrade pip && pip install jupyter-book && jupyter-book build .",
-    "outputDirectory": "_build/html"
+    "buildCommand": "python3 -m pip install --user jupyter-book && python3 -m jupyter-book build .",
+    "outputDirectory": "_build/html",
+    "installCommand": "python3 -m pip install --user --upgrade pip"
 }
