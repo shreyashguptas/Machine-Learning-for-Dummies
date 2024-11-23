@@ -59,4 +59,4 @@ repository:
   branch: main
 
 # Specify the output directory
-output_dir: .
+output_dir: . 
