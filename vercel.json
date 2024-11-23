@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "buildCommand": "python3 -m pip install --user jupyter-book && python3 -m jupyter-book build .",
-    "outputDirectory": "_build/html",
-    "installCommand": "python3 -m pip install --user --upgrade pip"
+    "buildCommand": "export PATH=\"/vercel/.local/bin:$PATH\" && pip install --user jupyter-book && jupyter-book build .",
+    "installCommand": "python3 -m ensurepip && export PATH=\"/vercel/.local/bin:$PATH\" && pip install --user --upgrade pip",
+    "outputDirectory": "_build/html"
 }
