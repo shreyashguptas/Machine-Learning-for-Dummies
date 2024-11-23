@@ -1,5 +1,6 @@
 {
     "version": 2,
-    "buildCommand": "python3 -m pip install -r requirements.txt && python3 -m jupyter-book build .",
+    "framework": null,
+    "buildCommand": "pip install --upgrade pip && pip install jupyter-book && jupyter-book build .",
     "outputDirectory": "_build/html"
 }
