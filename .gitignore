@@ -1,9 +1,22 @@
-# Build output
-dist/
+# Build artifacts but keep necessary files
 _build/
+!_build/html/
+*.pyc
+__pycache__/
+.ipynb_checkpoints
+.DS_Store
+
+# Keep these files when they appear in root
+!/_images/
+!/_static/
+!/searchindex.js
+!/*.html
+!/objects.inv
+!/_sources/
+!/genindex.html
+!/search.html
 
 # Python
-__pycache__/
 *.py[cod]
 *$py.class
 .Python

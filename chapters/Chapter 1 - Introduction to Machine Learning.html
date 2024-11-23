@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 1: Introduction to Machine Learning &#8212; Machine Learning for Dummies</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f0c89327" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=d2032c04" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=f0c89327" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css?v=a243ae73" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/Chapter 1 - Introduction to Machine Learning';</script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/searchtools.js?v=63a53a7d"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/language_data.js?v=d4673a71"></script>
+    <script src="../_static/copybutton_funcs.js?v=776a791e"></script>
+    <script src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/bootstrap.js?v=7583a70d"></script>
+    <script src="../_static/scripts/fontawesome.js?v=9b125980"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js?v=f62441ba"></script>
+    <link rel="icon" href="../_static/course-logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 2 - Data Fundamentals" href="Chapter%202%20-%20Data%20Fundamentals.html" />
+    <link rel="prev" title="Introduction" href="Introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/course-logo.svg" class="logo__image only-light" alt="Machine Learning for Dummies - Home"/>
+    <img src="../_static/course-logo.svg" class="logo__image only-dark pst-js-only" alt="Machine Learning for Dummies - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Machine Learning for Dummies 🧠
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to the course</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundations of Machine Learning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1: Introduction to Machine Learning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter%202%20-%20Data%20Fundamentals.html">Data Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter%203%20-%20Supervised%20Learning.html">Supervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter%204%20-%20Unsupervised%20Learning.html">Unsupervised Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning Fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter%205%20-%20Neural%20Networks%20Basics.html">Chapter 5 - Neural Networks Basics</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Chapter%206%20-%20Deep%20Learning%20Tools.html">Deep Learning Tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Deep Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Chapter%207%20-%20Convolutional%20Neural%20Networks.html">Convolutional Neural Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter%208%20-%20Sequential%20Data%20and%20RNNs.html">Sequential Data and RNNs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chapter%209%20-%20Modern%20Deep%20Learning.html">Modern Deep Learning</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shreyashguptas/Machine-Learning-for-Dummies/blob/main/chapters/Chapter 1 - Introduction to Machine Learning.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shreyashguptas/Machine-Learning-for-Dummies" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shreyashguptas/Machine-Learning-for-Dummies/edit/main/chapters/Chapter 1 - Introduction to Machine Learning.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shreyashguptas/Machine-Learning-for-Dummies/issues/new?title=Issue%20on%20page%20%2Fchapters/Chapter 1 - Introduction to Machine Learning.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/Chapter 1 - Introduction to Machine Learning.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 1: Introduction to Machine Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 1: Introduction to Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is Machine Learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-artifitial-intelligence-machine-learning-and-deep-learning-relate-to-each-other">How does Artifitial Intelligence, Machine Learning and Deep Learning relate to each other?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-machine-learning">Why do we need Machine Learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kitchen-analogy">The Kitchen Analogy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example">Real-World Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-vs-deep-learning">Machine Learning vs Deep Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-classifying-machine-learning-vs-deep-learning-problems">Exercise: Classifying Machine Learning vs Deep Learning Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning-models">2 types of Machine Learning Models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-distinguishing-between-supervised-and-unsupervised-learning">Exercise: Distinguishing Between Supervised and Unsupervised Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-project-lifecycle">Machine Learning Project Lifecycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-a-project-lifecycle">Why Do We Need a Project Lifecycle?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-phases-through-our-cooking-analogy">The Key Phases (Through Our Cooking Analogy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-the-ml-project-lifecycle">Exercise: Understanding the ML Project Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-machine-learning-terminology">Exercise: Understanding Machine Learning Terminology</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#good-job-you-ve-completed-the-first-chapter">Good Job! You’ve completed the first chapter.</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-introduction-to-machine-learning">
+<h1>Chapter 1: Introduction to Machine Learning<a class="headerlink" href="#chapter-1-introduction-to-machine-learning" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="what-is-machine-learning">
+<h2>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Link to this heading">#</a></h2>
+<div style="display: flex; justify-content: center;">
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+    <iframe
+        src="https://www.youtube.com/embed/PeMlggyqz0Y"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+</div>
+<section id="how-does-artifitial-intelligence-machine-learning-and-deep-learning-relate-to-each-other">
+<h3>How does Artifitial Intelligence, Machine Learning and Deep Learning relate to each other?<a class="headerlink" href="#how-does-artifitial-intelligence-machine-learning-and-deep-learning-relate-to-each-other" title="Link to this heading">#</a></h3>
+<p><img alt="venn-diagram-ai-ml-deeplearning" src="../_images/venn-diagram-ai-ml-deeplearning.png" /></p>
+<p><strong>Artificial Intelligence (AI)</strong> is like teaching computers to act smart and do things that normally need human brains - like making decisions or recognizing faces. It’s the biggest category that includes everything else.</p>
+<p><strong>Machine Learning (ML)</strong> lives inside AI and is more specific - it’s like giving computers the ability to learn from experience, just like how you get better at a video game by playing it more. Instead of being told exactly what to do, the computer figures things out by looking at lots of examples.</p>
+<p><strong>Deep Learning (DL)</strong> is the smallest category and lives inside machine learning. It works like a super-powered brain, using special layered networks that can learn really complex patterns.</p>
+</section>
+</section>
+<section id="why-do-we-need-machine-learning">
+<h2>Why do we need Machine Learning?<a class="headerlink" href="#why-do-we-need-machine-learning" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Machine Learning helps us solve complex problems faster and more efficiently than humans could do manually. Let me explain this using a simple kitchen analogy!</p>
+<section id="the-kitchen-analogy">
+<h3>The Kitchen Analogy<a class="headerlink" href="#the-kitchen-analogy" title="Link to this heading">#</a></h3>
+<p>Imagine teaching someone to bake the perfect chocolate chip cookies:</p>
+<p><strong>The Recipe (Machine Learning Model)</strong></p>
+<ul class="simple">
+<li><p>Just like a recipe guides you to make cookies, a Machine Learning model guides a computer to make decisions</p></li>
+<li><p>Both improve with practice and experience</p></li>
+</ul>
+<p><strong>Learning Process</strong></p>
+<ol class="arabic simple">
+<li><p>You start with ingredients (data)</p></li>
+<li><p>Follow a recipe (algorithm)</p></li>
+<li><p>Taste and adjust (training)</p></li>
+<li><p>Keep practicing until perfect (optimization)</p></li>
+</ol>
+</section>
+<section id="real-world-example">
+<h3>Real-World Example<a class="headerlink" href="#real-world-example" title="Link to this heading">#</a></h3>
+<p>Just like how mastering a recipe helps you make delicious cookies consistently and efficiently, Machine Learning helps us:</p>
+<ul class="simple">
+<li><p>Process huge amounts of data quickly (like sorting millions of emails)</p></li>
+<li><p>Find patterns automatically (like detecting fraudulent transactions)</p></li>
+<li><p>Make smart predictions (like Netflix recommendations)</p></li>
+</ul>
+<p>Machine Learning has become especially powerful today because we have:</p>
+<ul class="simple">
+<li><p>More data available than ever</p></li>
+<li><p>Powerful computers to process it</p></li>
+<li><p>Better tools to store and analyze it</p></li>
+</ul>
+<p>Just as no chef starts perfect but improves with practice, Machine Learning models get better as they learn from more examples!</p>
+</section>
+</section>
+<section id="machine-learning-vs-deep-learning">
+<h2>Machine Learning vs Deep Learning<a class="headerlink" href="#machine-learning-vs-deep-learning" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Machine Learning</p></th>
+<th class="head"><p>Deep Learning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Best Way to Think About It</p></td>
+<td><p>Like following a simple recipe - you know exactly what ingredients (features) affect the taste</p></td>
+<td><p>Like a complex restaurant dish - many ingredients interact in subtle ways that even the chef can’t fully explain</p></td>
+</tr>
+<tr class="row-odd"><td><p>When to Use It</p></td>
+<td><p>When your problem is straightforward (like predicting house prices from size and location)</p></td>
+<td><p>When your problem involves complex patterns (like recognizing faces in photos or understanding human language)</p></td>
+</tr>
+<tr class="row-even"><td><p>Data and Resources</p></td>
+<td><p>Works with smaller datasets and basic computers. Like cooking at home with basic kitchen tools</p></td>
+<td><p>Needs massive amounts of data and powerful computers. Like running a professional restaurant kitchen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exercise-classifying-machine-learning-vs-deep-learning-problems">
+<h2>Exercise: Classifying Machine Learning vs Deep Learning Problems<a class="headerlink" href="#exercise-classifying-machine-learning-vs-deep-learning-problems" title="Link to this heading">#</a></h2>
+<p>Let’s practice identifying whether a problem is better suited for traditional Machine Learning (ML) or Deep Learning (DL).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>You have thousands of customer reviews and want to automatically categorize them as positive or negative sentiment.</p></td>
+<td><p><select onchange="checkAnswer(this, 'ML')" class="ml-select"><option value="">Select your answer…</option><option value="ML">Machine Learning</option><option value="DL">Deep Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>You need to analyze thousands of medical X-ray images to detect signs of pneumonia.</p></td>
+<td><p><select onchange="checkAnswer(this, 'DL')" class="ml-select"><option value="">Select your answer…</option><option value="ML">Machine Learning</option><option value="DL">Deep Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>You want to predict house prices based on features like square footage, number of bedrooms, location, and age.</p></td>
+<td><p><select onchange="checkAnswer(this, 'ML')" class="ml-select"><option value="">Select your answer…</option><option value="ML">Machine Learning</option><option value="DL">Deep Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>You’re building a system to understand and respond to spoken commands in multiple languages.</p></td>
+<td><p><select onchange="checkAnswer(this, 'DL')" class="ml-select"><option value="">Select your answer…</option><option value="ML">Machine Learning</option><option value="DL">Deep Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct!';
+        feedbackSpan.style.color = 'green';
+    } else {
+        feedbackSpan.innerHTML = ' ❌ Try again';
+        feedbackSpan.style.color = 'red';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style>
+</section>
+<section id="types-of-machine-learning-models">
+<h2>2 types of Machine Learning Models:<a class="headerlink" href="#types-of-machine-learning-models" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Supervised Learning</p></li>
+<li><p>Unsupervised Learning</p></li>
+</ol>
+<p>Lets first watch this video to understand the difference between Supervised and Unsupervised Learning.</p>
+<div style="display: flex; justify-content: center;">
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+    <iframe
+        src="https://www.youtube.com/embed/YcOdGAnJlOc"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+</div></section>
+<section id="exercise-distinguishing-between-supervised-and-unsupervised-learning">
+<h2>Exercise: Distinguishing Between Supervised and Unsupervised Learning<a class="headerlink" href="#exercise-distinguishing-between-supervised-and-unsupervised-learning" title="Link to this heading">#</a></h2>
+<p>In this exercise, you will practice identifying whether a given scenario is best suited for supervised learning or unsupervised learning.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>You have a dataset of labeled images of cats and dogs, and you want to train a model to classify new images as either a cat or a dog.</p></td>
+<td><p><select onchange="checkAnswer(this, 'Supervised')" class="ml-select"><option value="">Select your answer…</option><option value="Supervised">Supervised Learning</option><option value="Unsupervised">Unsupervised Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>You want to group customers based on their purchasing behavior without any prior labels or categories.</p></td>
+<td><p><select onchange="checkAnswer(this, 'Unsupervised')" class="ml-select"><option value="">Select your answer…</option><option value="Supervised">Supervised Learning</option><option value="Unsupervised">Unsupervised Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>You are developing a model to predict the price of a house based on its features, such as size and location, using historical data.</p></td>
+<td><p><select onchange="checkAnswer(this, 'Supervised')" class="ml-select"><option value="">Select your answer…</option><option value="Supervised">Supervised Learning</option><option value="Unsupervised">Unsupervised Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>You want to analyze a collection of news articles to find common topics without any predefined categories.</p></td>
+<td><p><select onchange="checkAnswer(this, 'Unsupervised')" class="ml-select"><option value="">Select your answer…</option><option value="Supervised">Supervised Learning</option><option value="Unsupervised">Unsupervised Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct!';
+        feedbackSpan.style.color = 'green';
+    } else {
+        feedbackSpan.innerHTML = ' ❌ Try again';
+        feedbackSpan.style.color = 'red';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style>
+</section>
+<section id="machine-learning-project-lifecycle">
+<h2>Machine Learning Project Lifecycle<a class="headerlink" href="#machine-learning-project-lifecycle" title="Link to this heading">#</a></h2>
+<hr class="docutils" />
+<p>Just like a restaurant needs a systematic approach to consistently serve delicious meals, machine learning projects need a well-defined lifecycle to deliver successful solutions. Having a structured lifecycle helps teams stay organized, maintain quality, and efficiently handle the complexity of ML projects.</p>
+<p>Let’s explore the ML project lifecycle through the familiar lens of preparing a gourmet meal:</p>
+<section id="why-do-we-need-a-project-lifecycle">
+<h3>Why Do We Need a Project Lifecycle?<a class="headerlink" href="#why-do-we-need-a-project-lifecycle" title="Link to this heading">#</a></h3>
+<p>Imagine trying to cook a complex dish without any planning or process - you might forget ingredients, mess up the timing, or end up with an inedible result! Similarly, ML projects need structure to:</p>
+<ul class="simple">
+<li><p>Ensure nothing important is missed</p></li>
+<li><p>Keep the team coordinated and efficient</p></li>
+<li><p>Maintain quality throughout</p></li>
+<li><p>Make the process repeatable and scalable</p></li>
+</ul>
+</section>
+<section id="the-key-phases-through-our-cooking-analogy">
+<h3>The Key Phases (Through Our Cooking Analogy)<a class="headerlink" href="#the-key-phases-through-our-cooking-analogy" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Problem Definition &amp; Planning</strong></p>
+<ul class="simple">
+<li><p>Like planning a dinner party menu based on your guests’ preferences and dietary restrictions</p></li>
+<li><p>You decide what dish to make and what outcome you want (e.g., “I want to create a spicy Thai curry that my guests will love”)</p></li>
+<li><p>In ML: Defining the problem you want to solve and what success looks like</p></li>
+</ul>
+</li>
+<li><p><strong>Data Collection &amp; Processing</strong></p>
+<ul class="simple">
+<li><p>Similar to gathering and preparing your ingredients</p></li>
+<li><p>You source fresh vegetables, measure spices, and prep everything (washing, chopping, etc.)</p></li>
+<li><p>Just as you’d remove wilted herbs, you clean your data by removing errors</p></li>
+<li><p>In ML: Collecting and cleaning relevant data for your model</p></li>
+</ul>
+</li>
+<li><p><strong>Model Development</strong></p>
+<ul class="simple">
+<li><p>This is like the actual cooking process</p></li>
+<li><p>You combine ingredients following a recipe, adjust heat levels, and mix everything together</p></li>
+<li><p>You might try different cooking techniques to get the best results</p></li>
+<li><p>In ML: Building and training your model with different approaches</p></li>
+</ul>
+</li>
+<li><p><strong>Testing &amp; Evaluation</strong></p>
+<ul class="simple">
+<li><p>Like taste-testing your dish before serving</p></li>
+<li><p>You check if the seasoning is right, the texture is perfect, and everything is cooked properly</p></li>
+<li><p>Maybe have another cook try it and give feedback</p></li>
+<li><p>In ML: Testing your model’s performance on new data</p></li>
+</ul>
+</li>
+<li><p><strong>Deployment &amp; Monitoring</strong></p>
+<ul class="simple">
+<li><p>Similar to serving the dish to your customers and watching their reactions</p></li>
+<li><p>You keep an eye on food temperature, presentation, and customer satisfaction</p></li>
+<li><p>Make notes on what works and what needs improvement</p></li>
+<li><p>In ML: Putting your model into production and monitoring its performance</p></li>
+</ul>
+</li>
+</ol>
+<p>The beauty of this process is its iterative nature. Just as a chef might adjust their recipe based on customer feedback (more spice, less salt), ML projects often require going back to earlier steps to improve the final result. Maybe you need more data (ingredients), or perhaps your model (cooking technique) needs refinement.</p>
+<p>Remember: Just as no chef gets a complex recipe perfect on the first try, ML projects typically require multiple iterations to achieve optimal results. The key is to follow the process, learn from each cycle, and continuously improve.</p>
+</section>
+</section>
+<section id="exercise-understanding-the-ml-project-lifecycle">
+<h2>Exercise: Understanding the ML Project Lifecycle<a class="headerlink" href="#exercise-understanding-the-ml-project-lifecycle" title="Link to this heading">#</a></h2>
+<p>Let’s practice identifying which phase of the ML project lifecycle different scenarios belong to. For each scenario, select the appropriate phase number:</p>
+<ul class="simple">
+<li><p>Phase 1: Problem Definition &amp; Planning</p></li>
+<li><p>Phase 2: Data Collection &amp; Processing</p></li>
+<li><p>Phase 3: Model Development</p></li>
+<li><p>Phase 4: Testing &amp; Evaluation</p></li>
+<li><p>Phase 5: Deployment &amp; Monitoring</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A startup wants to build a recommendation system for their e-commerce platform. The team is discussing business goals, success metrics, and required resources.</p></td>
+<td><p><select onchange="checkAnswer(this, '1')" class="ml-select"><option value="">Select phase…</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option><option value="4">Phase 4</option><option value="5">Phase 5</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Data scientists are cleaning customer purchase history, removing duplicates, and converting timestamps to a standardized format.</p></td>
+<td><p><select onchange="checkAnswer(this, '2')" class="ml-select"><option value="">Select phase…</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option><option value="4">Phase 4</option><option value="5">Phase 5</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>The team is experimenting with different algorithms and hyperparameters to create the best performing model.</p></td>
+<td><p><select onchange="checkAnswer(this, '3')" class="ml-select"><option value="">Select phase…</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option><option value="4">Phase 4</option><option value="5">Phase 5</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Engineers are checking if the model’s recommendations are accurate using a holdout dataset of recent customer interactions.</p></td>
+<td><p><select onchange="checkAnswer(this, '4')" class="ml-select"><option value="">Select phase…</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option><option value="4">Phase 4</option><option value="5">Phase 5</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>The live recommendation system’s performance is being tracked, with alerts set up for any unusual patterns in user engagement.</p></td>
+<td><p><select onchange="checkAnswer(this, '5')" class="ml-select"><option value="">Select phase…</option><option value="1">Phase 1</option><option value="2">Phase 2</option><option value="3">Phase 3</option><option value="4">Phase 4</option><option value="5">Phase 5</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct!';
+        feedbackSpan.style.color = 'green';
+    } else {
+        feedbackSpan.innerHTML = ' ❌ Try again';
+        feedbackSpan.style.color = 'red';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style><p>Machine Learning Terminology Explained Simply</p>
+<p>Core Building Blocks:</p>
+<ul class="simple">
+<li><p><strong>Algorithm</strong>: Think of it like a recipe - a set of specific steps that tell the computer how to solve a problem. Just like how a cake recipe tells you exactly what to do to bake a cake.</p></li>
+<li><p><strong>Model</strong>: The end result after training an algorithm. Like a student who has finished studying and can now take tests. The model takes in new information and makes predictions.</p></li>
+<li><p><strong>Feature</strong>: A piece of information used to make predictions. For example, when predicting house prices, features could be square footage, number of bedrooms, location etc.</p></li>
+<li><p><strong>Label</strong>: The answer we’re trying to predict. Using the house price example, the label would be the actual price of the house.</p></li>
+</ul>
+<p>How We Measure Success:</p>
+<ul class="simple">
+<li><p><strong>Accuracy</strong>: The percentage of times our model gets the right answer. If it correctly predicts 90 out of 100 cases, that’s 90% accuracy.</p></li>
+<li><p><strong>Precision</strong>: Out of all the times our model said “yes”, how often was it right? Like if a spam filter marks 10 emails as spam, and 9 were actually spam, that’s 90% precision.</p></li>
+<li><p><strong>Recall</strong>: Out of all the actual “yes” cases, how many did our model catch? If there were 20 spam emails total and our filter caught 15 of them, that’s 75% recall.</p></li>
+<li><p><strong>Bias</strong>: When our model consistently makes the same type of mistake. Like always underestimating house prices in a certain neighborhood.</p></li>
+</ul>
+<p>Working with Data:</p>
+<ul class="simple">
+<li><p><strong>Training Set</strong>: The data we use to teach our model, like flashcards used to study for a test</p></li>
+<li><p><strong>Test Set</strong>: New data we use to check how well our model learned, like taking the final exam</p></li>
+<li><p><strong>Validation Set</strong>: Extra data we use to fine-tune our model, like practice tests before the final</p></li>
+<li><p><strong>Feature Vector</strong>: A list of all features for one example, like [1500 sq ft, 3 bedrooms, 2 bathrooms] for a house</p></li>
+</ul>
+<p>Different Ways Machines Learn:</p>
+<ul class="simple">
+<li><p><strong>Supervised Learning</strong>: Teaching with examples where we know the right answer. Like teaching a child by showing pictures and saying “this is a cat, this is a dog”</p></li>
+<li><p><strong>Unsupervised Learning</strong>: Finding patterns without being told the answers. Like grouping similar songs together without being told their genres</p></li>
+<li><p><strong>Transfer Learning</strong>: Using knowledge from one task to help with another. Like how knowing French makes it easier to learn Spanish</p></li>
+<li><p><strong>Reinforcement Learning</strong>: Learning through trial and error with rewards and punishments. Like training a dog with treats</p></li>
+</ul>
+<p>These concepts form the foundation of machine learning. Understanding them helps grasp how computers can learn from data to make predictions and decisions.</p>
+</section>
+<section id="exercise-understanding-machine-learning-terminology">
+<h2>Exercise: Understanding Machine Learning Terminology<a class="headerlink" href="#exercise-understanding-machine-learning-terminology" title="Link to this heading">#</a></h2>
+<p>Let’s practice matching machine learning terms with their real-world examples. For each scenario, select the appropriate ML term:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>When buying a house, the price you’re trying to predict</p></td>
+<td><p><select onchange="checkAnswer(this, 'Label')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>A student who has finished studying and can now take tests</p></td>
+<td><p><select onchange="checkAnswer(this, 'Model')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>The square footage and number of bedrooms of a house</p></td>
+<td><p><select onchange="checkAnswer(this, 'Feature')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>A recipe with specific steps to solve a problem</p></td>
+<td><p><select onchange="checkAnswer(this, 'Algorithm')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>The flashcards used to study for a test</p></td>
+<td><p><select onchange="checkAnswer(this, 'Training Set')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>A spam filter that consistently misses promotional emails</p></td>
+<td><p><select onchange="checkAnswer(this, 'Bias')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Out of 100 spam predictions, 90 were actually spam</p></td>
+<td><p><select onchange="checkAnswer(this, 'Precision')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Learning to group customers without knowing their categories</p></td>
+<td><p><select onchange="checkAnswer(this, 'Unsupervised Learning')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Using knowledge from face detection to improve object detection</p></td>
+<td><p><select onchange="checkAnswer(this, 'Transfer Learning')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>A robot learning to walk through trial and error</p></td>
+<td><p><select onchange="checkAnswer(this, 'Reinforcement Learning')" class="ml-select"><option value="">Select term…</option><option value="Algorithm">Algorithm</option><option value="Model">Model</option><option value="Feature">Feature</option><option value="Label">Label</option><option value="Training Set">Training Set</option><option value="Bias">Bias</option><option value="Precision">Precision</option><option value="Recall">Recall</option><option value="Accuracy">Accuracy</option><option value="Supervised Learning">Supervised Learning</option><option value="Unsupervised Learning">Unsupervised Learning</option><option value="Transfer Learning">Transfer Learning</option><option value="Reinforcement Learning">Reinforcement Learning</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct! ' + getExplanation(correctAnswer);
+        feedbackSpan.style.color = 'green';
+    } else if (selectedValue) {
+        feedbackSpan.innerHTML = ' ❌ Try again. Hint: Think about what this scenario most closely resembles.';
+        feedbackSpan.style.color = 'red';
+    }
+}
+
+function getExplanation(term) {
+    const explanations = {
+        'Label': 'The label is what we\'re trying to predict - in this case, the house price.',
+        'Model': 'Like a trained student, a model learns from data and can then make predictions.',
+        'Feature': 'Features are the input information we use to make predictions.',
+        'Algorithm': 'An algorithm is like a recipe - it provides step-by-step instructions.',
+        'Training Set': 'Training data is like study materials used to learn from examples.',
+        'Bias': 'Bias shows up as systematic errors in predictions.',
+        'Precision': 'Precision measures how many of our positive predictions were correct.',
+        'Unsupervised Learning': 'Finding patterns without being given the correct answers.',
+        'Transfer Learning': 'Using knowledge from one task to help with another task.',
+        'Reinforcement Learning': 'Learning optimal actions through trial and error.'
+    };
+    return explanations[term];
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="good-job-you-ve-completed-the-first-chapter">
+<h1>Good Job! You’ve completed the first chapter.<a class="headerlink" href="#good-job-you-ve-completed-the-first-chapter" title="Link to this heading">#</a></h1>
+<p>Let’s move on to the next chapter.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Chapter%202%20-%20Data%20Fundamentals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 2 - Data Fundamentals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 1: Introduction to Machine Learning</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is Machine Learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-artifitial-intelligence-machine-learning-and-deep-learning-relate-to-each-other">How does Artifitial Intelligence, Machine Learning and Deep Learning relate to each other?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-machine-learning">Why do we need Machine Learning?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-kitchen-analogy">The Kitchen Analogy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example">Real-World Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-vs-deep-learning">Machine Learning vs Deep Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-classifying-machine-learning-vs-deep-learning-problems">Exercise: Classifying Machine Learning vs Deep Learning Problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning-models">2 types of Machine Learning Models:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-distinguishing-between-supervised-and-unsupervised-learning">Exercise: Distinguishing Between Supervised and Unsupervised Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-project-lifecycle">Machine Learning Project Lifecycle</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-a-project-lifecycle">Why Do We Need a Project Lifecycle?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-phases-through-our-cooking-analogy">The Key Phases (Through Our Cooking Analogy)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-the-ml-project-lifecycle">Exercise: Understanding the ML Project Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-machine-learning-terminology">Exercise: Understanding Machine Learning Terminology</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#good-job-you-ve-completed-the-first-chapter">Good Job! You’ve completed the first chapter.</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shreyash Gupta
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
