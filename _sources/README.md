@@ -133,7 +133,7 @@ Based on your target audience of Python-familiar beginners, here's a comprehensi
 - Decision Trees
 - Random Forests
 - XGBoost
-- Model Evaluation Metrics[1][3]
+- Model Evaluation Metrics
 
 **Chapter 4: Unsupervised Learning**
 - Clustering Algorithms

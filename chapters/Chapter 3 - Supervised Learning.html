@@ -69,6 +69,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/Chapter 3 - Supervised Learning';</script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
@@ -202,7 +204,21 @@
 <li class="toctree-l1"><a class="reference internal" href="Chapter%201%20-%20Introduction%20to%20Machine%20Learning.html">Chapter 1: Introduction to Machine Learning</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Chapter%202%20-%20Data%20Fundamentals.html">Chapter 2 - Data Fundamentals</a></li>
+
+
+
+
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 3 - Supervised Learning</a></li>
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Chapter%204%20-%20Unsupervised%20Learning.html">Chapter 4 - Unsupervised Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning Fundamentals</span></p>
@@ -447,7 +463,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -463,6 +481,176 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 3 - Supervised Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-difference">Understanding the Difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-categories-vs-numbers">1. Predicting Categories vs Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-examples">2. Real-world Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each">3. When to Use Each</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-vs-output-types">4. Input vs Output Types</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-vs-discrete-outputs">1. Continuous vs Discrete Outputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-vs-multi-class-classification">2. Binary vs Multi-class Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-types">3. Prediction Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-line-fitting">1. Simple Line Fitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#house-price-example">2. House Price Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-form">3. Equation Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-best-fit">4. Line of Best Fit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-and-intercept">1. Slope and Intercept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-targets">2. Features and Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">3. Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">4. Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example">1. Simple Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-features">2. Multiple Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">3. Model Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-predictions">4. Making Predictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-classification">1. Binary Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-output">2. Probability Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-shaped-curve">3. S-shaped Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary">4. Decision Boundary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spam-detection">1. Spam Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medical-diagnosis">2. Medical Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#credit-approval">3. Credit Approval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customer-conversion">4. Customer Conversion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-elements">Key Elements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-values">1. Threshold Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-interpretation">2. Probability Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-output">3. Binary Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-impact">4. Feature Impact</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">Decision Trees</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-structure">Tree Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-node">1. Root Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-nodes">2. Decision Nodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaf-nodes">3. Leaf Nodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-rules">4. Splitting Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-process">Learning Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">1. Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-criteria">2. Split Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-growth">3. Tree Growth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-basics">4. Pruning Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-limitations">Advantages/Limitations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easy-to-understand">1. Easy to Understand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-risk">2. Overfitting Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use">3. When to Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-examples">4. Real Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">Random Forests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-basics">Ensemble Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-trees">1. Multiple Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-system">2. Voting System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-process">3. Bagging Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-selection">4. Random Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">1. Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-bag-error">2. Out-of-bag Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-trees">3. Parallel Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#majority-voting">4. Majority Voting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-use">Practical Use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-tuning">1. Parameter Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forest-size">2. Forest Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-applications">4. Real Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">XGBoost</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-concepts">Boosting Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-learning">1. Sequential Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-learners">2. Weak Learners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-boosting">3. Gradient Boosting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-correction">4. Error Correction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">1. Learning Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-depth">2. Tree Depth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-trees">3. Number of Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">4. Regularization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup">1. Basic Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-selection">2. Parameter Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">3. Common Pitfalls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">4. Performance Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation-metrics">Model Evaluation Metrics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-metrics">Classification Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">1. Accuracy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision">2. Precision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall">3. Recall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">4. F1-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">5. Confusion Matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-metrics">Regression Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error-mse">1. Mean Squared Error (MSE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared-r2">2. R-squared (R²)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error-mae">3. Mean Absolute Error (MAE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-mean-squared-error-rmse">4. Root Mean Squared Error (RMSE)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-techniques">Validation Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">1. Train-Test Split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">2. Cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#holdout-sets">3. Holdout Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-curves">4. Validation Curves</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -474,7 +662,2305 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-supervised-learning">
 <h1>Chapter 3 - Supervised Learning<a class="headerlink" href="#chapter-3-supervised-learning" title="Link to this heading">#</a></h1>
+</section>
 <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="classification-vs-regression">
+<h1>Classification vs Regression<a class="headerlink" href="#classification-vs-regression" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="understanding-the-difference">
+<h2>Understanding the Difference<a class="headerlink" href="#understanding-the-difference" title="Link to this heading">#</a></h2>
+<section id="predicting-categories-vs-numbers">
+<h3>1. Predicting Categories vs Numbers<a class="headerlink" href="#predicting-categories-vs-numbers" title="Link to this heading">#</a></h3>
+<p><strong>Classification</strong> is like being a sorting hat at Hogwarts:</p>
+<ul class="simple">
+<li><p>You look at a student’s traits</p></li>
+<li><p>You place them in specific houses (categories)</p></li>
+<li><p>The output is always a group or category</p></li>
+</ul>
+<p><strong>Regression</strong> is like predicting how tall a child will grow:</p>
+<ul class="simple">
+<li><p>You look at parents’ height, nutrition, age</p></li>
+<li><p>You predict a specific number</p></li>
+<li><p>The output is a continuous value</p></li>
+</ul>
+</section>
+<section id="real-world-examples">
+<h3>2. Real-world Examples<a class="headerlink" href="#real-world-examples" title="Link to this heading">#</a></h3>
+<p><strong>Classification Examples:</strong></p>
+<ul class="simple">
+<li><p>Email: Spam or Not Spam</p></li>
+<li><p>Medical: Sick or Healthy</p></li>
+<li><p>Images: Cat, Dog, or Bird</p></li>
+<li><p>Weather: Sunny, Rainy, or Cloudy</p></li>
+</ul>
+<p><strong>Regression Examples:</strong></p>
+<ul class="simple">
+<li><p>House Prices: <span class="math notranslate nohighlight">\(100,000, \)</span>200,000, etc.</p></li>
+<li><p>Temperature: 72°F, 75°F, etc.</p></li>
+<li><p>Sales: $5,000 per month</p></li>
+<li><p>Height: 5.8 feet</p></li>
+</ul>
+</section>
+<section id="when-to-use-each">
+<h3>3. When to Use Each<a class="headerlink" href="#when-to-use-each" title="Link to this heading">#</a></h3>
+<p>Use <strong>Classification</strong> when:</p>
+<ul class="simple">
+<li><p>You’re answering Yes/No questions</p></li>
+<li><p>You’re putting things into categories</p></li>
+<li><p>You need to make discrete choices</p></li>
+</ul>
+<p>Use <strong>Regression</strong> when:</p>
+<ul class="simple">
+<li><p>You’re predicting a specific number</p></li>
+<li><p>You’re forecasting amounts</p></li>
+<li><p>You need continuous outputs</p></li>
+</ul>
+</section>
+<section id="input-vs-output-types">
+<h3>4. Input vs Output Types<a class="headerlink" href="#input-vs-output-types" title="Link to this heading">#</a></h3>
+<p>Think of it like cooking:</p>
+<ul class="simple">
+<li><p><strong>Classification</strong>: You look at ingredients (inputs) to decide what dish you’re making (category output)</p></li>
+<li><p><strong>Regression</strong>: You look at recipe quantities (inputs) to predict cooking time (numerical output)</p></li>
+</ul>
+</section>
+</section>
+<section id="key-concepts">
+<h2>Key Concepts<a class="headerlink" href="#key-concepts" title="Link to this heading">#</a></h2>
+<section id="continuous-vs-discrete-outputs">
+<h3>1. Continuous vs Discrete Outputs<a class="headerlink" href="#continuous-vs-discrete-outputs" title="Link to this heading">#</a></h3>
+<p><strong>Continuous</strong> (Regression):</p>
+<ul class="simple">
+<li><p>Like a volume knob that smoothly goes from 0 to 100</p></li>
+<li><p>Can take any value within a range</p></li>
+<li><p>Example: Temperature can be 72.1°F, 72.2°F, 72.15°F</p></li>
+</ul>
+<p><strong>Discrete</strong> (Classification):</p>
+<ul class="simple">
+<li><p>Like a light switch that’s either ON or OFF</p></li>
+<li><p>Takes specific, separate values</p></li>
+<li><p>Example: A movie rating can be 1, 2, 3, 4, or 5 stars</p></li>
+</ul>
+</section>
+<section id="binary-vs-multi-class-classification">
+<h3>2. Binary vs Multi-class Classification<a class="headerlink" href="#binary-vs-multi-class-classification" title="Link to this heading">#</a></h3>
+<p><strong>Binary Classification:</strong></p>
+<ul class="simple">
+<li><p>Like a coin toss: Heads or Tails</p></li>
+<li><p>Only two possible outcomes</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Pass/Fail</p></li>
+<li><p>Win/Lose</p></li>
+<li><p>Spam/Not Spam</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Multi-class Classification:</strong></p>
+<ul class="simple">
+<li><p>Like choosing ice cream flavors</p></li>
+<li><p>Three or more possible categories</p></li>
+<li><p>Examples:</p>
+<ul>
+<li><p>Rock/Paper/Scissors</p></li>
+<li><p>Dog Breeds</p></li>
+<li><p>Movie Genres</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="prediction-types">
+<h3>3. Prediction Types<a class="headerlink" href="#prediction-types" title="Link to this heading">#</a></h3>
+<p>Think of predictions like different types of questions:</p>
+<p><strong>Classification Questions:</strong></p>
+<ul class="simple">
+<li><p>“Is this fruit an apple or banana?”</p></li>
+<li><p>“Will it rain today?”</p></li>
+<li><p>“Is this transaction fraudulent?”</p></li>
+</ul>
+<p><strong>Regression Questions:</strong></p>
+<ul class="simple">
+<li><p>“How much will this house sell for?”</p></li>
+<li><p>“What will the temperature be tomorrow?”</p></li>
+<li><p>“How many customers will visit today?”</p></li>
+</ul>
+<p>Remember: The key difference is whether you’re putting things in categories (classification) or predicting a specific number (regression). It’s like the difference between sorting your books by genre (classification) versus arranging them by page count (regression)!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<section id="simple-line-fitting">
+<h3>1. Simple Line Fitting<a class="headerlink" href="#simple-line-fitting" title="Link to this heading">#</a></h3>
+<p>Think of linear regression like playing connect the dots, but with a twist. Instead of connecting every dot, you’re trying to draw ONE straight line that best represents all dots.</p>
+<p>Imagine plotting your ice cream sales:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sales │    •
+($)   │  •  •
+      │ •    
+      │•   •
+      └─────────
+        Temperature (°F)
+</pre></div>
+</div>
+<p>The line you draw shows the relationship: as temperature goes up, so do ice cream sales!</p>
+</section>
+<section id="house-price-example">
+<h3>2. House Price Example<a class="headerlink" href="#house-price-example" title="Link to this heading">#</a></h3>
+<p>Let’s use houses because everyone understands them:</p>
+<p>Imagine you have these houses:</p>
+<ul class="simple">
+<li><p>1000 sq ft → $100,000</p></li>
+<li><p>2000 sq ft → $200,000</p></li>
+<li><p>3000 sq ft → $300,000</p></li>
+</ul>
+<p>You can see the pattern: for every 1000 sq ft increase, the price goes up by $100,000. That’s a linear relationship!</p>
+</section>
+<section id="equation-form">
+<h3>3. Equation Form<a class="headerlink" href="#equation-form" title="Link to this heading">#</a></h3>
+<p>The equation is like a simple recipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price = (Price per sq ft × Size) + Base Price
+
+In math terms:
+y = mx + b
+
+Where:
+y = what we&#39;re predicting (price)
+m = rate of change (price per sq ft)
+x = what we know (house size)
+b = starting point (base price)
+</pre></div>
+</div>
+</section>
+<section id="line-of-best-fit">
+<h3>4. Line of Best Fit<a class="headerlink" href="#line-of-best-fit" title="Link to this heading">#</a></h3>
+<p>Imagine you’re a teacher looking at study time vs. test scores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Score │    •
+      │  •   •
+      │ •  •
+      │•    •
+      └─────────
+        Study Hours
+</pre></div>
+</div>
+<p>The “best fit” line is like finding the fairest way to show the relationship between study time and scores. It won’t hit every point perfectly, but it shows the general trend.</p>
+<p>Think of it like this:</p>
+<ul class="simple">
+<li><p>Too high: Some points feel left out below</p></li>
+<li><p>Too low: Some points feel left out above</p></li>
+<li><p>Just right: Balances all points fairly</p></li>
+</ul>
+<p>Remember: Linear regression is like finding the “golden rule” in your data - it might not be perfect for every single case, but it gives you a reliable way to make predictions based on patterns you’ve seen before!</p>
+</section>
+</section>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h2>
+<section id="slope-and-intercept">
+<h3>1. Slope and Intercept<a class="headerlink" href="#slope-and-intercept" title="Link to this heading">#</a></h3>
+<p>Think of a slide at a playground:</p>
+<ul class="simple">
+<li><p><strong>Slope</strong> is how steep the slide is</p></li>
+<li><p><strong>Intercept</strong> is how high off the ground the slide starts</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Height │   /
+      │  /  ← Slope (steepness)
+      │ /
+      │/← Intercept (starting height)
+      └─────────
+        Distance
+</pre></div>
+</div>
+<p><strong>Real-Life Example:</strong></p>
+<ul class="simple">
+<li><p>Ice Cream Sales:</p>
+<ul>
+<li><p>Slope: For every 1°F increase, sales go up by $10</p></li>
+<li><p>Intercept: Even on the coldest day, you sell $50 worth of ice cream</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="features-and-targets">
+<h3>2. Features and Targets<a class="headerlink" href="#features-and-targets" title="Link to this heading">#</a></h3>
+<p>Think of this like baking a cake:</p>
+<ul class="simple">
+<li><p><strong>Features</strong> are your ingredients (eggs, flour, sugar)</p></li>
+<li><p><strong>Target</strong> is what you’re trying to make (the cake)</p></li>
+</ul>
+<p><strong>Real-World Example:</strong>
+House Price Prediction:</p>
+<ul class="simple">
+<li><p><strong>Features</strong> (What you know):</p>
+<ul>
+<li><p>Square footage</p></li>
+<li><p>Number of bedrooms</p></li>
+<li><p>Age of house</p></li>
+<li><p>Location</p></li>
+</ul>
+</li>
+<li><p><strong>Target</strong> (What you predict):</p>
+<ul>
+<li><p>House price</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="assumptions">
+<h3>3. Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h3>
+<p>Like rules for a fair game, linear regression has some assumptions:</p>
+<p><strong>1. Linearity</strong></p>
+<ul class="simple">
+<li><p>Like a rubber band stretched between points</p></li>
+<li><p>Relationship should be straight, not curved</p></li>
+<li><p>Example: More study time = Better grades (usually true)</p></li>
+</ul>
+<p><strong>2. Independence</strong></p>
+<ul class="simple">
+<li><p>Like separate ingredients in a recipe</p></li>
+<li><p>Each feature should stand on its own</p></li>
+<li><p>Example: House size and location are independent</p></li>
+</ul>
+<p><strong>3. Equal Variance</strong></p>
+<ul class="simple">
+<li><p>Like evenly spread sprinkles on a cupcake</p></li>
+<li><p>Points should scatter evenly around the line</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good:    Bad:
+y │ • •  y │ •
+  │• • •   │ ••
+  │ • •    │•  •••
+  └────    └────
+</pre></div>
+</div>
+</section>
+<section id="limitations">
+<h3>4. Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
+<p>Like knowing when a recipe won’t work well:</p>
+<p><strong>1. Can’t Handle Curves</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price │    •
+      │  •
+      │•    •
+      │    •  •
+      └─────────
+        Size
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Real life often has curves</p></li>
+<li><p>Example: Doubling study time doesn’t double your grade</p></li>
+</ul>
+<p><strong>2. Sensitive to Outliers</strong></p>
+<ul class="simple">
+<li><p>Like one giant mansion affecting all house prices</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price │        •
+      │
+      │• • • •
+      └─────────
+        Size
+</pre></div>
+</div>
+<p><strong>3. Assumes Linear Patterns</strong></p>
+<ul class="simple">
+<li><p>Like expecting temperature to always increase ice cream sales</p></li>
+<li><p>Doesn’t work for:</p>
+<ul>
+<li><p>Seasonal patterns</p></li>
+<li><p>Complex relationships</p></li>
+<li><p>Sudden changes</p></li>
+</ul>
+</li>
+</ul>
+<p>Remember: Linear regression is like using a ruler to draw through points - it works great for straight-line relationships but struggles with anything curved or complex. It’s simple and useful, but you need to know its limitations!</p>
+</section>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
+<section id="simple-example">
+<h3>1. Simple Example<a class="headerlink" href="#simple-example" title="Link to this heading">#</a></h3>
+<p>Think of predicting a child’s height based on their parent’s height:</p>
+<p><strong>Single Feature Prediction:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Height │    •
+Child  │  •  •
+      │ •    
+      │•   •
+      └─────────
+        Height Parent
+</pre></div>
+</div>
+<p>This is the simplest form:</p>
+<ul class="simple">
+<li><p>One input (parent’s height)</p></li>
+<li><p>One output (child’s height)</p></li>
+<li><p>One straight line relationship</p></li>
+</ul>
+<p>Like using a simple recipe:</p>
+<ul class="simple">
+<li><p>More sugar = Sweeter cake</p></li>
+<li><p>Simple, direct relationship</p></li>
+<li><p>Easy to understand and predict</p></li>
+</ul>
+</section>
+<section id="multiple-features">
+<h3>2. Multiple Features<a class="headerlink" href="#multiple-features" title="Link to this heading">#</a></h3>
+<p>Now imagine predicting house prices with multiple factors:</p>
+<p>Think of it like cooking with multiple ingredients:</p>
+<ul class="simple">
+<li><p>Single ingredient: Just flour → Basic bread</p></li>
+<li><p>Multiple ingredients: Flour + Yeast + Salt → Better bread</p></li>
+</ul>
+<p><strong>House Price Example:</strong></p>
+<ul class="simple">
+<li><p>Size (like flour - the main ingredient)</p></li>
+<li><p>Location (like salt - adds value)</p></li>
+<li><p>Age (like freshness - affects value)</p></li>
+<li><p>Bedrooms (like extra ingredients)</p></li>
+</ul>
+<p>Each feature adds a new dimension to our prediction, like adding depth to a recipe.</p>
+</section>
+<section id="model-training">
+<h3>3. Model Training<a class="headerlink" href="#model-training" title="Link to this heading">#</a></h3>
+<p>Think of training a new chef:</p>
+<p><strong>Step 1: Show Examples</strong></p>
+<ul class="simple">
+<li><p>Like showing a chef many cakes</p></li>
+<li><p>The chef learns from each example</p></li>
+<li><p>Builds understanding of what works</p></li>
+</ul>
+<p><strong>Step 2: Practice and Adjust</strong></p>
+<ul class="simple">
+<li><p>Chef tries making cakes</p></li>
+<li><p>Compares results with examples</p></li>
+<li><p>Makes small adjustments</p></li>
+</ul>
+<p><strong>Step 3: Fine-Tuning</strong></p>
+<ul class="simple">
+<li><p>Like perfecting a recipe</p></li>
+<li><p>Small tweaks to improve results</p></li>
+<li><p>Learning from mistakes</p></li>
+</ul>
+<p>The model learns like a chef:</p>
+<ul class="simple">
+<li><p>Sees many examples</p></li>
+<li><p>Finds patterns</p></li>
+<li><p>Adjusts its “recipe” (line)</p></li>
+<li><p>Gets better with more data</p></li>
+</ul>
+</section>
+<section id="making-predictions">
+<h3>4. Making Predictions<a class="headerlink" href="#making-predictions" title="Link to this heading">#</a></h3>
+<p>Like using a recipe after mastering it:</p>
+<p><strong>The Process:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Gather Inputs</strong></p>
+<ul class="simple">
+<li><p>Like collecting ingredients</p></li>
+<li><p>Get all needed features</p></li>
+</ul>
+</li>
+<li><p><strong>Apply the Formula</strong></p>
+<ul class="simple">
+<li><p>Like following the recipe</p></li>
+<li><p>Use the learned pattern</p></li>
+</ul>
+</li>
+<li><p><strong>Get Prediction</strong></p>
+<ul class="simple">
+<li><p>Like the finished dish</p></li>
+<li><p>Your estimated value</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Real Example:</strong>
+House Price Prediction:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Known:
+- Size: 2000 sq ft
+- Age: 5 years
+- Location: Good area
+
+↓ Apply learned pattern ↓
+
+Prediction: $300,000
+</pre></div>
+</div>
+<p>Think of it like a well-trained chef:</p>
+<ul class="simple">
+<li><p>Sees ingredients (features)</p></li>
+<li><p>Knows the recipe (learned pattern)</p></li>
+<li><p>Predicts outcome (final dish)</p></li>
+</ul>
+<p>Remember: Implementation is like learning to cook:</p>
+<ul class="simple">
+<li><p>Start simple (one ingredient)</p></li>
+<li><p>Add complexity (more ingredients)</p></li>
+<li><p>Practice (training)</p></li>
+<li><p>Finally, make predictions (cook independently)</p></li>
+</ul>
+<p>The beauty of linear regression is that once trained, it’s like having a reliable recipe - input the ingredients (features), and you’ll get a predictable output (prediction)!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
+<h1>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Imagine you’re a doctor trying to decide if someone has a cold or not - you don’t just make a random guess, you look at symptoms and make an informed yes/no decision. That’s what logistic regression does!</p>
+<section id="core-concepts">
+<h2>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h2>
+<section id="binary-classification">
+<h3>1. Binary Classification<a class="headerlink" href="#binary-classification" title="Link to this heading">#</a></h3>
+<p>Think of binary classification like a light switch:</p>
+<ul class="simple">
+<li><p>Only two possible outcomes: ON or OFF</p></li>
+<li><p>No in-between states</p></li>
+<li><p>Clear decision required</p></li>
+</ul>
+<p>Real-Life Examples:</p>
+<ul class="simple">
+<li><p>Email: Spam or Not Spam</p></li>
+<li><p>Medical: Sick or Healthy</p></li>
+<li><p>Banking: Approve or Deny Loan</p></li>
+<li><p>Weather: Will Rain or Won’t Rain</p></li>
+</ul>
+</section>
+<section id="probability-output">
+<h3>2. Probability Output<a class="headerlink" href="#probability-output" title="Link to this heading">#</a></h3>
+<p>Instead of just yes/no, logistic regression gives you a confidence level, like a weather forecast:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="o">%</span> <span class="o">--------</span> <span class="mi">50</span><span class="o">%</span> <span class="o">--------</span> <span class="mi">100</span><span class="o">%</span>
+<span class="n">Definitely</span>   <span class="n">Unsure</span>    <span class="n">Definitely</span>
+    <span class="n">No</span>                   <span class="n">Yes</span>
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>90% chance of rain → Bring umbrella</p></li>
+<li><p>30% chance of rain → Maybe don’t worry</p></li>
+<li><p>50% chance → Tough decision!</p></li>
+</ul>
+</section>
+<section id="s-shaped-curve">
+<h3>3. S-shaped Curve<a class="headerlink" href="#s-shaped-curve" title="Link to this heading">#</a></h3>
+<p>Imagine pushing a boulder up a hill:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Success │    ⌒⌒⌒
+Chance  │  ⌒
+        │⌒
+        │
+        └─────────
+         Effort
+</pre></div>
+</div>
+<p>The S-curve (sigmoid) shows how probability changes:</p>
+<ul class="simple">
+<li><p>Bottom: Very unlikely to succeed</p></li>
+<li><p>Middle: Rapid change zone</p></li>
+<li><p>Top: Very likely to succeed</p></li>
+</ul>
+<p>Real-Life Example:</p>
+<ul class="simple">
+<li><p>Studying for a test:</p>
+<ul>
+<li><p>0-2 hours: Likely to fail</p></li>
+<li><p>3-5 hours: Big improvement in chances</p></li>
+<li><p>6+ hours: Diminishing returns</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="decision-boundary">
+<h3>4. Decision Boundary<a class="headerlink" href="#decision-boundary" title="Link to this heading">#</a></h3>
+<p>Think of this like a fence dividing two groups:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Health  │  • • ❌ ❌
+Score   │ •  |  ❌ ❌
+        │• • |   ❌
+        │ •  |  ❌
+        └────|─────
+         Temperature
+         (Decision Line)
+</pre></div>
+</div>
+<p>Real-World Examples:</p>
+<ul class="simple">
+<li><p>Credit Score: Above 700 → Approve loan</p></li>
+<li><p>Test Score: Above 70% → Pass</p></li>
+<li><p>Temperature: Above 100°F → Fever</p></li>
+</ul>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>A bouncer deciding who enters a club</p></li>
+<li><p>A teacher grading pass/fail</p></li>
+<li><p>A doctor diagnosing sick/healthy</p></li>
+</ul>
+<p>Remember: Logistic regression is like a smart judge:</p>
+<ul class="simple">
+<li><p>Looks at evidence (features)</p></li>
+<li><p>Calculates probability</p></li>
+<li><p>Makes a yes/no decision</p></li>
+<li><p>Shows confidence in the decision</p></li>
+</ul>
+<p>It’s perfect for when you need to make binary choices with confidence levels, like deciding whether to take an umbrella based on weather conditions!</p>
+</section>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
+<section id="spam-detection">
+<h3>1. Spam Detection<a class="headerlink" href="#spam-detection" title="Link to this heading">#</a></h3>
+<p>Think of a mail sorter at a post office, but for emails:</p>
+<p><strong>How It Works:</strong></p>
+<ul class="simple">
+<li><p>Looks at key features:</p>
+<ul>
+<li><p>Sender’s address (like checking return address)</p></li>
+<li><p>Email content (like peeking through envelope window)</p></li>
+<li><p>Links present (like checking for suspicious packages)</p></li>
+<li><p>Time sent (like noting when mail arrives)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Decision Process:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Features → Probability → Decision
+&quot;FREE MONEY!&quot; → 95% → Spam
+&quot;Meeting at 3&quot; → 5% → Not Spam
+</pre></div>
+</div>
+</section>
+<section id="medical-diagnosis">
+<h3>2. Medical Diagnosis<a class="headerlink" href="#medical-diagnosis" title="Link to this heading">#</a></h3>
+<p>Like a very experienced doctor making quick decisions:</p>
+<p><strong>Disease Detection:</strong></p>
+<ul class="simple">
+<li><p>Looks at symptoms (features):</p>
+<ul>
+<li><p>Temperature</p></li>
+<li><p>Blood pressure</p></li>
+<li><p>Age</p></li>
+<li><p>Medical history</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Example: Flu Diagnosis</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Symptoms         → Probability → Decision
+Fever: 101°F    │
+Cough: Yes      │→ 85% → Likely Flu
+Fatigue: High   │
+Contact: Yes    │
+</pre></div>
+</div>
+</section>
+<section id="credit-approval">
+<h3>3. Credit Approval<a class="headerlink" href="#credit-approval" title="Link to this heading">#</a></h3>
+<p>Like a bank manager deciding to lend money:</p>
+<p><strong>Key Factors:</strong></p>
+<ul class="simple">
+<li><p>Income (like checking salary)</p></li>
+<li><p>Credit History (like reading references)</p></li>
+<li><p>Employment (like job stability)</p></li>
+<li><p>Existing Debts (like current responsibilities)</p></li>
+</ul>
+<p><strong>Decision Making:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good Signs        Bad Signs
+High Income       Late Payments
+Stable Job        High Debt
+Long History      No Employment
+↓                 ↓
+Higher Approval   Lower Approval
+Probability       Probability
+</pre></div>
+</div>
+</section>
+<section id="customer-conversion">
+<h3>4. Customer Conversion<a class="headerlink" href="#customer-conversion" title="Link to this heading">#</a></h3>
+<p>Like a shop owner predicting who will buy:</p>
+<p><strong>Customer Journey:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Browse → Interest → Purchase
+   ↓        ↓         ↓
+ 20%      50%       80%
+Chance   Chance    Chance
+</pre></div>
+</div>
+<p><strong>Features Considered:</strong></p>
+<ul class="simple">
+<li><p>Time spent looking (like browsing time in store)</p></li>
+<li><p>Items viewed (like trying clothes)</p></li>
+<li><p>Previous purchases (like regular customer)</p></li>
+<li><p>Cart value (like basket size)</p></li>
+</ul>
+<p><strong>Real Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Customer Behavior       → Probability → Action
+Views: Many            │
+Time: 30 mins         │→ 75% → Show Special Offer
+Cart: Has Items       │
+Previous: Purchased   │
+</pre></div>
+</div>
+<p>Remember: In all these applications, Logistic Regression acts like an experienced decision-maker:</p>
+<ul class="simple">
+<li><p>Gathers relevant information</p></li>
+<li><p>Weighs different factors</p></li>
+<li><p>Calculates probability</p></li>
+<li><p>Makes yes/no decisions</p></li>
+</ul>
+<p>It’s like having:</p>
+<ul class="simple">
+<li><p>A smart spam filter for emails</p></li>
+<li><p>An experienced doctor for diagnosis</p></li>
+<li><p>A fair bank manager for loans</p></li>
+<li><p>A skilled salesperson for conversions</p></li>
+</ul>
+<p>The beauty is in its simplicity - just like a good judge, it takes complex information and delivers clear, binary decisions with confidence levels!</p>
+</section>
+</section>
+<section id="key-elements">
+<h2>Key Elements<a class="headerlink" href="#key-elements" title="Link to this heading">#</a></h2>
+<section id="threshold-values">
+<h3>1. Threshold Values<a class="headerlink" href="#threshold-values" title="Link to this heading">#</a></h3>
+<p>Think of threshold like the height requirement at an amusement park ride:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Too Short │     │ Tall Enough
+         │     │
+    🧍‍♂️   │  🧍  │  🧍‍♀️
+    4&#39;8&quot;  │  5&#39;0&quot; │  5&#39;2&quot;
+         │     │
+    NO   │ LINE │   YES
+</pre></div>
+</div>
+<p><strong>Real-World Examples:</strong></p>
+<ul class="simple">
+<li><p>Credit Score: Below 700 = Deny, Above 700 = Approve</p></li>
+<li><p>Test Scores: Below 70% = Fail, Above 70% = Pass</p></li>
+<li><p>Fever: Below 100.4°F = Normal, Above 100.4°F = Fever</p></li>
+</ul>
+<p>The threshold is your decision line - like drawing a line in the sand.</p>
+</section>
+<section id="probability-interpretation">
+<h3>2. Probability Interpretation<a class="headerlink" href="#probability-interpretation" title="Link to this heading">#</a></h3>
+<p>Think of it like weather forecasts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="o">%</span> <span class="o">--------</span> <span class="mi">50</span><span class="o">%</span> <span class="o">--------</span> <span class="mi">100</span><span class="o">%</span>
+<span class="n">Definitely</span>   <span class="n">Maybe</span>    <span class="n">Definitely</span>
+<span class="n">Will</span> <span class="n">Rain</span>    <span class="n">Rain</span>     <span class="n">Will</span> <span class="n">Rain</span>
+</pre></div>
+</div>
+<p><strong>Example: Loan Approval</strong></p>
+<ul class="simple">
+<li><p>90% probability → Almost certainly approve</p></li>
+<li><p>60% probability → Leaning towards approval</p></li>
+<li><p>30% probability → Probably deny</p></li>
+<li><p>10% probability → Almost certainly deny</p></li>
+</ul>
+<p>Like a doctor’s confidence in a diagnosis:</p>
+<ul class="simple">
+<li><p>“I’m 95% sure it’s just a cold”</p></li>
+<li><p>“There’s a 20% chance of complications”</p></li>
+</ul>
+</section>
+<section id="binary-output">
+<h3>3. Binary Output<a class="headerlink" href="#binary-output" title="Link to this heading">#</a></h3>
+<p>Like a simple yes/no question:</p>
+<ul class="simple">
+<li><p>Are you over 18? Yes/No</p></li>
+<li><p>Is it raining? Yes/No</p></li>
+<li><p>Did the team win? Yes/No</p></li>
+</ul>
+<p>Think of it as a light switch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Input → Decision → Output
+         │
+    ┌────┴────┐
+    │         │
+   OFF       ON
+    0         1
+</pre></div>
+</div>
+<p>No middle ground - just like:</p>
+<ul class="simple">
+<li><p>Pregnant or not pregnant</p></li>
+<li><p>Spam or not spam</p></li>
+<li><p>Passed or failed</p></li>
+</ul>
+</section>
+<section id="feature-impact">
+<h3>4. Feature Impact<a class="headerlink" href="#feature-impact" title="Link to this heading">#</a></h3>
+<p>Like ingredients affecting a recipe’s success:</p>
+<p><strong>Strong Impact Features:</strong></p>
+<ul class="simple">
+<li><p>Like salt in cooking (a little makes big difference)</p></li>
+<li><p>Like studying for test scores</p></li>
+<li><p>Like location for house prices</p></li>
+</ul>
+<p><strong>Weak Impact Features:</strong></p>
+<ul class="simple">
+<li><p>Like garnish on a dish (nice but not crucial)</p></li>
+<li><p>Like shoe color for running speed</p></li>
+<li><p>Like paint color for house price</p></li>
+</ul>
+<p><strong>Example: Email Spam Detection</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Feature         Impact
+-----------------
+ALL CAPS       Strong ⬆️
+Known Sender   Strong ⬇️
+Time Sent      Weak   ↕️
+Email Length   Weak   ↕️
+</pre></div>
+</div>
+<p>Think of it like packing for a trip:</p>
+<ul class="simple">
+<li><p>Important items (passport, tickets) → Strong impact</p></li>
+<li><p>Nice-to-have items (extra socks) → Weak impact</p></li>
+</ul>
+<p>Remember: Logistic Regression elements work together like a good judge:</p>
+<ul class="simple">
+<li><p>Uses a clear threshold (like law guidelines)</p></li>
+<li><p>Provides confidence levels (like judge’s certainty)</p></li>
+<li><p>Makes binary decisions (like guilty/not guilty)</p></li>
+<li><p>Weighs evidence appropriately (like case facts)</p></li>
+</ul>
+<p>It’s all about making clear yes/no decisions while understanding how confident we are in those decisions!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="decision-trees">
+<h1>Decision Trees<a class="headerlink" href="#decision-trees" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Imagine playing a game of “20 Questions” or following a flowchart to decide what to wear - that’s exactly how decision trees work!</p>
+<section id="tree-structure">
+<h2>Tree Structure<a class="headerlink" href="#tree-structure" title="Link to this heading">#</a></h2>
+<section id="root-node">
+<h3>1. Root Node<a class="headerlink" href="#root-node" title="Link to this heading">#</a></h3>
+<p>Think of the root node like the first question in “20 Questions”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Is it alive?&quot;
+     ↙    ↘
+   Yes     No
+</pre></div>
+</div>
+<p>It’s like the main entrance to a maze:</p>
+<ul class="simple">
+<li><p>Everyone starts here</p></li>
+<li><p>First major decision point</p></li>
+<li><p>Most important question</p></li>
+</ul>
+<p>Real-Life Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Is it raining?&quot;
+     ↙    ↘
+  Yes      No
+(Take     (Leave
+umbrella)  umbrella)
+</pre></div>
+</div>
+</section>
+<section id="decision-nodes">
+<h3>2. Decision Nodes<a class="headerlink" href="#decision-nodes" title="Link to this heading">#</a></h3>
+<p>Like a series of follow-up questions, each leading to more specific answers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Is it hot outside?
+    ↙         ↘
+   Yes         No
+   ↙           ↘
+Shorts      Is it raining?
+           ↙          ↘
+         Yes           No
+         ↓             ↓
+      Raincoat      Sweater
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>A doctor’s diagnosis questions</p></li>
+<li><p>A customer service flowchart</p></li>
+<li><p>A choose-your-own-adventure book</p></li>
+</ul>
+</section>
+<section id="leaf-nodes">
+<h3>3. Leaf Nodes<a class="headerlink" href="#leaf-nodes" title="Link to this heading">#</a></h3>
+<p>These are your final answers - like reaching the end of your journey:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Should I order pizza?
+       ↙         ↘
+ Hungry?         Not Hungry
+   ↙    ↘         ↓
+ Money?   No    Don&#39;t Order
+ ↙    ↘   ↓
+Yes    No  Don&#39;t
+ ↓     ↓   Order
+Order Don&#39;t
+      Order
+</pre></div>
+</div>
+<p>Leaf nodes are like:</p>
+<ul class="simple">
+<li><p>Final diagnosis in medicine</p></li>
+<li><p>End of a quiz</p></li>
+<li><p>Final decision in a flowchart</p></li>
+</ul>
+</section>
+<section id="splitting-rules">
+<h3>4. Splitting Rules<a class="headerlink" href="#splitting-rules" title="Link to this heading">#</a></h3>
+<p>Think of splitting rules like sorting laundry:</p>
+<p><strong>Simple Split:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Clothes
+   ↙    ↘
+Light   Dark
+</pre></div>
+</div>
+<p><strong>Complex Split:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Clothes
+  ↙   |   ↘
+White Color  Dark
+     ↙  ↘
+  Light  Bright
+</pre></div>
+</div>
+<p>Real-World Example - Restaurant Choice:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Budget?
+  ↙     ↘
+&lt;$20    &gt;$20
+  ↙       ↘
+Fast    Cuisine Type?
+Food    ↙    |    ↘
+     Italian Asian Steak
+</pre></div>
+</div>
+<p>Splitting Rules are like:</p>
+<ul class="simple">
+<li><p>Questions in a quiz</p></li>
+<li><p>Filters when shopping</p></li>
+<li><p>Sorting criteria</p></li>
+</ul>
+<p>Remember: A decision tree is like:</p>
+<ul class="simple">
+<li><p>A smart flowchart</p></li>
+<li><p>A game of “20 Questions”</p></li>
+<li><p>A choose-your-own-adventure book</p></li>
+<li><p>A series of sorting decisions</p></li>
+</ul>
+<p>Each decision leads you closer to the final answer, just like following directions to a destination!</p>
+</section>
+</section>
+<section id="learning-process">
+<h2>Learning Process<a class="headerlink" href="#learning-process" title="Link to this heading">#</a></h2>
+<section id="feature-selection">
+<h3>1. Feature Selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h3>
+<p>Think of feature selection like choosing questions for a guessing game:</p>
+<p><strong>Good Questions:</strong></p>
+<ul class="simple">
+<li><p>Like “Is it bigger than a car?” (Divides options clearly)</p></li>
+<li><p>Like “Does it live in water?” (Separates clearly)</p></li>
+<li><p>Like “Is it more expensive than $100?” (Clear distinction)</p></li>
+</ul>
+<p><strong>Bad Questions:</strong></p>
+<ul class="simple">
+<li><p>Like “Is it nice?” (Too subjective)</p></li>
+<li><p>Like “What color is it?” (Too many options)</p></li>
+<li><p>Like “How heavy is it?” (Too complex)</p></li>
+</ul>
+<p>Think of it like a detective choosing the most important clues:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Crime Scene Clues:
+✓ Forced entry (Very informative)
+✓ Time of crime (Important)
+✗ Weather that day (Less relevant)
+✗ Street name (Not helpful)
+</pre></div>
+</div>
+</section>
+<section id="split-criteria">
+<h3>2. Split Criteria<a class="headerlink" href="#split-criteria" title="Link to this heading">#</a></h3>
+<p>Imagine sorting books in a library:</p>
+<p><strong>Good Splits:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Books
+  ↙     ↘
+Fiction  Non-Fiction
+  ↙         ↘
+Kids      Reference
+Adult     Textbooks
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Sorting laundry (Clear categories)</p></li>
+<li><p>Organizing groceries (Logical groups)</p></li>
+<li><p>Classifying emails (Clear distinctions)</p></li>
+</ul>
+<p>The best splits are like good party seating arrangements:</p>
+<ul class="simple">
+<li><p>Clear grouping logic</p></li>
+<li><p>Similar things together</p></li>
+<li><p>Different things apart</p></li>
+</ul>
+</section>
+<section id="tree-growth">
+<h3>3. Tree Growth<a class="headerlink" href="#tree-growth" title="Link to this heading">#</a></h3>
+<p>Like growing a real tree, but upside down:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Should I go out?
+     ↙        ↘
+Raining?     Sunny?
+ ↙   ↘       ↙    ↘
+Yes   No    Hot   Cool
+ ↓    ↓     ↓     ↓
+Stay  Go   Beach  Park
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Starting with trunk (main question)</p></li>
+<li><p>Adding branches (more specific questions)</p></li>
+<li><p>Reaching leaves (final decisions)</p></li>
+</ul>
+<p>Like a plant growing:</p>
+<ul class="simple">
+<li><p>Starts small (root node)</p></li>
+<li><p>Grows branches (decisions)</p></li>
+<li><p>Stops at natural endpoints</p></li>
+</ul>
+</section>
+<section id="pruning-basics">
+<h3>4. Pruning Basics<a class="headerlink" href="#pruning-basics" title="Link to this heading">#</a></h3>
+<p>Like trimming a bonsai tree to keep it healthy:</p>
+<p><strong>Before Pruning:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Choice
+    ↙     ↘
+Flavor?   Size?
+ ↙  ↘     ↙   ↘
+Van Choc  S    M
+ ↙   ↘   
+Hot Cold  (Too detailed!)
+</pre></div>
+</div>
+<p><strong>After Pruning:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Choice
+    ↙     ↘
+Flavor?   Size?
+ ↙  ↘     ↙   ↘
+Van Choc  S    M
+</pre></div>
+</div>
+<p>Think of pruning like:</p>
+<ul class="simple">
+<li><p>Editing a long story (removing unnecessary details)</p></li>
+<li><p>Simplifying directions (keeping important turns)</p></li>
+<li><p>Cleaning up a messy room (removing clutter)</p></li>
+</ul>
+<p>Remember: The learning process is like:</p>
+<ul class="simple">
+<li><p>A child learning to ask better questions</p></li>
+<li><p>A gardener growing and shaping a tree</p></li>
+<li><p>A detective focusing on important clues</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Ask smart questions (Feature Selection)</p></li>
+<li><p>Make clear divisions (Split Criteria)</p></li>
+<li><p>Build systematically (Tree Growth)</p></li>
+<li><p>Keep it simple (Pruning)</p></li>
+</ul>
+<p>Just like in real life, sometimes simpler decisions are better than complex ones!</p>
+</section>
+</section>
+<section id="advantages-limitations">
+<h2>Advantages/Limitations<a class="headerlink" href="#advantages-limitations" title="Link to this heading">#</a></h2>
+<section id="easy-to-understand">
+<h3>1. Easy to Understand<a class="headerlink" href="#easy-to-understand" title="Link to this heading">#</a></h3>
+<p>Think of decision trees like giving directions to your house:</p>
+<p><strong>Why They’re Easy:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Get to My House:
+     ↙         ↘
+See McDonald&#39;s?  Keep Going
+     ↙
+Turn Right
+     ↙
+Red House
+</pre></div>
+</div>
+<p>Like following a recipe:</p>
+<ul class="simple">
+<li><p>Clear steps</p></li>
+<li><p>Yes/No decisions</p></li>
+<li><p>Visual flow</p></li>
+<li><p>No complex math</p></li>
+</ul>
+<p>Real-Life Comparison:</p>
+<ul class="simple">
+<li><p>GPS: “Turn left in 0.7 miles” (Complex)</p></li>
+<li><p>Friend: “Turn left at the big red barn” (Like a decision tree)</p></li>
+</ul>
+</section>
+<section id="overfitting-risk">
+<h3>2. Overfitting Risk<a class="headerlink" href="#overfitting-risk" title="Link to this heading">#</a></h3>
+<p>Think of overfitting like memorizing a textbook instead of understanding the concepts:</p>
+<p><strong>Too Simple (Underfitting):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Is it raining?
+   ↙      ↘
+  Yes      No
+  ↓        ↓
+Umbrella   No Umbrella
+</pre></div>
+</div>
+<p><strong>Too Complex (Overfitting):</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Is it raining?
+   ↙      ↘
+Heavy?    Cloudy?
+ ↙  ↘     ↙    ↘
+Yes  No  Dark? Bright?
+ ↓   ↓    ↓     ↓
+Big Small Maybe  None
+</pre></div>
+</div>
+<p>Like a student who:</p>
+<ul class="simple">
+<li><p>Memorizes exact test questions</p></li>
+<li><p>Struggles with slightly different problems</p></li>
+<li><p>Can’t apply knowledge to new situations</p></li>
+</ul>
+</section>
+<section id="when-to-use">
+<h3>3. When to Use<a class="headerlink" href="#when-to-use" title="Link to this heading">#</a></h3>
+<p>Perfect for situations like:</p>
+<p><strong>Good Scenarios:</strong></p>
+<ul class="simple">
+<li><p>Customer Service Flowcharts</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Problem Type?
+   ↙        ↘
+Technical   Billing
+   ↙          ↘
+Reset      Check Account
+Device     Balance
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Medical Diagnosis</p></li>
+<li><p>Restaurant Decision-Making</p></li>
+<li><p>Product Recommendations</p></li>
+</ul>
+<p><strong>Not Great For:</strong></p>
+<ul class="simple">
+<li><p>Predicting exact house prices</p></li>
+<li><p>Continuous predictions</p></li>
+<li><p>Complex relationships</p></li>
+</ul>
+<p>Like choosing between:</p>
+<ul class="simple">
+<li><p>A recipe book (Decision Tree) → Good for clear steps</p></li>
+<li><p>A seasoned chef’s intuition (Other Models) → Better for subtle adjustments</p></li>
+</ul>
+</section>
+<section id="real-examples">
+<h3>4. Real Examples<a class="headerlink" href="#real-examples" title="Link to this heading">#</a></h3>
+<p><strong>Netflix Show Recommendations:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Like Action?
+    ↙      ↘
+  Yes       No
+   ↙         ↘
+Watch         Like Romance?
+Marvel?        ↙        ↘
+   ↙          Yes       No
+Superhero    Rom-Com   Documentary
+</pre></div>
+</div>
+<p><strong>Bank Loan Approval:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Income &gt; 50k?
+    ↙      ↘
+   Yes      No
+    ↙        ↘
+Credit       Savings &gt; 10k?
+Score?        ↙        ↘
+ ↙    ↘      Yes       No
+Good  Bad    Maybe     Deny
+ ↓     ↓
+Approve Deny
+</pre></div>
+</div>
+<p><strong>Email Sorting:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>From Known Sender?
+     ↙        ↘
+    Yes        No
+     ↙          ↘
+Important     Contains
+Contact?     &quot;Urgent&quot;?
+ ↙    ↘       ↙    ↘
+Yes    No    Yes    No
+ ↓     ↓     ↓     ↓
+Priority Regular Check  Spam
+</pre></div>
+</div>
+<p>Remember: Decision Trees are like:</p>
+<ul class="simple">
+<li><p>A good friend giving directions (Easy to follow)</p></li>
+<li><p>A strict rulebook (Can be too rigid)</p></li>
+<li><p>A choose-your-own-adventure book (Clear paths)</p></li>
+</ul>
+<p>They’re perfect when you need:</p>
+<ul class="simple">
+<li><p>Clear decisions</p></li>
+<li><p>Explainable results</p></li>
+<li><p>Simple rules</p></li>
+</ul>
+<p>But be careful of:</p>
+<ul class="simple">
+<li><p>Making too many specific rules</p></li>
+<li><p>Complex numerical predictions</p></li>
+<li><p>Situations needing flexibility</p></li>
+</ul>
+<p>Just like in real life, sometimes simple, clear decisions work best, but other times you need more nuanced approaches!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="random-forests">
+<h1>Random Forests<a class="headerlink" href="#random-forests" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Imagine instead of asking one friend for advice, you ask many friends and take a vote - that’s basically what Random Forests do!</p>
+<section id="ensemble-basics">
+<h2>Ensemble Basics<a class="headerlink" href="#ensemble-basics" title="Link to this heading">#</a></h2>
+<section id="multiple-trees">
+<h3>1. Multiple Trees<a class="headerlink" href="#multiple-trees" title="Link to this heading">#</a></h3>
+<p>Think of it like getting multiple opinions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Should I buy this house?
+
+Friend 1&#39;s Decision Tree:
+Price?
+  ↙    ↘
+High   Low
+ ↓      ↓
+No    Yes
+
+Friend 2&#39;s Decision Tree:
+Location?
+  ↙    ↘
+Good   Bad
+ ↓      ↓
+Yes    No
+
+Friend 3&#39;s Decision Tree:
+Size?
+  ↙    ↘
+Big   Small
+ ↓      ↓
+Yes    No
+</pre></div>
+</div>
+<p>Like having:</p>
+<ul class="simple">
+<li><p>Multiple doctors for a diagnosis</p></li>
+<li><p>Different teachers grading a paper</p></li>
+<li><p>Several experts giving advice</p></li>
+</ul>
+</section>
+<section id="voting-system">
+<h3>2. Voting System<a class="headerlink" href="#voting-system" title="Link to this heading">#</a></h3>
+<p>Think of it like a group decision at a restaurant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Where to eat?
+Tree 1: &quot;Italian&quot; 
+Tree 2: &quot;Italian&quot;
+Tree 3: &quot;Chinese&quot;
+Tree 4: &quot;Italian&quot;
+Tree 5: &quot;Mexican&quot;
+
+Final Decision: Italian (3 votes wins!)
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>Class voting for field trip destination</p></li>
+<li><p>Jury reaching a verdict</p></li>
+<li><p>Family deciding on vacation spot</p></li>
+</ul>
+</section>
+<section id="bagging-process">
+<h3>3. Bagging Process<a class="headerlink" href="#bagging-process" title="Link to this heading">#</a></h3>
+<p>Imagine different chefs making the same dish with slightly different ingredients:</p>
+<p><strong>Chef 1:</strong></p>
+<ul class="simple">
+<li><p>Uses tomatoes, pasta, herbs</p></li>
+<li><p>Makes Italian dish</p></li>
+</ul>
+<p><strong>Chef 2:</strong></p>
+<ul class="simple">
+<li><p>Uses pasta, garlic, cheese</p></li>
+<li><p>Makes Italian dish</p></li>
+</ul>
+<p><strong>Chef 3:</strong></p>
+<ul class="simple">
+<li><p>Uses herbs, cheese, tomatoes</p></li>
+<li><p>Makes Italian dish</p></li>
+</ul>
+<p>Each chef:</p>
+<ul class="simple">
+<li><p>Gets random ingredients (random data samples)</p></li>
+<li><p>Makes their best dish (builds their tree)</p></li>
+<li><p>Contributes to final menu (votes for prediction)</p></li>
+</ul>
+</section>
+<section id="random-selection">
+<h3>4. Random Selection<a class="headerlink" href="#random-selection" title="Link to this heading">#</a></h3>
+<p>Like different people packing for the same trip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Packing</span> <span class="n">List</span> <span class="n">Options</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Clothes</span>
+<span class="o">-</span> <span class="n">Toiletries</span>
+<span class="o">-</span> <span class="n">Electronics</span>
+<span class="o">-</span> <span class="n">Books</span>
+<span class="o">-</span> <span class="n">Snacks</span>
+<span class="o">-</span> <span class="n">Maps</span>
+
+<span class="n">Person</span> <span class="mi">1</span> <span class="n">considers</span><span class="p">:</span> <span class="n">Clothes</span><span class="p">,</span> <span class="n">Electronics</span><span class="p">,</span> <span class="n">Maps</span>
+<span class="n">Person</span> <span class="mi">2</span> <span class="n">considers</span><span class="p">:</span> <span class="n">Toiletries</span><span class="p">,</span> <span class="n">Books</span><span class="p">,</span> <span class="n">Clothes</span>
+<span class="n">Person</span> <span class="mi">3</span> <span class="n">considers</span><span class="p">:</span> <span class="n">Snacks</span><span class="p">,</span> <span class="n">Electronics</span><span class="p">,</span> <span class="n">Toiletries</span>
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Different judges looking at different aspects of a competition</p></li>
+<li><p>Multiple detectives focusing on different clues</p></li>
+<li><p>Various doctors specializing in different symptoms</p></li>
+</ul>
+<p>Remember: Random Forests work like:</p>
+<ul class="simple">
+<li><p>A panel of experts (multiple trees)</p></li>
+<li><p>Each expert looks at different evidence (random selection)</p></li>
+<li><p>They vote on the final decision (voting system)</p></li>
+<li><p>Each uses slightly different information (bagging)</p></li>
+</ul>
+<p>It’s like getting advice from a group of wise friends:</p>
+<ul class="simple">
+<li><p>Each friend has different experiences</p></li>
+<li><p>They look at different aspects</p></li>
+<li><p>They vote on what’s best</p></li>
+<li><p>Together, they make better decisions than any one alone</p></li>
+</ul>
+<p>The power comes from diversity and democracy - just like in real life, multiple viewpoints often lead to better decisions!</p>
+</section>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<section id="feature-importance">
+<h3>1. Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h3>
+<p>Think of this like ranking ingredients in a popular restaurant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Recipe Success Factors:
+🥇 Fresh Ingredients (Used in 90% of good reviews)
+🥈 Cooking Temperature (Used in 70% of good reviews)
+🥉 Plating Style (Used in 30% of good reviews)
+⭐ Garnish Type (Used in 5% of good reviews)
+</pre></div>
+</div>
+<p>Like a chef learning that:</p>
+<ul class="simple">
+<li><p>Fresh ingredients matter most</p></li>
+<li><p>Temperature is crucial</p></li>
+<li><p>Plating is less important</p></li>
+<li><p>Garnish barely affects taste</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">House</span> <span class="n">Price</span> <span class="n">Factors</span><span class="p">:</span>
+<span class="n">Location</span><span class="p">:</span> <span class="mi">45</span><span class="o">%</span> <span class="n">importance</span>
+<span class="n">Size</span><span class="p">:</span> <span class="mi">30</span><span class="o">%</span> <span class="n">importance</span>
+<span class="n">Age</span><span class="p">:</span> <span class="mi">15</span><span class="o">%</span> <span class="n">importance</span>
+<span class="n">Paint</span> <span class="n">Color</span><span class="p">:</span> <span class="mi">2</span><span class="o">%</span> <span class="n">importance</span>
+</pre></div>
+</div>
+</section>
+<section id="out-of-bag-error">
+<h3>2. Out-of-bag Error<a class="headerlink" href="#out-of-bag-error" title="Link to this heading">#</a></h3>
+<p>Think of this like having a practice audience before a big performance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Main</span> <span class="n">Show</span><span class="p">:</span> <span class="mi">100</span> <span class="n">audience</span> <span class="n">members</span>
+<span class="n">Practice</span> <span class="n">Groups</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Group</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">30</span> <span class="n">different</span> <span class="n">people</span>
+<span class="o">-</span> <span class="n">Group</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">30</span> <span class="n">different</span> <span class="n">people</span>
+<span class="o">-</span> <span class="n">Group</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">30</span> <span class="n">different</span> <span class="n">people</span>
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>Testing a joke on friends before a speech</p></li>
+<li><p>Trying recipes on family before a party</p></li>
+<li><p>Practicing presentation on colleagues</p></li>
+</ul>
+<p>Each tree gets tested on data it hasn’t seen, like:</p>
+<ul class="simple">
+<li><p>A chef testing recipes on new customers</p></li>
+<li><p>A teacher testing methods on different classes</p></li>
+<li><p>A comedian trying jokes on new audiences</p></li>
+</ul>
+</section>
+<section id="parallel-trees">
+<h3>3. Parallel Trees<a class="headerlink" href="#parallel-trees" title="Link to this heading">#</a></h3>
+<p>Imagine multiple chefs working in different kitchen stations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Restaurant Kitchen:
+👩‍🍳 Chef 1: Making appetizers
+👨‍🍳 Chef 2: Making main course
+👩‍🍳 Chef 3: Making dessert
+👨‍🍳 Chef 4: Making drinks
+
+All working at the same time!
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>Multiple cashiers serving customers</p></li>
+<li><p>Different assembly lines in a factory</p></li>
+<li><p>Several security guards watching different areas</p></li>
+</ul>
+<p>Benefits:</p>
+<ul class="simple">
+<li><p>Faster results (like multiple workers)</p></li>
+<li><p>Independent work (no waiting for others)</p></li>
+<li><p>Efficient use of resources</p></li>
+</ul>
+</section>
+<section id="majority-voting">
+<h3>4. Majority Voting<a class="headerlink" href="#majority-voting" title="Link to this heading">#</a></h3>
+<p>Think of it like a group of friends deciding on a movie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Movie</span> <span class="n">Choice</span> <span class="n">Votes</span><span class="p">:</span>
+<span class="n">Action</span><span class="p">:</span> <span class="o">|||</span>  <span class="p">(</span><span class="mi">3</span> <span class="n">votes</span><span class="p">)</span>
+<span class="n">Comedy</span><span class="p">:</span> <span class="o">||</span>   <span class="p">(</span><span class="mi">2</span> <span class="n">votes</span><span class="p">)</span>
+<span class="n">Drama</span><span class="p">:</span>  <span class="o">||||</span> <span class="p">(</span><span class="mi">4</span> <span class="n">votes</span><span class="p">)</span>
+<span class="n">Horror</span><span class="p">:</span> <span class="o">|</span>    <span class="p">(</span><span class="mi">1</span> <span class="n">vote</span><span class="p">)</span>
+
+<span class="n">Winner</span><span class="p">:</span> <span class="n">Drama</span> <span class="p">(</span><span class="n">most</span> <span class="n">votes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Weather</span> <span class="n">Prediction</span><span class="p">:</span>
+<span class="n">Tree</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Rain&quot;</span>
+<span class="n">Tree</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Rain&quot;</span>
+<span class="n">Tree</span> <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;Sun&quot;</span>
+<span class="n">Tree</span> <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Rain&quot;</span>
+<span class="n">Tree</span> <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot;Sun&quot;</span>
+
+<span class="n">Final</span> <span class="n">Forecast</span><span class="p">:</span> <span class="n">Rain</span> <span class="p">(</span><span class="mi">3</span> <span class="n">vs</span> <span class="mi">2</span> <span class="n">votes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>Jury reaching verdict</p></li>
+<li><p>Committee making decisions</p></li>
+<li><p>Class choosing field trip destination</p></li>
+</ul>
+<p>Remember: Random Forests key features work like:</p>
+<ul class="simple">
+<li><p>A cooking competition (Feature Importance)</p>
+<ul>
+<li><p>Judges note what makes dishes win</p></li>
+</ul>
+</li>
+<li><p>Preview audience (Out-of-bag Error)</p>
+<ul>
+<li><p>Testing on fresh audiences</p></li>
+</ul>
+</li>
+<li><p>Restaurant kitchen (Parallel Trees)</p>
+<ul>
+<li><p>Multiple chefs working simultaneously</p></li>
+</ul>
+</li>
+<li><p>Democratic vote (Majority Voting)</p>
+<ul>
+<li><p>Final decision based on most votes</p></li>
+</ul>
+</li>
+</ul>
+<p>It’s like having a well-organized team:</p>
+<ul class="simple">
+<li><p>Everyone knows what’s important</p></li>
+<li><p>They test their work</p></li>
+<li><p>They work efficiently</p></li>
+<li><p>They make decisions together</p></li>
+</ul>
+<p>The power comes from combining multiple perspectives while understanding what really matters!</p>
+</section>
+</section>
+<section id="practical-use">
+<h2>Practical Use<a class="headerlink" href="#practical-use" title="Link to this heading">#</a></h2>
+<section id="parameter-tuning">
+<h3>1. Parameter Tuning<a class="headerlink" href="#parameter-tuning" title="Link to this heading">#</a></h3>
+<p>Think of this like adjusting your car settings for the perfect drive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Car Settings:
+Speed Limit ←→ Accuracy
+Comfort    ←→ Performance
+Fuel Mode  ←→ Efficiency
+</pre></div>
+</div>
+<p>Like cooking adjustments:</p>
+<ul class="simple">
+<li><p><strong>Heat Level</strong> (How detailed each tree is)</p>
+<ul>
+<li><p>Too high: Burns the food (overfitting)</p></li>
+<li><p>Too low: Raw food (underfitting)</p></li>
+<li><p>Just right: Perfect cooking</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Key Parameters:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tree Depth:
+Shallow ←→ Deep
+(Simple)   (Complex)
+
+Split Size:
+Small  ←→ Large
+(Detailed) (General)
+</pre></div>
+</div>
+</section>
+<section id="forest-size">
+<h3>2. Forest Size<a class="headerlink" href="#forest-size" title="Link to this heading">#</a></h3>
+<p>Like deciding how many judges for a competition:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Too Few Judges:
+👨‍⚖️👩‍⚖️ (2 judges)
+- Tied votes possible
+- Limited perspectives
+- Quick but unreliable
+
+Good Balance:
+👨‍⚖️👩‍⚖️👨‍⚖️👩‍⚖️👨‍⚖️ (5 judges)
+- Clear majority possible
+- Multiple viewpoints
+- Efficient decision-making
+
+Too Many Judges:
+👨‍⚖️👩‍⚖️👨‍⚖️👩‍⚖️👨‍⚖️👩‍⚖️👨‍⚖️👩‍⚖️👨‍⚖️👩‍⚖️ (10 judges)
+- Slow decisions
+- Diminishing returns
+- Resource intensive
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>3. Feature Selection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Like packing for a trip - choosing what’s important:</p>
+<p><strong>Essential Features:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Vacation Packing:
+✓ Passport (Must-have)
+✓ Money   (Critical)
+✓ Phone   (Important)
+✗ Extra shoes (Optional)
+✗ Fifth book (Unnecessary)
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Choosing ingredients for a recipe</p></li>
+<li><p>Selecting players for a team</p></li>
+<li><p>Picking tools for a job</p></li>
+</ul>
+</section>
+<section id="real-applications">
+<h3>4. Real Applications<a class="headerlink" href="#real-applications" title="Link to this heading">#</a></h3>
+<p><strong>Financial Predictions:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Bank Loan Approval:
+- Income History
+- Credit Score
+- Employment Status
+→ Approve/Deny Decision
+</pre></div>
+</div>
+<p><strong>Medical Diagnosis:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Disease Detection:
+- Symptoms
+- Test Results
+- Patient History
+→ Diagnosis
+</pre></div>
+</div>
+<p><strong>Customer Behavior:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Predictions:
+- Past Purchases
+- Browsing History
+- Cart Items
+→ Will They Buy?
+</pre></div>
+</div>
+<p><strong>Weather Forecasting:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Weather Prediction:
+- Temperature
+- Humidity
+- Wind Speed
+- Pressure
+→ Rain or No Rain
+</pre></div>
+</div>
+<p>Remember: Using Random Forests is like:</p>
+<ul class="simple">
+<li><p>Running a restaurant kitchen</p>
+<ul>
+<li><p>Right number of chefs (Forest Size)</p></li>
+<li><p>Proper cooking settings (Parameter Tuning)</p></li>
+<li><p>Essential ingredients only (Feature Selection)</p></li>
+<li><p>Various menu items (Applications)</p></li>
+</ul>
+</li>
+</ul>
+<p>Best Practices:</p>
+<ul class="simple">
+<li><p>Start simple, then add complexity</p></li>
+<li><p>Monitor performance</p></li>
+<li><p>Use enough trees, but not too many</p></li>
+<li><p>Focus on important features</p></li>
+</ul>
+<p>Think of it like building a team:</p>
+<ul class="simple">
+<li><p>Right number of people</p></li>
+<li><p>Right skills and tools</p></li>
+<li><p>Right focus areas</p></li>
+<li><p>Right applications</p></li>
+</ul>
+<p>The goal is to find the sweet spot between:</p>
+<ul class="simple">
+<li><p>Accuracy (good predictions)</p></li>
+<li><p>Efficiency (reasonable speed)</p></li>
+<li><p>Simplicity (manageable complexity)</p></li>
+</ul>
+<p>Just like in real life, balance is key to success!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="xgboost">
+<h1>XGBoost<a class="headerlink" href="#xgboost" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Think of XGBoost like training a team of specialists who learn from each other’s mistakes!</p>
+<section id="boosting-concepts">
+<h2>Boosting Concepts<a class="headerlink" href="#boosting-concepts" title="Link to this heading">#</a></h2>
+<section id="sequential-learning">
+<h3>1. Sequential Learning<a class="headerlink" href="#sequential-learning" title="Link to this heading">#</a></h3>
+<p>Imagine learning to cook a complex dish:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Day 1: Learn basic cooking
+↓
+Day 2: Learn from Day 1 mistakes
+↓
+Day 3: Perfect what was missed
+↓
+Day 4: Master the final details
+</pre></div>
+</div>
+<p>Like a relay race where:</p>
+<ul class="simple">
+<li><p>First runner sets the pace</p></li>
+<li><p>Second runner learns from first’s strategy</p></li>
+<li><p>Third runner adjusts based on previous legs</p></li>
+<li><p>Each runner improves the overall performance</p></li>
+</ul>
+</section>
+<section id="weak-learners">
+<h3>2. Weak Learners<a class="headerlink" href="#weak-learners" title="Link to this heading">#</a></h3>
+<p>Think of weak learners like a team of okay-but-not-great specialists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>House Price Prediction Team:
+👤 Bob: Good at judging by size only
+👤 Alice: Expert in location only
+👤 Charlie: Focuses on age only
+👤 Diana: Looks at condition only
+
+Together → Strong Prediction!
+</pre></div>
+</div>
+<p>Like a detective agency where:</p>
+<ul class="simple">
+<li><p>No one detective knows everything</p></li>
+<li><p>Each has a specific strength</p></li>
+<li><p>Combined knowledge solves cases</p></li>
+<li><p>Together they’re brilliant</p></li>
+</ul>
+</section>
+<section id="gradient-boosting">
+<h3>3. Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Link to this heading">#</a></h3>
+<p>Imagine painting a picture by fixing mistakes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Portrait Painting:
+First Try: Basic outline
+   ↓
+Second: Fix the eyes
+   ↓
+Third: Improve the smile
+   ↓
+Final: Perfect the details
+</pre></div>
+</div>
+<p>Like learning from mistakes:</p>
+<ul class="simple">
+<li><p>Start with rough work</p></li>
+<li><p>Focus on biggest errors</p></li>
+<li><p>Gradually refine</p></li>
+<li><p>Each step improves accuracy</p></li>
+</ul>
+</section>
+<section id="error-correction">
+<h3>4. Error Correction<a class="headerlink" href="#error-correction" title="Link to this heading">#</a></h3>
+<p>Think of it like tuning a musical performance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Band Practice:
+🎸 Guitarist: Too loud
+  ↓
+🥁 Drummer: Adjusts volume
+  ↓
+🎤 Singer: Balances with new level
+  ↓
+🎹 Pianist: Fine-tunes the harmony
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sales Prediction:
+Model 1: Predicts $1000 (actual: $1200)
+Model 2: Focuses on $200 gap
+Model 3: Refines remaining error
+Final: Nearly perfect prediction
+</pre></div>
+</div>
+<p>Remember: XGBoost works like:</p>
+<ul class="simple">
+<li><p>A learning journey (Sequential)</p>
+<ul>
+<li><p>Each step builds on previous knowledge</p></li>
+</ul>
+</li>
+<li><p>A team of specialists (Weak Learners)</p>
+<ul>
+<li><p>Each member has specific skills</p></li>
+</ul>
+</li>
+<li><p>An artist fixing mistakes (Gradient Boosting)</p>
+<ul>
+<li><p>Gradually improving the picture</p></li>
+</ul>
+</li>
+<li><p>A band tuning their sound (Error Correction)</p>
+<ul>
+<li><p>Each adjustment makes it better</p></li>
+</ul>
+</li>
+</ul>
+<p>It’s like having a team that:</p>
+<ul class="simple">
+<li><p>Learns from mistakes</p></li>
+<li><p>Builds on strengths</p></li>
+<li><p>Fixes weaknesses</p></li>
+<li><p>Constantly improves</p></li>
+</ul>
+<p>The magic is in the progression - each step makes the previous one better!</p>
+</section>
+</section>
+<section id="key-components">
+<h2>Key Components<a class="headerlink" href="#key-components" title="Link to this heading">#</a></h2>
+<section id="learning-rate">
+<h3>1. Learning Rate<a class="headerlink" href="#learning-rate" title="Link to this heading">#</a></h3>
+<p>Think of learning rate like adjusting the speed of learning a new language:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Learning Speed Options:
+🐢 Slow and Steady (0.01)
+- Like learning 2 words per day
+- Very thorough but takes time
+- Less likely to make mistakes
+
+🚶 Medium Pace (0.1)
+- Like learning 10 words per day
+- Good balance of speed and retention
+- Moderate risk of mistakes
+
+🏃 Fast Track (0.3)
+- Like learning 30 words per day
+- Quick progress but might forget
+- Higher risk of mistakes
+</pre></div>
+</div>
+<p>Like cooking adjustments:</p>
+<ul class="simple">
+<li><p>Small adjustments = More precise but slower</p></li>
+<li><p>Large adjustments = Faster but might overcook</p></li>
+</ul>
+</section>
+<section id="tree-depth">
+<h3>2. Tree Depth<a class="headerlink" href="#tree-depth" title="Link to this heading">#</a></h3>
+<p>Imagine organizing a company hierarchy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Shallow</span> <span class="n">Tree</span> <span class="p">(</span><span class="n">Depth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">CEO</span>
+    <span class="o">/</span>         \
+<span class="n">Manager1</span>    <span class="n">Manager2</span>
+<span class="p">(</span><span class="n">Simple</span> <span class="n">but</span> <span class="n">might</span> <span class="n">miss</span> <span class="n">details</span><span class="p">)</span>
+
+<span class="n">Deep</span> <span class="n">Tree</span> <span class="p">(</span><span class="n">Depth</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+           <span class="n">CEO</span>
+      <span class="o">/</span>           \
+  <span class="n">Director1</span>    <span class="n">Director2</span>
+   <span class="o">/</span>     \      <span class="o">/</span>     \
+<span class="n">Mgr1</span>    <span class="n">Mgr2</span>  <span class="n">Mgr3</span>   <span class="n">Mgr4</span>
+  <span class="o">|</span>       <span class="o">|</span>     <span class="o">|</span>      <span class="o">|</span>
+<span class="n">Staff</span>   <span class="n">Staff</span>  <span class="n">Staff</span>  <span class="n">Staff</span>
+<span class="p">(</span><span class="n">Detailed</span> <span class="n">but</span> <span class="n">might</span> <span class="n">be</span> <span class="n">too</span> <span class="nb">complex</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Like organizing a library:</p>
+<ul class="simple">
+<li><p>Shallow: Just Fiction/Non-Fiction</p></li>
+<li><p>Medium: Categories (Mystery, Science, etc.)</p></li>
+<li><p>Deep: Very specific sub-categories</p></li>
+</ul>
+</section>
+<section id="number-of-trees">
+<h3>3. Number of Trees<a class="headerlink" href="#number-of-trees" title="Link to this heading">#</a></h3>
+<p>Think of it like getting multiple opinions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Few Trees (10):
+👤👤👤👤👤
+👤👤👤👤👤
+- Quick decisions
+- Might miss patterns
+- Like asking 10 friends
+
+Many Trees (100):
+👤👤👤👤👤 × 20
+- More reliable
+- Takes longer
+- Like surveying 100 people
+
+Too Many Trees (1000+):
+👤👤👤👤👤 × 200
+- Diminishing returns
+- Resource intensive
+- Like asking entire town
+</pre></div>
+</div>
+</section>
+<section id="regularization">
+<h3>4. Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h3>
+<p>Think of regularization like training wheels on a bike:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>No Regularization:
+🚲 → 💨 → 💫 → 💥
+(Might overfit and crash)
+
+With Regularization:
+🚲 → 🛡️ → 🛡️ → ✅
+(Controlled, stable ride)
+</pre></div>
+</div>
+<p>Like setting boundaries:</p>
+<ul class="simple">
+<li><p>Speed limits on a road</p></li>
+<li><p>Recipe measurements</p></li>
+<li><p>Budget constraints</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Training</span> <span class="n">a</span> <span class="n">Chef</span><span class="p">:</span>
+<span class="n">Learning</span> <span class="n">Rate</span><span class="p">:</span> <span class="n">How</span> <span class="n">much</span> <span class="n">to</span> <span class="n">adjust</span> <span class="n">recipe</span> <span class="n">each</span> <span class="n">time</span>
+<span class="n">Tree</span> <span class="n">Depth</span><span class="p">:</span> <span class="n">How</span> <span class="nb">complex</span> <span class="n">the</span> <span class="n">recipes</span> <span class="n">can</span> <span class="n">be</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Trees</span><span class="p">:</span> <span class="n">How</span> <span class="n">many</span> <span class="n">recipes</span> <span class="n">to</span> <span class="n">master</span>
+<span class="n">Regularization</span><span class="p">:</span> <span class="n">Following</span> <span class="n">standard</span> <span class="n">cooking</span> <span class="n">rules</span>
+</pre></div>
+</div>
+<p>Remember: These components work together like:</p>
+<ul class="simple">
+<li><p>Learning Rate = Speed of learning</p></li>
+<li><p>Tree Depth = Level of detail</p></li>
+<li><p>Number of Trees = Amount of opinions</p></li>
+<li><p>Regularization = Safety controls</p></li>
+</ul>
+<p>Finding the right balance is like:</p>
+<ul class="simple">
+<li><p>Cooking the perfect meal</p>
+<ul>
+<li><p>Right temperature (Learning Rate)</p></li>
+<li><p>Right complexity (Tree Depth)</p></li>
+<li><p>Right number of tries (Number of Trees)</p></li>
+<li><p>Right rules (Regularization)</p></li>
+</ul>
+</li>
+</ul>
+<p>The goal is to find the sweet spot where:</p>
+<ul class="simple">
+<li><p>Learning is efficient</p></li>
+<li><p>Details are appropriate</p></li>
+<li><p>Opinions are sufficient</p></li>
+<li><p>Rules prevent mistakes</p></li>
+</ul>
+<p>Just like in cooking, the right combination of ingredients and techniques makes the perfect dish!</p>
+</section>
+</section>
+<section id="id2">
+<h2>Implementation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="basic-setup">
+<h3>1. Basic Setup<a class="headerlink" href="#basic-setup" title="Link to this heading">#</a></h3>
+<p>Think of setting up XGBoost like preparing a kitchen for cooking:</p>
+<p><strong>Essential Components:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kitchen</span> <span class="n">Setup</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Basic</span> <span class="n">Tools</span> <span class="p">(</span><span class="n">Data</span> <span class="n">Preparation</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Cutting</span> <span class="n">board</span> <span class="p">(</span><span class="n">Clean</span> <span class="n">data</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Knives</span> <span class="p">(</span><span class="n">Feature</span> <span class="n">processing</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Bowls</span> <span class="p">(</span><span class="n">Data</span> <span class="n">organization</span><span class="p">)</span>
+
+<span class="mf">2.</span> <span class="n">Recipe</span> <span class="n">Book</span> <span class="p">(</span><span class="n">Model</span> <span class="n">Structure</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Ingredients</span> <span class="nb">list</span> <span class="p">(</span><span class="n">Features</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Steps</span> <span class="n">to</span> <span class="n">follow</span> <span class="p">(</span><span class="n">Parameters</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Expected</span> <span class="n">outcome</span> <span class="p">(</span><span class="n">Target</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Like preparing for a big meal:</p>
+<ul class="simple">
+<li><p>Clean workspace (Clean data)</p></li>
+<li><p>Right tools ready (Libraries)</p></li>
+<li><p>Recipe planned (Model structure)</p></li>
+</ul>
+</section>
+<section id="parameter-selection">
+<h3>2. Parameter Selection<a class="headerlink" href="#parameter-selection" title="Link to this heading">#</a></h3>
+<p>Like adjusting settings on a new appliance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Basic</span> <span class="n">Settings</span> <span class="p">(</span><span class="n">Start</span> <span class="n">Here</span><span class="p">):</span>
+<span class="n">learning_rate</span><span class="p">:</span> <span class="mf">0.1</span>    <span class="p">(</span><span class="n">Like</span> <span class="n">stove</span> <span class="n">temperature</span><span class="p">)</span>
+<span class="n">max_depth</span><span class="p">:</span> <span class="mi">3</span><span class="o">-</span><span class="mi">6</span>        <span class="p">(</span><span class="n">Like</span> <span class="n">recipe</span> <span class="n">complexity</span><span class="p">)</span>
+<span class="n">n_estimators</span><span class="p">:</span> <span class="mi">100</span>     <span class="p">(</span><span class="n">Like</span> <span class="n">cooking</span> <span class="n">time</span><span class="p">)</span>
+
+<span class="n">Advanced</span> <span class="n">Settings</span> <span class="p">(</span><span class="n">Fine</span><span class="o">-</span><span class="n">Tune</span> <span class="n">Later</span><span class="p">):</span>
+<span class="n">subsample</span><span class="p">:</span> <span class="mf">0.8</span>        <span class="p">(</span><span class="n">Like</span> <span class="n">ingredient</span> <span class="n">portions</span><span class="p">)</span>
+<span class="n">colsample_bytree</span><span class="p">:</span> <span class="mf">0.8</span> <span class="p">(</span><span class="n">Like</span> <span class="n">spice</span> <span class="n">selection</span><span class="p">)</span>
+<span class="n">min_child_weight</span><span class="p">:</span> <span class="mi">1</span>   <span class="p">(</span><span class="n">Like</span> <span class="n">minimum</span> <span class="n">serving</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Starting with basic recipe</p></li>
+<li><p>Adjusting to taste</p></li>
+<li><p>Fine-tuning for perfection</p></li>
+</ul>
+</section>
+<section id="common-pitfalls">
+<h3>3. Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h3>
+<p>Like common cooking mistakes to avoid:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>🚫 Overfitting:
+- Like overcooking food
+- Too many trees
+- Too deep trees
+- Learning rate too high
+
+🚫 Underfitting:
+- Like undercooked food
+- Too few trees
+- Too shallow trees
+- Learning rate too low
+
+🚫 Data Issues:
+- Like bad ingredients
+- Missing values
+- Noisy data
+- Imbalanced classes
+</pre></div>
+</div>
+</section>
+<section id="performance-tips">
+<h3>4. Performance Tips<a class="headerlink" href="#performance-tips" title="Link to this heading">#</a></h3>
+<p>Think of these like kitchen efficiency tips:</p>
+<p><strong>Speed Improvements:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Data</span> <span class="n">Preparation</span>
+   <span class="o">-</span> <span class="n">Pre</span><span class="o">-</span><span class="n">cut</span> <span class="n">ingredients</span> <span class="p">(</span><span class="n">Feature</span> <span class="n">engineering</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Organize</span> <span class="n">workspace</span> <span class="p">(</span><span class="n">Memory</span> <span class="n">management</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Prep</span> <span class="ow">in</span> <span class="n">advance</span> <span class="p">(</span><span class="n">Data</span> <span class="n">preprocessing</span><span class="p">)</span>
+
+<span class="mf">2.</span> <span class="n">Model</span> <span class="n">Efficiency</span>
+   <span class="o">-</span> <span class="n">Use</span> <span class="n">right</span> <span class="n">pot</span> <span class="n">size</span> <span class="p">(</span><span class="n">GPU</span> <span class="n">vs</span> <span class="n">CPU</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Batch</span> <span class="n">cooking</span> <span class="p">(</span><span class="n">Batch</span> <span class="n">processing</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Parallel</span> <span class="n">preparation</span> <span class="p">(</span><span class="n">Multi</span><span class="o">-</span><span class="n">threading</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Accuracy Improvements:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Early</span> <span class="n">Stage</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Start</span> <span class="n">simple</span> <span class="p">(</span><span class="n">Basic</span> <span class="n">recipe</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Monitor</span> <span class="n">progress</span> <span class="p">(</span><span class="n">Taste</span> <span class="n">testing</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Adjust</span> <span class="n">gradually</span> <span class="p">(</span><span class="n">Fine</span><span class="o">-</span><span class="n">tuning</span><span class="p">)</span>
+
+<span class="n">Later</span> <span class="n">Stage</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Cross</span><span class="o">-</span><span class="n">validation</span> <span class="p">(</span><span class="n">Different</span> <span class="n">tasters</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Feature</span> <span class="n">selection</span> <span class="p">(</span><span class="n">Best</span> <span class="n">ingredients</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Parameter</span> <span class="n">tuning</span> <span class="p">(</span><span class="n">Perfect</span> <span class="n">seasoning</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember: Implementing XGBoost is like running a professional kitchen:</p>
+<p><strong>Good Practices:</strong></p>
+<ul class="simple">
+<li><p>Start with basics</p></li>
+<li><p>Monitor progress</p></li>
+<li><p>Adjust carefully</p></li>
+<li><p>Learn from mistakes</p></li>
+</ul>
+<p><strong>Workflow:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Preparation Phase
+   Data → Clean → Organize
+
+2. Basic Model
+   Simple → Test → Adjust
+
+3. Fine-Tuning
+   Monitor → Improve → Perfect
+</pre></div>
+</div>
+<p>Think of it like cooking a complex dish:</p>
+<ul class="simple">
+<li><p>Start with basic recipe</p></li>
+<li><p>Add complexity gradually</p></li>
+<li><p>Test and adjust</p></li>
+<li><p>Perfect over time</p></li>
+</ul>
+<p>Success comes from:</p>
+<ul class="simple">
+<li><p>Good preparation</p></li>
+<li><p>Careful monitoring</p></li>
+<li><p>Smart adjustments</p></li>
+<li><p>Continuous improvement</p></li>
+</ul>
+<p>Just like becoming a master chef, becoming good at XGBoost takes practice and patience!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="model-evaluation-metrics">
+<h1>Model Evaluation Metrics<a class="headerlink" href="#model-evaluation-metrics" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="classification-metrics">
+<h2>Classification Metrics<a class="headerlink" href="#classification-metrics" title="Link to this heading">#</a></h2>
+<section id="accuracy">
+<h3>1. Accuracy<a class="headerlink" href="#accuracy" title="Link to this heading">#</a></h3>
+<p>Think of accuracy like a student’s overall test score:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="n">a</span> <span class="mi">100</span><span class="o">-</span><span class="n">question</span> <span class="n">test</span><span class="p">:</span>
+<span class="mi">90</span> <span class="n">correct</span> <span class="n">answers</span> <span class="o">=</span> <span class="mi">90</span><span class="o">%</span> <span class="n">accuracy</span>
+
+<span class="n">Real</span><span class="o">-</span><span class="n">World</span> <span class="n">Example</span><span class="p">:</span>
+<span class="n">Email</span> <span class="n">Spam</span> <span class="n">Filter</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Checked</span> <span class="mi">100</span> <span class="n">emails</span>
+<span class="o">-</span> <span class="n">Correctly</span> <span class="n">identified</span> <span class="mi">95</span>
+<span class="o">-</span> <span class="n">Accuracy</span> <span class="o">=</span> <span class="mi">95</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>But accuracy alone can be misleading! Like getting an A+ in an easy test.</p>
+</section>
+<section id="precision">
+<h3>2. Precision<a class="headerlink" href="#precision" title="Link to this heading">#</a></h3>
+<p>Think of precision like a weather forecaster predicting rain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Forecaster</span> <span class="n">says</span> <span class="s2">&quot;Rain&quot;</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Said</span> <span class="n">rain</span> <span class="mi">10</span> <span class="n">times</span>
+<span class="o">-</span> <span class="n">Actually</span> <span class="n">rained</span> <span class="mi">8</span> <span class="n">times</span>
+<span class="o">-</span> <span class="n">Precision</span> <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">10</span> <span class="o">=</span> <span class="mi">80</span><span class="o">%</span>
+
+<span class="n">Like</span> <span class="n">a</span> <span class="n">chef</span> <span class="n">who</span> <span class="n">makes</span> <span class="n">predictions</span><span class="p">:</span>
+<span class="s2">&quot;These cookies will be delicious&quot;</span>
+<span class="o">-</span> <span class="n">Said</span> <span class="n">it</span> <span class="mi">10</span> <span class="n">times</span>
+<span class="o">-</span> <span class="kc">True</span> <span class="mi">8</span> <span class="n">times</span>
+<span class="o">-</span> <span class="n">Wrong</span> <span class="mi">2</span> <span class="n">times</span>
+</pre></div>
+</div>
+<p>Precision asks: “When we make a prediction, how often are we right?”</p>
+</section>
+<section id="recall">
+<h3>3. Recall<a class="headerlink" href="#recall" title="Link to this heading">#</a></h3>
+<p>Think of recall like a parent finding all their kid’s toys:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Toy</span> <span class="n">Collection</span><span class="p">:</span>
+<span class="n">Total</span> <span class="n">toys</span><span class="p">:</span> <span class="mi">20</span>
+<span class="n">Found</span> <span class="n">toys</span><span class="p">:</span> <span class="mi">16</span>
+<span class="n">Missed</span> <span class="n">toys</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">Recall</span> <span class="o">=</span> <span class="mi">16</span><span class="o">/</span><span class="mi">20</span> <span class="o">=</span> <span class="mi">80</span><span class="o">%</span>
+
+<span class="n">Medical</span> <span class="n">Example</span><span class="p">:</span>
+<span class="mi">100</span> <span class="n">sick</span> <span class="n">patients</span>
+<span class="o">-</span> <span class="n">Found</span> <span class="mi">90</span> <span class="n">sick</span> <span class="n">patients</span>
+<span class="o">-</span> <span class="n">Missed</span> <span class="mi">10</span> <span class="n">sick</span> <span class="n">patients</span>
+<span class="o">-</span> <span class="n">Recall</span> <span class="o">=</span> <span class="mi">90</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>Recall asks: “Out of all actual cases, how many did we find?”</p>
+</section>
+<section id="f1-score">
+<h3>4. F1-Score<a class="headerlink" href="#f1-score" title="Link to this heading">#</a></h3>
+<p>Think of F1-Score like a balanced restaurant review:</p>
+<ul class="simple">
+<li><p>Food Quality (Precision)</p></li>
+<li><p>Service Speed (Recall)</p></li>
+<li><p>Overall Experience (F1-Score)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Restaurant</span> <span class="n">Ratings</span><span class="p">:</span>
+<span class="n">Food</span><span class="p">:</span> <span class="mi">9</span><span class="o">/</span><span class="mi">10</span> <span class="p">(</span><span class="n">Precision</span><span class="p">)</span>
+<span class="n">Service</span><span class="p">:</span> <span class="mi">7</span><span class="o">/</span><span class="mi">10</span> <span class="p">(</span><span class="n">Recall</span><span class="p">)</span>
+<span class="n">F1</span><span class="o">-</span><span class="n">Score</span><span class="p">:</span> <span class="mi">8</span><span class="o">/</span><span class="mi">10</span> <span class="p">(</span><span class="n">Balanced</span> <span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>F1-Score balances precision and recall, like considering both taste AND service.</p>
+</section>
+<section id="confusion-matrix">
+<h3>5. Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h3>
+<p>Think of it like sorting laundry into four baskets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Predicted vs Actual:
+
+         │ Actually │ Actually
+         │  Clean  │  Dirty
+─────────┼─────────┼─────────
+Said     │   ✓✓    │   ✗✗
+Clean    │   TP    │   FN
+─────────┼─────────┼─────────
+Said     │   ✗✗    │   ✓✓
+Dirty    │   FP    │   TN
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Spam Detection:
+        │ Real    │ Real
+        │ Spam    │ Not Spam
+────────┼─────────┼──────────
+Said    │   50    │    5
+Spam    │ (True+) │ (False+)
+────────┼─────────┼──────────
+Said    │   10    │   935
+Not Spam│ (False-)│ (True-)
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>True Positive (TP): Found treasure where you dug</p></li>
+<li><p>False Positive (FP): Dug but found nothing</p></li>
+<li><p>False Negative (FN): Missed treasure by not digging</p></li>
+<li><p>True Negative (TN): Correctly didn’t dig where no treasure</p></li>
+</ul>
+<p>Remember: These metrics work together like:</p>
+<ul class="simple">
+<li><p>Accuracy: Overall score</p></li>
+<li><p>Precision: When we predict yes, how often are we right?</p></li>
+<li><p>Recall: How many actual yes cases do we find?</p></li>
+<li><p>F1-Score: Balance between precision and recall</p></li>
+<li><p>Confusion Matrix: Detailed breakdown of all predictions</p></li>
+</ul>
+<p>Like a doctor’s diagnosis:</p>
+<ul class="simple">
+<li><p>Accuracy: Overall correct diagnoses</p></li>
+<li><p>Precision: When saying “sick,” how often right?</p></li>
+<li><p>Recall: Finding all actually sick people</p></li>
+<li><p>F1-Score: Balance of finding sick people and being right</p></li>
+<li><p>Confusion Matrix: Complete breakdown of all diagnoses</p></li>
+</ul>
+<p>The key is choosing the right metric for your problem, just like choosing the right tool for a job!</p>
+</section>
+</section>
+<section id="regression-metrics">
+<h2>Regression Metrics<a class="headerlink" href="#regression-metrics" title="Link to this heading">#</a></h2>
+<section id="mean-squared-error-mse">
+<h3>1. Mean Squared Error (MSE)<a class="headerlink" href="#mean-squared-error-mse" title="Link to this heading">#</a></h3>
+<p>Think of MSE like measuring how far your darts are from the bullseye:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price Predictions:
+Actual: $100
+Guessed: $120
+Error: $20 off
+Squared: $400 (20²)
+
+Multiple Guesses:
+Guess 1: $20 off → 400
+Guess 2: $10 off → 100
+Guess 3: $15 off → 225
+MSE = (400 + 100 + 225) ÷ 3 = 241.67
+</pre></div>
+</div>
+<p>Like a golf score:</p>
+<ul class="simple">
+<li><p>Bigger errors (far from hole) are punished more</p></li>
+<li><p>Small errors (close to hole) matter less</p></li>
+<li><p>Lower score is better</p></li>
+</ul>
+</section>
+<section id="r-squared-r2">
+<h3>2. R-squared (R²)<a class="headerlink" href="#r-squared-r2" title="Link to this heading">#</a></h3>
+<p>Think of R² like a movie rating percentage:</p>
+<ul class="simple">
+<li><p>100% = Perfect prediction</p></li>
+<li><p>0% = Terrible prediction</p></li>
+<li><p>75% = Pretty good prediction</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Weather Temperature Predictions:
+Perfect Model: &quot;It&#39;ll be exactly 75°F&quot; → 100%
+Bad Model: &quot;Random guess between 0-100°F&quot; → 0%
+Good Model: &quot;Between 73-77°F&quot; → 85%
+</pre></div>
+</div>
+<p>Like a teacher explaining student grades:</p>
+<ul class="simple">
+<li><p>How much of the grade is explained by study time?</p></li>
+<li><p>How much is just random chance?</p></li>
+<li><p>Higher percentage means better explanation</p></li>
+</ul>
+</section>
+<section id="mean-absolute-error-mae">
+<h3>3. Mean Absolute Error (MAE)<a class="headerlink" href="#mean-absolute-error-mae" title="Link to this heading">#</a></h3>
+<p>Think of MAE like measuring recipe ingredient errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cookie Recipe:
+Should Use │ Actually Used │ Error
+2 cups     │ 2.5 cups     │ 0.5
+1 cup      │ 0.8 cups     │ 0.2
+3 cups     │ 2.8 cups     │ 0.2
+MAE = (0.5 + 0.2 + 0.2) ÷ 3 = 0.3 cups average error
+</pre></div>
+</div>
+<p>Like measuring distance from target:</p>
+<ul class="simple">
+<li><p>Simple to understand</p></li>
+<li><p>All errors count equally</p></li>
+<li><p>Shows average mistake size</p></li>
+</ul>
+</section>
+<section id="root-mean-squared-error-rmse">
+<h3>4. Root Mean Squared Error (RMSE)<a class="headerlink" href="#root-mean-squared-error-rmse" title="Link to this heading">#</a></h3>
+<p>Think of RMSE like measuring your monthly budget errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Monthly Budget:
+Predicted │ Actual │ Error │ Squared
+$1000     │ $1200 │ $200  │ 40,000
+$500      │ $600  │ $100  │ 10,000
+$300      │ $400  │ $100  │ 10,000
+
+MSE = 20,000 (average of squared errors)
+RMSE = √20,000 = $141.42 (average error in dollars)
+</pre></div>
+</div>
+<p>Like a weather forecast error:</p>
+<ul class="simple">
+<li><p>Shows error in original units (dollars, degrees, etc.)</p></li>
+<li><p>Punishes big mistakes more</p></li>
+<li><p>Easier to understand than MSE</p></li>
+</ul>
+<p>Remember: These metrics are like different ways to grade performance:</p>
+<p><strong>Comparison Table:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Metric │ Like Measuring        │ Best For
+MSE    │ Golf score           │ Punishing big errors
+R²     │ Movie rating %       │ Overall performance
+MAE    │ Recipe mistakes      │ Simple error size
+RMSE   │ Budget planning      │ Practical error size
+</pre></div>
+</div>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>MSE: How bad are your worst mistakes?</p></li>
+<li><p>R²: How good is your overall performance?</p></li>
+<li><p>MAE: What’s your average mistake?</p></li>
+<li><p>RMSE: What’s your typical error in real terms?</p></li>
+</ul>
+<p>Choose your metric like choosing a measuring tool:</p>
+<ul class="simple">
+<li><p>Want to punish big errors? Use MSE</p></li>
+<li><p>Want simple averages? Use MAE</p></li>
+<li><p>Want practical measures? Use RMSE</p></li>
+<li><p>Want overall performance? Use R²</p></li>
+</ul>
+<p>Just like different tools for different jobs, each metric has its perfect use case!</p>
+</section>
+</section>
+<section id="validation-techniques">
+<h2>Validation Techniques<a class="headerlink" href="#validation-techniques" title="Link to this heading">#</a></h2>
+<section id="train-test-split">
+<h3>1. Train-Test Split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h3>
+<p>Think of this like learning to cook:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cookbook</span> <span class="k">with</span> <span class="mi">100</span> <span class="n">recipes</span><span class="p">:</span>
+<span class="o">-</span> <span class="mi">80</span> <span class="n">recipes</span> <span class="n">to</span> <span class="n">practice</span> <span class="k">with</span> <span class="p">(</span><span class="n">Training</span> <span class="n">Set</span><span class="p">)</span>
+<span class="o">-</span> <span class="mi">20</span> <span class="n">recipes</span> <span class="n">to</span> <span class="n">test</span> <span class="n">your</span> <span class="n">skills</span> <span class="p">(</span><span class="n">Test</span> <span class="n">Set</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Like a driving instructor:</p>
+<ul class="simple">
+<li><p>Practice in empty parking lot (Training)</p></li>
+<li><p>Final test on real roads (Testing)</p></li>
+</ul>
+<p>Why Split?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good Split:
+Practice → Different → Test
+(Learn)     (Roads)    (Prove)
+
+Bad Split (Memorization):
+Practice → Same → Test
+(Memorize)  (Road)  (Repeat)
+</pre></div>
+</div>
+</section>
+<section id="cross-validation">
+<h3>2. Cross-validation<a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h3>
+<p>Think of this like tasting a soup multiple ways:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>5-Fold Cross-validation:
+Bowl 1: Taste hot  → Score
+Bowl 2: Taste cold → Score
+Bowl 3: With bread → Score
+Bowl 4: With spice → Score
+Bowl 5: Plain      → Score
+Final: Average all scores
+</pre></div>
+</div>
+<p>Like a chef testing a recipe:</p>
+<ul class="simple">
+<li><p>Different tasters</p></li>
+<li><p>Different conditions</p></li>
+<li><p>Different times</p></li>
+<li><p>Average all feedback</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Data</span> <span class="n">Split</span> <span class="n">Example</span><span class="p">:</span>
+<span class="n">Round</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="n">Test</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">]</span>
+<span class="n">Round</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="n">Train</span><span class="p">][</span><span class="n">Test</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">]</span>
+<span class="n">Round</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Test</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">]</span>
+<span class="n">Round</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Test</span><span class="p">][</span><span class="n">Train</span><span class="p">]</span>
+<span class="n">Round</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Train</span><span class="p">][</span><span class="n">Test</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="holdout-sets">
+<h3>3. Holdout Sets<a class="headerlink" href="#holdout-sets" title="Link to this heading">#</a></h3>
+<p>Think of this like saving the best judge for last:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cooking Competition:
+60% → Practice judges (Training)
+20% → Feedback judges (Validation)
+20% → Final judge (Test/Holdout)
+</pre></div>
+</div>
+<p>Like game development:</p>
+<ul class="simple">
+<li><p>Development team (Training)</p></li>
+<li><p>Beta testers (Validation)</p></li>
+<li><p>Real players (Holdout/Test)</p></li>
+</ul>
+<p>Why Three Sets?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Training: Learn and adjust
+    ↓
+Validation: Check progress
+    ↓
+Holdout: Final verification
+</pre></div>
+</div>
+</section>
+<section id="validation-curves">
+<h3>4. Validation Curves<a class="headerlink" href="#validation-curves" title="Link to this heading">#</a></h3>
+<p>Think of this like tracking a student’s learning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Study Hours vs Test Scores:
+Hours │    • •
+      │   •
+Score │  •
+      │ •
+      └─────────
+        Time
+</pre></div>
+</div>
+<p>Like learning an instrument:</p>
+<ul class="simple">
+<li><p>Initial fast improvement</p></li>
+<li><p>Slower middle progress</p></li>
+<li><p>Plateau at expertise</p></li>
+</ul>
+<p><strong>Common Patterns:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good Learning:
+Skill │    ****
+      │   *
+      │  *
+      │ *
+      └─────────
+
+Overfitting:
+Skill │    *
+      │   * *
+      │  *   *
+      │ *     *
+      └─────────
+</pre></div>
+</div>
+<p>Remember: Validation techniques are like:</p>
+<ul class="simple">
+<li><p>Train-Test Split: Practice vs Final Exam</p></li>
+<li><p>Cross-validation: Multiple Practice Tests</p></li>
+<li><p>Holdout Sets: Saving Final Judge</p></li>
+<li><p>Validation Curves: Progress Tracking</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Training: Learning phase</p></li>
+<li><p>Validation: Practice tests</p></li>
+<li><p>Testing: Final exam</p></li>
+<li><p>Curves: Report card</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Learn properly (Training)</p></li>
+<li><p>Check progress (Validation)</p></li>
+<li><p>Prove skills (Testing)</p></li>
+<li><p>Track improvement (Curves)</p></li>
+</ul>
+<p>Just like learning any skill, proper validation ensures real understanding, not just memorization!</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -531,6 +3017,184 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 3 - Supervised Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-vs-regression">Classification vs Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-difference">Understanding the Difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-categories-vs-numbers">1. Predicting Categories vs Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-examples">2. Real-world Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each">3. When to Use Each</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-vs-output-types">4. Input vs Output Types</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-concepts">Key Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-vs-discrete-outputs">1. Continuous vs Discrete Outputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-vs-multi-class-classification">2. Binary vs Multi-class Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-types">3. Prediction Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-line-fitting">1. Simple Line Fitting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#house-price-example">2. House Price Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-form">3. Equation Form</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-best-fit">4. Line of Best Fit</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-and-intercept">1. Slope and Intercept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-and-targets">2. Features and Targets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">3. Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">4. Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-example">1. Simple Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-features">2. Multiple Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training">3. Model Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-predictions">4. Making Predictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression">Logistic Regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-classification">1. Binary Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-output">2. Probability Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#s-shaped-curve">3. S-shaped Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-boundary">4. Decision Boundary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spam-detection">1. Spam Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medical-diagnosis">2. Medical Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#credit-approval">3. Credit Approval</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customer-conversion">4. Customer Conversion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-elements">Key Elements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#threshold-values">1. Threshold Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-interpretation">2. Probability Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-output">3. Binary Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-impact">4. Feature Impact</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-trees">Decision Trees</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-structure">Tree Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-node">1. Root Node</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-nodes">2. Decision Nodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaf-nodes">3. Leaf Nodes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-rules">4. Splitting Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-process">Learning Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">1. Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-criteria">2. Split Criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-growth">3. Tree Growth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-basics">4. Pruning Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-limitations">Advantages/Limitations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easy-to-understand">1. Easy to Understand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-risk">2. Overfitting Risk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use">3. When to Use</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-examples">4. Real Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forests">Random Forests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-basics">Ensemble Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-trees">1. Multiple Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-system">2. Voting System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-process">3. Bagging Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-selection">4. Random Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">1. Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-bag-error">2. Out-of-bag Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-trees">3. Parallel Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#majority-voting">4. Majority Voting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-use">Practical Use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-tuning">1. Parameter Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forest-size">2. Forest Size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-applications">4. Real Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#xgboost">XGBoost</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-concepts">Boosting Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-learning">1. Sequential Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weak-learners">2. Weak Learners</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-boosting">3. Gradient Boosting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-correction">4. Error Correction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-rate">1. Learning Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-depth">2. Tree Depth</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-trees">3. Number of Trees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">4. Regularization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup">1. Basic Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-selection">2. Parameter Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">3. Common Pitfalls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">4. Performance Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-evaluation-metrics">Model Evaluation Metrics</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-metrics">Classification Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">1. Accuracy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision">2. Precision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall">3. Recall</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">4. F1-Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">5. Confusion Matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-metrics">Regression Metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-squared-error-mse">1. Mean Squared Error (MSE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared-r2">2. R-squared (R²)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-absolute-error-mae">3. Mean Absolute Error (MAE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root-mean-squared-error-rmse">4. Root Mean Squared Error (RMSE)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-techniques">Validation Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">1. Train-Test Split</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">2. Cross-validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#holdout-sets">3. Holdout Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-curves">4. Validation Curves</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -202,7 +202,21 @@
 <li class="toctree-l1"><a class="reference internal" href="Chapter%201%20-%20Introduction%20to%20Machine%20Learning.html">Chapter 1: Introduction to Machine Learning</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2 - Data Fundamentals</a></li>
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Chapter%203%20-%20Supervised%20Learning.html">Chapter 3 - Supervised Learning</a></li>
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Chapter%204%20-%20Unsupervised%20Learning.html">Chapter 4 - Unsupervised Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning Fundamentals</span></p>
@@ -447,7 +461,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -463,6 +479,157 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 2 - Data Fundamentals</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-structures">Data Types and Structures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">1. Numerical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">2. Categorical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-data">3. Binary Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">4. Time Series Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">5. Text Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-data-types-and-structures">Exercise: Understanding Data Types and Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-in-python">Data Structures in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">1. NumPy Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframes-series">2. Pandas DataFrames &amp; Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">3. Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-ml-dataset-formats">4. Common ML Dataset Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-summary">Statistical Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-median-and-mode">1. Mean, Median, and Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">2. Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quartiles-and-iqr">3. Quartiles and IQR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-analysis">4. Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-analysis">5. Distribution Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-checks">Data Quality Checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-duplicates">1. Identifying Duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-outliers">2. Detecting Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-data-balance">3. Checking Data Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-data-anomalies">4. Finding Data Anomalies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-data-types">5. Verifying Data Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">1. Removing Duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-inconsistent-values">2. Handling Inconsistent Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-cleaning">3. String Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-time-formatting">4. Date/Time Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-data-types">5. Fixing Data Types</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">1. One-Hot Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoding">2. Label Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-numerical-data">3. Binning Numerical Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-transformation">4. Log Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-transformation">5. Power Transformation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature Scaling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-methods">Scaling Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaling">1. Min-Max Scaling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-scaling-z-score">2. Standard Scaling (Z-score)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-scaling">3. Robust Scaling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">4. Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each-method">When to Use Each Method?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-order-in-pipeline">1. Scaling Order in Pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-new-data">Handling New Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-categorical-data">Scaling Categorical Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">Handling Missing Values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value-analysis">Missing Value Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-missing-data">1. Types of Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-patterns">2. Missing Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-assessment">3. Impact Assessment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-solutions">Real-World Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values-techniques">Handling Missing Values Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deletion-methods">1. Deletion Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-imputation">2. Simple Imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-imputation">3. Statistical Imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-imputation">4. Advanced Imputation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">When to Use Each Method</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature Selection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-methods">1. Statistical Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-gain">3. Information Gain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-rankings">2. Feature Rankings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-knowledge">3. Domain Knowledge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-house-price-prediction">Real-World Example: House Price Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection-methods-comparison">Feature Selection Methods Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns-to-watch">Common Patterns to Watch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-methods">Selection Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">1. Filter Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">2. Wrapper Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-methods">3. Embedded Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">4. Dimensionality Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering-basics">5. Feature Engineering Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-method-comparison">Selection Method Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns">Common Patterns</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data Visualization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plots">Basic Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">2. Box Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">3. Scatter Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots">4. Line Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">5. Bar Charts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-plot">Choosing the Right Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-visualization-tips">Common Visualization Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-visualization">Advanced Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-heatmaps">1. Correlation Heatmaps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plots">2. Pair Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-plots">3. Distribution Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-plots">4. Time Series Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-visualizations">5. Interactive Visualizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-advanced-plots">Choosing Advanced Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -474,15 +641,1967 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-data-fundamentals">
 <h1>Chapter 2 - Data Fundamentals<a class="headerlink" href="#chapter-2-data-fundamentals" title="Link to this heading">#</a></h1>
+</section>
 <hr class="docutils" />
-<p>Chapter 2: Data Fundamentals
-Data Types and Structures
-Exploratory Data Analysis
-Data Preprocessing
-Feature Scaling
-Handling Missing Values
-Feature Selection
-Data Visualization</p>
+<section class="tex2jax_ignore mathjax_ignore" id="data-types-and-structures">
+<h1>Data Types and Structures<a class="headerlink" href="#data-types-and-structures" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="basic-data-types">
+<h2>Basic Data Types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
+<section id="numerical-data">
+<h3>1. Numerical Data<a class="headerlink" href="#numerical-data" title="Link to this heading">#</a></h3>
+<p><strong>Continuous Numbers</strong>
+Think of continuous data like measuring temperature - it can be any value: 98.6°F, 98.7°F, or even 98.65°F. Other examples include:</p>
+<ul class="simple">
+<li><p>Height (5.7 feet, 5.8 feet)</p></li>
+<li><p>Weight (150.5 pounds)</p></li>
+<li><p>House prices ($299,999.99)</p></li>
+</ul>
+<p><strong>Discrete Numbers</strong>
+These are counting numbers that can’t be broken down further. Imagine:</p>
+<ul class="simple">
+<li><p>Number of pets in a house</p></li>
+<li><p>Students in a classroom</p></li>
+<li><p>Cars in a parking lot</p></li>
+</ul>
+</section>
+<section id="categorical-data">
+<h3>2. Categorical Data<a class="headerlink" href="#categorical-data" title="Link to this heading">#</a></h3>
+<p><strong>Nominal Categories</strong>
+Think of these as labels with no order, like:</p>
+<ul class="simple">
+<li><p>Colors (Red, Blue, Green)</p></li>
+<li><p>Car brands (Toyota, Honda, Ford)</p></li>
+<li><p>Cities (New York, London, Tokyo)</p></li>
+</ul>
+<p><strong>Ordinal Categories</strong>
+These are categories with a natural order, such as:</p>
+<ul class="simple">
+<li><p>T-shirt sizes (S, M, L, XL)</p></li>
+<li><p>Movie ratings (1 to 5 stars)</p></li>
+<li><p>Education levels (High School, Bachelor’s, Master’s)</p></li>
+</ul>
+</section>
+<section id="binary-data">
+<h3>3. Binary Data<a class="headerlink" href="#binary-data" title="Link to this heading">#</a></h3>
+<p>This type of data has only two possible values, often represented as 0 and 1. Examples include:</p>
+<ul class="simple">
+<li><p>Yes/No questions (e.g., Is the light on? Yes or No)</p></li>
+<li><p>Gender (Male or Female)</p></li>
+<li><p>Pass/Fail results in exams</p></li>
+</ul>
+</section>
+<section id="time-series-data">
+<h3>4. Time Series Data<a class="headerlink" href="#time-series-data" title="Link to this heading">#</a></h3>
+<p>This is data that changes over time, like:</p>
+<ul class="simple">
+<li><p>Daily stock prices</p></li>
+<li><p>Monthly temperature readings</p></li>
+<li><p>Weekly sales figures</p></li>
+</ul>
+</section>
+<section id="text-data">
+<h3>5. Text Data<a class="headerlink" href="#text-data" title="Link to this heading">#</a></h3>
+<p>Words and sentences that carry meaning, such as:</p>
+<ul class="simple">
+<li><p>Customer reviews</p></li>
+<li><p>Email content</p></li>
+<li><p>Social media posts</p></li>
+</ul>
+<p>Remember: Understanding data types helps us choose the right tools and techniques for our machine learning models. Just like you wouldn’t use a hammer to cut paper, each data type needs its own special handling!</p>
+</section>
+</section>
+<section id="exercise-understanding-data-types-and-structures">
+<h2>Exercise: Understanding Data Types and Structures<a class="headerlink" href="#exercise-understanding-data-types-and-structures" title="Link to this heading">#</a></h2>
+<p>Let’s test your understanding of different data types in machine learning. For each scenario, select the most appropriate data type:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A sensor measuring ocean water temperature every hour</p></td>
+<td><p><select onchange="checkAnswer(this, 'continuous')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Customer satisfaction ratings from 1-5 stars</p></td>
+<td><p><select onchange="checkAnswer(this, 'ordinal')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Blood type (A, B, AB, O)</p></td>
+<td><p><select onchange="checkAnswer(this, 'nominal')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Number of children in a family</p></td>
+<td><p><select onchange="checkAnswer(this, 'discrete')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Product reviews written by customers</p></td>
+<td><p><select onchange="checkAnswer(this, 'text')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Daily closing prices of a stock</p></td>
+<td><p><select onchange="checkAnswer(this, 'time')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Distance traveled by a car (in miles)</p></td>
+<td><p><select onchange="checkAnswer(this, 'continuous')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Academic grades (A, B, C, D, F)</p></td>
+<td><p><select onchange="checkAnswer(this, 'ordinal')" class="ml-select"><option value="">Select type…</option><option value="continuous">Continuous Numerical</option><option value="discrete">Discrete Numerical</option><option value="nominal">Nominal Categorical</option><option value="ordinal">Ordinal Categorical</option><option value="time">Time Series</option><option value="text">Text</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct!';
+        feedbackSpan.style.color = 'green';
+    } else {
+        feedbackSpan.innerHTML = ' ❌ Try again';
+        feedbackSpan.style.color = 'red';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style></section>
+<section id="data-structures-in-python">
+<h2>Data Structures in Python<a class="headerlink" href="#data-structures-in-python" title="Link to this heading">#</a></h2>
+<p>These data structures are commonly used in machine learning:</p>
+<section id="numpy-arrays">
+<h3>1. NumPy Arrays<a class="headerlink" href="#numpy-arrays" title="Link to this heading">#</a></h3>
+<p>Think of NumPy arrays like a super-powered list. Imagine organizing chocolates in a box:</p>
+<ul class="simple">
+<li><p>A 1D array is like a single row of chocolates</p></li>
+<li><p>A 2D array is like a box with rows and columns</p></li>
+<li><p>A 3D array is like stacking multiple boxes</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># 1D array (like a line of students)</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">170</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">180</span><span class="p">])</span>
+
+<span class="c1"># 2D array (like a seating chart)</span>
+<span class="n">classroom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="pandas-dataframes-series">
+<h3>2. Pandas DataFrames &amp; Series<a class="headerlink" href="#pandas-dataframes-series" title="Link to this heading">#</a></h3>
+<p><strong>2.1 Series</strong>
+Think of a Series as a single column in a spreadsheet:</p>
+<ul class="simple">
+<li><p>Like a list of test scores with student names as labels</p></li>
+<li><p>Or daily temperatures for a week</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Series (like a single column of grades)</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>2.2 DataFrames</strong>
+Imagine a DataFrame as an Excel spreadsheet:</p>
+<ul class="simple">
+<li><p>Rows represent individual entries (like students)</p></li>
+<li><p>Columns represent different features (like subjects)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DataFrame (like a grade book)</span>
+<span class="n">student_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="s1">&#39;Grade&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="tensors">
+<h3>3. Tensors<a class="headerlink" href="#tensors" title="Link to this heading">#</a></h3>
+<p>Think of tensors as stacks of arrays:</p>
+<ul class="simple">
+<li><p>0 Dimensional (0D) tensor: Single number (scalar)</p></li>
+<li><p>1 Dimensional (1D) tensor: Array (vector)</p></li>
+<li><p>2 Dimensional (2D) tensor: Matrix</p></li>
+<li><p>3 Dimensional (3D) tensor: Cube of numbers (like a Rubik’s cube)</p></li>
+<li><p>4 Dimensional (4D) tensor: Multiple cubes (like video frames)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="c1"># Creating a simple tensor (like RGB values of an image)</span>
+<span class="n">image_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+    <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>    <span class="c1"># Red</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>    <span class="c1"># Green</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]</span>    <span class="c1"># Blue</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="common-ml-dataset-formats">
+<h3>4. Common ML Dataset Formats<a class="headerlink" href="#common-ml-dataset-formats" title="Link to this heading">#</a></h3>
+<p><strong>CSV Files</strong>
+Like a simple spreadsheet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">grade</span>
+<span class="n">Alice</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">90</span>
+<span class="n">Bob</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">85</span>
+</pre></div>
+</div>
+<p><strong>JSON Format</strong>
+Like a nested dictionary:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;students&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Parquet Files</strong>
+Think of these as compressed, column-oriented files:</p>
+<ul class="simple">
+<li><p>Great for big data</p></li>
+<li><p>Faster to read than CSV</p></li>
+<li><p>Takes less storage space</p></li>
+</ul>
+<p>Remember: These structures are like different types of containers. Just like you wouldn’t store soup in a paper bag, choosing the right data structure is crucial for efficient machine learning!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exploratory-data-analysis">
+<h1>Exploratory Data Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="statistical-summary">
+<h2>Statistical Summary<a class="headerlink" href="#statistical-summary" title="Link to this heading">#</a></h2>
+<section id="mean-median-and-mode">
+<h3>1. Mean, Median, and Mode<a class="headerlink" href="#mean-median-and-mode" title="Link to this heading">#</a></h3>
+<p>Think of these as the “averages family”:</p>
+<ul class="simple">
+<li><p><strong>Mean</strong>: The average value</p>
+<ul>
+<li><p>Like splitting a pizza equally among friends</p></li>
+<li><p>Example: Test scores [90, 85, 85, 95, 75]</p></li>
+<li><p>Mean = (90 + 85 + 85 + 95 + 75) ÷ 5 = 86</p></li>
+</ul>
+</li>
+<li><p><strong>Median</strong>: The middle value</p>
+<ul>
+<li><p>Like finding the middle person in a height-ordered line</p></li>
+<li><p>Example: [75, 85, 85, 90, 95]</p></li>
+<li><p>Median = 85 (middle number)</p></li>
+</ul>
+</li>
+<li><p><strong>Mode</strong>: The most common value</p>
+<ul>
+<li><p>Like the most popular ice cream flavor</p></li>
+<li><p>Example: [75, 85, 85, 90, 95]</p></li>
+<li><p>Mode = 85 (appears twice)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="standard-deviation">
+<h3>2. Standard Deviation<a class="headerlink" href="#standard-deviation" title="Link to this heading">#</a></h3>
+<p>Think of this as the “spread-out-ness” of your data:</p>
+<ul class="simple">
+<li><p>Small standard deviation = data points close together</p>
+<ul>
+<li><p>Like a tight group of friends walking together</p></li>
+</ul>
+</li>
+<li><p>Large standard deviation = data points spread out</p>
+<ul>
+<li><p>Like friends scattered across a playground</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><p>Dataset A: [10, 11, 9, 10, 10] → Small deviation</p></li>
+<li><p>Dataset B: [2, 18, 5, 15, 10] → Large deviation</p></li>
+</ul>
+</section>
+<section id="quartiles-and-iqr">
+<h3>3. Quartiles and IQR<a class="headerlink" href="#quartiles-and-iqr" title="Link to this heading">#</a></h3>
+<p>Imagine lining up students by height:</p>
+<ul class="simple">
+<li><p>Q1 (25th percentile): Quarter way through the line</p></li>
+<li><p>Q2 (50th percentile): Halfway (same as median)</p></li>
+<li><p>Q3 (75th percentile): Three-quarters way through</p></li>
+<li><p>IQR = Q3 - Q1 (middle 50% of data)</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="mi">11</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</section>
+<section id="correlation-analysis">
+<h3>4. Correlation Analysis<a class="headerlink" href="#correlation-analysis" title="Link to this heading">#</a></h3>
+<p>Think of correlation as how two things move together:</p>
+<ul class="simple">
+<li><p>Positive correlation: Both increase together</p>
+<ul>
+<li><p>Like ice cream sales and temperature</p></li>
+</ul>
+</li>
+<li><p>Negative correlation: One up, one down</p>
+<ul>
+<li><p>Like study time and gaming time</p></li>
+</ul>
+</li>
+<li><p>No correlation: No relationship</p>
+<ul>
+<li><p>Like shoe size and test scores</p></li>
+</ul>
+</li>
+</ul>
+<p>Scale: -1 to +1</p>
+<ul class="simple">
+<li><p>+1: Perfect positive relationship</p></li>
+<li><p>-1: Perfect negative relationship</p></li>
+<li><p>0: No relationship</p></li>
+</ul>
+</section>
+<section id="distribution-analysis">
+<h3>5. Distribution Analysis<a class="headerlink" href="#distribution-analysis" title="Link to this heading">#</a></h3>
+<p>Think of this as the “shape” of your data:</p>
+<p><strong>Normal Distribution (Bell Curve)</strong></p>
+<ul class="simple">
+<li><p>Like heights in a classroom</p></li>
+<li><p>Most values cluster in the middle</p></li>
+<li><p>Fewer values at extremes</p></li>
+</ul>
+<p><strong>Skewed Distribution</strong></p>
+<ul class="simple">
+<li><p>Right-skewed: Long tail on right</p>
+<ul>
+<li><p>Like household income</p></li>
+</ul>
+</li>
+<li><p>Left-skewed: Long tail on left</p>
+<ul>
+<li><p>Like test scores in an easy exam</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Uniform Distribution</strong></p>
+<ul class="simple">
+<li><p>Like rolling a fair die</p></li>
+<li><p>All values equally likely</p></li>
+</ul>
+</section>
+</section>
+<section id="data-quality-checks">
+<h2>Data Quality Checks<a class="headerlink" href="#data-quality-checks" title="Link to this heading">#</a></h2>
+<section id="identifying-duplicates">
+<h3>1. Identifying Duplicates<a class="headerlink" href="#identifying-duplicates" title="Link to this heading">#</a></h3>
+<p>Think of duplicates like identical twins in your dataset - sometimes they’re real, sometimes they’re mistakes!</p>
+<p><strong>Common Scenarios</strong></p>
+<ul class="simple">
+<li><p>Same customer entered twice</p></li>
+<li><p>Multiple transactions with identical values</p></li>
+<li><p>Accidentally repeated rows</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of finding duplicates</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">},</span>  <span class="c1"># Duplicate!</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">85</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="detecting-outliers">
+<h3>2. Detecting Outliers<a class="headerlink" href="#detecting-outliers" title="Link to this heading">#</a></h3>
+<p>Outliers are like the odd ones out - imagine a basketball player in a kindergarten class!</p>
+<p><strong>Common Methods</strong></p>
+<ul class="simple">
+<li><p>IQR Method (1.5 × IQR rule)</p>
+<ul>
+<li><p>Normal range: Q1 - 1.5×IQR to Q3 + 1.5×IQR</p></li>
+</ul>
+</li>
+<li><p>Z-score Method</p>
+<ul>
+<li><p>Values beyond 3 standard deviations</p></li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Heights (cm): [165, 170, 168, 172, 169, 250]
+250 cm is clearly an outlier!
+</pre></div>
+</div>
+</section>
+<section id="checking-data-balance">
+<h3>3. Checking Data Balance<a class="headerlink" href="#checking-data-balance" title="Link to this heading">#</a></h3>
+<p>Think of data balance like a see-saw:</p>
+<p><strong>Class Balance Example</strong></p>
+<ul class="simple">
+<li><p>Spam Detection Dataset:</p>
+<ul>
+<li><p>95% Normal emails (Imbalanced!)</p></li>
+<li><p>5% Spam emails</p></li>
+</ul>
+</li>
+<li><p>Like trying to learn about tigers by showing 100 cats and 1 tiger</p></li>
+</ul>
+<p><strong>Solutions</strong></p>
+<ul class="simple">
+<li><p>Oversampling minority class</p></li>
+<li><p>Undersampling majority class</p></li>
+<li><p>Generating synthetic data</p></li>
+</ul>
+</section>
+<section id="finding-data-anomalies">
+<h3>4. Finding Data Anomalies<a class="headerlink" href="#finding-data-anomalies" title="Link to this heading">#</a></h3>
+<p>Anomalies are like suspicious behavior patterns:</p>
+<p><strong>Types of Anomalies</strong></p>
+<ul class="simple">
+<li><p>Point Anomalies</p>
+<ul>
+<li><p>Single weird values</p></li>
+<li><p>Like a -50°C temperature in summer</p></li>
+</ul>
+</li>
+<li><p>Contextual Anomalies</p>
+<ul>
+<li><p>Normal values in wrong context</p></li>
+<li><p>Like high ice cream sales in winter</p></li>
+</ul>
+</li>
+<li><p>Pattern Anomalies</p>
+<ul>
+<li><p>Strange sequences</p></li>
+<li><p>Like sudden spikes in network traffic</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="verifying-data-types">
+<h3>5. Verifying Data Types<a class="headerlink" href="#verifying-data-types" title="Link to this heading">#</a></h3>
+<p>Think of this as making sure ingredients are correct before cooking:</p>
+<p><strong>Common Issues</strong></p>
+<ul class="simple">
+<li><p>Numbers stored as text</p>
+<ul>
+<li><p>“123” instead of 123</p></li>
+</ul>
+</li>
+<li><p>Dates in wrong format</p>
+<ul>
+<li><p>“01-12-2023” vs “12-01-2023”</p></li>
+</ul>
+</li>
+<li><p>Mixed types in columns</p>
+<ul>
+<li><p>Age column: [25, “thirty”, 40]</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
+<h1>Data Preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="data-cleaning">
+<h2>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
+<p>Think of data cleaning like preparing ingredients before cooking a meal - everything needs to be just right!</p>
+<section id="removing-duplicates">
+<h3>1. Removing Duplicates<a class="headerlink" href="#removing-duplicates" title="Link to this heading">#</a></h3>
+<p>Think of this like removing extra copies of the same photo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example messy data</span>
+<span class="n">student_records</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">},</span>  <span class="c1"># Duplicate</span>
+    <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">}</span>   <span class="c1"># Case difference</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Common Duplicate Types</strong></p>
+<ul class="simple">
+<li><p>Exact duplicates (identical rows)</p></li>
+<li><p>Partial duplicates (same core info, different format)</p></li>
+<li><p>Case-sensitive duplicates (JOHN vs john)</p></li>
+</ul>
+</section>
+<section id="handling-inconsistent-values">
+<h3>2. Handling Inconsistent Values<a class="headerlink" href="#handling-inconsistent-values" title="Link to this heading">#</a></h3>
+<p>Think of this like standardizing measurements in a recipe:</p>
+<p><strong>Common Inconsistencies</strong></p>
+<ul class="simple">
+<li><p>Different spellings</p>
+<ul>
+<li><p>“New York” vs “NY” vs “New York City”</p></li>
+</ul>
+</li>
+<li><p>Different units</p>
+<ul>
+<li><p>“1.8m” vs “180cm” vs “5’11”</p></li>
+</ul>
+</li>
+<li><p>Different formats</p>
+<ul>
+<li><p>“Yes” vs “Y” vs “1” vs “True”</p></li>
+</ul>
+</li>
+</ul>
+<p>Example Standardization:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Before</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">States</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NY&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="s2">&quot;new york&quot;</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">Gender</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">Status</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;Yes&quot;</span><span class="p">,</span> <span class="s2">&quot;TRUE&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">]</span>
+
+<span class="n">After</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">States</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;NY&quot;</span><span class="p">,</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span> <span class="s2">&quot;NY&quot;</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">Gender</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">,</span> <span class="s2">&quot;M&quot;</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">Status</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="string-cleaning">
+<h3>3. String Cleaning<a class="headerlink" href="#string-cleaning" title="Link to this heading">#</a></h3>
+<p>Like washing vegetables before cooking:</p>
+<p><strong>Common String Issues</strong></p>
+<ul class="simple">
+<li><p>Extra spaces: “John  Smith  “</p></li>
+<li><p>Mixed case: “john SMITH”</p></li>
+<li><p>Special characters: “John’s-Account#123”</p></li>
+<li><p>Unwanted symbols: “Phone: (555) 123-4567”</p></li>
+</ul>
+</section>
+<section id="date-time-formatting">
+<h3>4. Date/Time Formatting<a class="headerlink" href="#date-time-formatting" title="Link to this heading">#</a></h3>
+<p>Think of this like setting all clocks to the same time zone:</p>
+<p><strong>Common Date Formats</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">Formats</span><span class="p">:</span>
+<span class="o">-</span> <span class="s2">&quot;01-12-2023&quot;</span>
+<span class="o">-</span> <span class="s2">&quot;12/01/2023&quot;</span>
+<span class="o">-</span> <span class="s2">&quot;2023.12.01&quot;</span>
+<span class="o">-</span> <span class="s2">&quot;Dec 1, 2023&quot;</span>
+
+<span class="n">Standardized</span> <span class="n">Output</span><span class="p">:</span>
+<span class="o">-</span> <span class="s2">&quot;2023-12-01&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="fixing-data-types">
+<h3>5. Fixing Data Types<a class="headerlink" href="#fixing-data-types" title="Link to this heading">#</a></h3>
+<p>Like putting groceries in their proper places:</p>
+<p><strong>Common Conversions</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Before cleaning</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;25&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;unknown&#39;</span><span class="p">,</span> <span class="s1">&#39;40&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;salary&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;50,000&#39;</span><span class="p">,</span> <span class="s1">&#39;60000&#39;</span><span class="p">,</span> <span class="s1">&#39;75,000&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;active&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># After cleaning</span>
+<span class="n">clean_data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+    <span class="s1">&#39;salary&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">60000</span><span class="p">,</span> <span class="mi">75000</span><span class="p">],</span>
+    <span class="s1">&#39;active&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-transformation">
+<h2>Data Transformation<a class="headerlink" href="#data-transformation" title="Link to this heading">#</a></h2>
+</section>
+<section id="one-hot-encoding">
+<h2>1. One-Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Link to this heading">#</a></h2>
+<p>Think of this like breaking down a multiple-choice question into yes/no questions:</p>
+<p><strong>Original Data</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+
+<span class="c1"># Becomes:</span>
+<span class="c1"># red:   [1, 0, 0]</span>
+<span class="c1"># blue:  [0, 1, 0]</span>
+<span class="c1"># green: [0, 0, 1]</span>
+</pre></div>
+</div>
+<p><strong>When to Use</strong></p>
+<ul class="simple">
+<li><p>Categorical data with no order</p></li>
+<li><p>Like: Cities, Colors, Product Categories</p></li>
+<li><p>When categories are equally important</p></li>
+</ul>
+</section>
+<section id="label-encoding">
+<h2>2. Label Encoding<a class="headerlink" href="#label-encoding" title="Link to this heading">#</a></h2>
+<p>Think of this like giving students numbers instead of names:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># T-Shirt Sizes</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;XL&#39;</span><span class="p">]</span>
+
+<span class="c1"># Becomes:</span>
+<span class="c1"># S  → 0</span>
+<span class="c1"># M  → 1</span>
+<span class="c1"># L  → 2</span>
+<span class="c1"># XL → 3</span>
+</pre></div>
+</div>
+<p><strong>When to Use</strong></p>
+<ul class="simple">
+<li><p>Ordinal categories</p></li>
+<li><p>When order matters</p></li>
+<li><p>Like: Grades, Rankings, Sizes</p></li>
+</ul>
+</section>
+<section id="binning-numerical-data">
+<h2>3. Binning Numerical Data<a class="headerlink" href="#binning-numerical-data" title="Link to this heading">#</a></h2>
+<p>Think of this like grouping students by age ranges:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ages: 0-100</span>
+<span class="n">age_bins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;0-18&#39;</span>  <span class="p">:</span> <span class="n">Child</span>
+    <span class="s1">&#39;19-35&#39;</span> <span class="p">:</span> <span class="n">Young</span> <span class="n">Adult</span>
+    <span class="s1">&#39;36-50&#39;</span> <span class="p">:</span> <span class="n">Adult</span>
+    <span class="s1">&#39;51+&#39;</span>   <span class="p">:</span> <span class="n">Senior</span>
+<span class="p">]</span>
+
+<span class="c1"># Example:</span>
+<span class="c1"># 15 → Child</span>
+<span class="c1"># 27 → Young Adult</span>
+<span class="c1"># 45 → Adult</span>
+</pre></div>
+</div>
+<p><strong>Common Binning Methods</strong></p>
+<ul class="simple">
+<li><p>Equal-width bins (same size ranges)</p></li>
+<li><p>Equal-frequency bins (same number of items)</p></li>
+<li><p>Custom bins (based on domain knowledge)</p></li>
+</ul>
+</section>
+<section id="log-transformation">
+<h2>4. Log Transformation<a class="headerlink" href="#log-transformation" title="Link to this heading">#</a></h2>
+<p>Think of this like using a zoom lens to see both mountains and molehills:</p>
+<p><strong>When to Use</strong></p>
+<ul class="simple">
+<li><p>Data with large ranges</p></li>
+<li><p>Skewed distributions</p></li>
+<li><p>When ratios matter more than differences</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Income</span> <span class="n">Data</span><span class="p">:</span>
+<span class="n">Original</span><span class="p">:</span> <span class="p">[</span><span class="mi">30000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">]</span>
+<span class="n">Log</span><span class="p">:</span>     <span class="p">[</span><span class="mf">10.3</span><span class="p">,</span>  <span class="mf">10.8</span><span class="p">,</span>  <span class="mf">13.8</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="power-transformation">
+<h2>5. Power Transformation<a class="headerlink" href="#power-transformation" title="Link to this heading">#</a></h2>
+<p>Think of this like adjusting a camera’s exposure:</p>
+<p><strong>Common Types</strong></p>
+<ul class="simple">
+<li><p>Square Root: For moderately skewed data</p></li>
+<li><p>Cube Root: For strongly skewed data</p></li>
+<li><p>Box-Cox: Automatically finds best power</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="n">Data</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+
+<span class="n">Square</span> <span class="n">Root</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">Cube</span> <span class="n">Root</span><span class="p">:</span>   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Choose transformations based on data type</p></li>
+<li><p>Consider the model you’ll use</p></li>
+<li><p>Keep track of transformations for future data</p></li>
+<li><p>Always scale after transforming</p></li>
+</ul>
+<p>Think of data transformation like preparing ingredients - sometimes you need to chop, grind, or puree to get the right texture for your recipe!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="feature-scaling">
+<h1>Feature Scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="scaling-methods">
+<h2>Scaling Methods<a class="headerlink" href="#scaling-methods" title="Link to this heading">#</a></h2>
+<p>Imagine you’re comparing apples and watermelons - you need to make them comparable!</p>
+<section id="min-max-scaling">
+<h3>1. Min-Max Scaling<a class="headerlink" href="#min-max-scaling" title="Link to this heading">#</a></h3>
+<p>Think of this like converting test scores to percentages:</p>
+<p><strong>Real-Life Example</strong></p>
+<ul class="simple">
+<li><p>Original test scores: [60, 75, 90, 100]</p></li>
+<li><p>Scaled to 0-1: [0, 0.375, 0.75, 1]</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basketball Players</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">160</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">200</span><span class="p">]</span>  <span class="c1"># cm</span>
+<span class="n">scaled_heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># House Prices</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="n">k</span><span class="p">,</span> <span class="mi">500</span><span class="n">k</span><span class="p">,</span> <span class="mi">900</span><span class="n">k</span><span class="p">]</span>
+<span class="n">scaled_prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>When to Use</strong></p>
+<ul class="simple">
+<li><p>Like Instagram filters: scaling image pixels (0-255 → 0-1)</p></li>
+<li><p>Like rating systems (1-5 stars → 0-1)</p></li>
+<li><p>Perfect for neural networks that expect 0-1 input</p></li>
+</ul>
+</section>
+<section id="standard-scaling-z-score">
+<h3>2. Standard Scaling (Z-score)<a class="headerlink" href="#standard-scaling-z-score" title="Link to this heading">#</a></h3>
+<p>Like comparing how unusual something is:</p>
+<p><strong>Fun Example: Height in a Class</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="n">heights</span> <span class="p">(</span><span class="n">cm</span><span class="p">):</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">190</span><span class="p">]</span>
+<span class="n">Mean</span> <span class="o">=</span> <span class="mi">170</span><span class="p">,</span> <span class="n">Std</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">Scaled</span> <span class="n">heights</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Meaning</span><span class="p">:</span>
+<span class="o">-</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">Average</span> <span class="n">height</span>
+<span class="o">-</span> <span class="o">+</span><span class="mi">1</span> <span class="o">=</span> <span class="n">Taller</span> <span class="n">than</span> <span class="n">average</span>
+<span class="o">-</span> <span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="n">Shorter</span> <span class="n">than</span> <span class="n">average</span>
+</pre></div>
+</div>
+<p><strong>Real-World Example</strong></p>
+<ul class="simple">
+<li><p>Test Scores: [70, 80, 90, 100]</p></li>
+<li><p>After scaling: [-1.5, -0.5, 0.5, 1.5]</p></li>
+<li><p>0 means “average student”</p></li>
+<li><p>+1 means “one standard deviation above average”</p></li>
+</ul>
+</section>
+<section id="robust-scaling">
+<h3>3. Robust Scaling<a class="headerlink" href="#robust-scaling" title="Link to this heading">#</a></h3>
+<p>Like measuring kids’ heights using a growth chart:</p>
+<p><strong>Example: Salary Data</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Salaries: [30k, 45k, 50k, 52k, 1M]
+                    ↓
+After robust scaling: [-1, -0.2, 0, 0.1, 5]
+
+The millionaire doesn&#39;t mess up our scale!
+</pre></div>
+</div>
+</section>
+<section id="normalization">
+<h3>4. Normalization<a class="headerlink" href="#normalization" title="Link to this heading">#</a></h3>
+<p>Like adjusting a recipe for different serving sizes:</p>
+<p><strong>Pizza Toppings Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Original Recipe (4 pizzas):
+- Cheese: 400g
+- Tomatoes: 200g
+- Pepperoni: 200g
+                ↓
+Normalized (per pizza):
+- Cheese: 0.5 (50%)
+- Tomatoes: 0.25 (25%)
+- Pepperoni: 0.25 (25%)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="when-to-use-each-method">
+<h2>When to Use Each Method?<a class="headerlink" href="#when-to-use-each-method" title="Link to this heading">#</a></h2>
+<p>Think of scaling methods like different measuring tools:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>If Your Data Is Like…</p></th>
+<th class="head"><p>Use This Scaling</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Instagram photo pixels</p></td>
+<td><p>Min-Max</p></td>
+<td><p>0-255 → 0-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Student test scores</p></td>
+<td><p>Standard</p></td>
+<td><p>Compare to class average</p></td>
+</tr>
+<tr class="row-even"><td><p>House prices with mansions</p></td>
+<td><p>Robust</p></td>
+<td><p>Handle those million-dollar outliers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Recipe ingredients</p></td>
+<td><p>Normalization</p></td>
+<td><p>Adjust for different serving sizes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Scale features like you’re making ingredients work together in a recipe</p></li>
+<li><p>Always scale after splitting training/test data</p></li>
+<li><p>Keep the original data backed up</p></li>
+</ul>
+</section>
+<section id="implementation-considerations">
+<h2>Implementation Considerations<a class="headerlink" href="#implementation-considerations" title="Link to this heading">#</a></h2>
+<section id="scaling-order-in-pipeline">
+<h3>1. Scaling Order in Pipeline<a class="headerlink" href="#scaling-order-in-pipeline" title="Link to this heading">#</a></h3>
+<p>Think of this like following a recipe in the right order:</p>
+<p><strong>Wrong Order (Common Mistake)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># DON&#39;T DO THIS!</span>
+<span class="mf">1.</span> <span class="n">Scale</span> <span class="nb">all</span> <span class="n">data</span>
+<span class="mf">2.</span> <span class="n">Split</span> <span class="n">into</span> <span class="n">train</span><span class="o">/</span><span class="n">test</span>
+<span class="n">Result</span><span class="p">:</span> <span class="n">Data</span> <span class="n">leakage</span><span class="err">!</span> <span class="err">😱</span>
+</pre></div>
+</div>
+<p><strong>Right Order (Like Cooking)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Split</span> <span class="n">data</span> <span class="n">first</span> <span class="p">(</span><span class="n">like</span> <span class="n">separating</span> <span class="n">ingredients</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">Calculate</span> <span class="n">scaling</span> <span class="n">on</span> <span class="n">training</span> <span class="n">data</span> <span class="p">(</span><span class="n">like</span> <span class="n">measuring</span> <span class="n">spices</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">Apply</span> <span class="n">to</span> <span class="n">both</span> <span class="n">train</span> <span class="ow">and</span> <span class="n">test</span> <span class="p">(</span><span class="n">like</span> <span class="n">using</span> <span class="n">same</span> <span class="n">measurements</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Real Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Height and Weight Dataset</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>  <span class="c1"># cm</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>      <span class="c1"># kg</span>
+
+<span class="c1"># Step 1: Split</span>
+<span class="n">train_heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">165</span><span class="p">]</span>
+<span class="n">test_heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">175</span><span class="p">]</span>
+
+<span class="c1"># Step 2: Calculate scale on train</span>
+<span class="n">mean_height</span> <span class="o">=</span> <span class="mf">167.5</span>
+<span class="n">std_height</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+<span class="c1"># Step 3: Apply to both</span>
+<span class="n">scaled_train</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">scaled_test</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="handling-new-data">
+<h3>Handling New Data<a class="headerlink" href="#handling-new-data" title="Link to this heading">#</a></h3>
+<p>Like using the same recipe measurements for future cooking:</p>
+<p><strong>Example: Temperature Scaling</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Training Data:
+Temps = [60°F, 70°F, 80°F]
+Min = 60°F, Max = 80°F
+
+New Data comes in: 90°F
+Use SAME min/max from training:
+scaled = (90 - 60) / (80 - 60) = 1.5
+</pre></div>
+</div>
+</section>
+<section id="scaling-categorical-data">
+<h3>Scaling Categorical Data<a class="headerlink" href="#scaling-categorical-data" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing different types of fruits:</p>
+<p><strong>Before Scaling:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Colors</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+<span class="n">Sizes</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>After Proper Handling:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># One-Hot for Colors:</span>
+<span class="n">red</span><span class="p">:</span>   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">blue</span><span class="p">:</span>  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">green</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Ordinal for Sizes:</span>
+<span class="n">S</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">M</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">L</span><span class="p">:</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h2>
+<p>Like common cooking mistakes to avoid:</p>
+<p><strong>Pitfall 1: Scaling Target Variable</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">House</span> <span class="n">Prices</span> <span class="p">(</span><span class="n">Target</span><span class="p">):</span>
+<span class="n">Original</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="n">k</span><span class="p">,</span> <span class="mi">200</span><span class="n">k</span><span class="p">,</span> <span class="mi">300</span><span class="n">k</span><span class="p">]</span>
+<span class="n">DON</span><span class="s1">&#39;T scale unless absolutely necessary!</span>
+</pre></div>
+</div>
+<p><strong>Pitfall 2: Scaling After Feature Selection</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Wrong Order:
+1. Select important features
+2. Scale data
+✓ Right Order:
+1. Scale data
+2. Select important features
+</pre></div>
+</div>
+<p><strong>Pitfall 3: Using Wrong Scaler</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Salary Data with Outliers:
+[30k, 35k, 32k, 1M]
+❌ Standard Scaler: Gets messed up
+✓ Robust Scaler: Handles it well
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<p>Think of these like kitchen safety rules:</p>
+<p><strong>1. Always Save Scaler Parameters</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save these from training:</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Use for future data</span>
+</pre></div>
+</div>
+<p><strong>2. Handle Missing Values First</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Original: [10, NaN, 20, 30]
+❌ Scale first
+✓ Fill NaN, then scale
+</pre></div>
+</div>
+<p><strong>3. Document Your Scaling</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good Documentation</span>
+<span class="n">scaling_info</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;standard_scaler&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="s1">&#39;min_max_scaler&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;robust_scaler&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Scale like you’re following a recipe</p></li>
+<li><p>Keep your scaling consistent</p></li>
+<li><p>Document everything</p></li>
+<li><p>Test your pipeline with new data</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="handling-missing-values">
+<h1>Handling Missing Values<a class="headerlink" href="#handling-missing-values" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="missing-value-analysis">
+<h2>Missing Value Analysis<a class="headerlink" href="#missing-value-analysis" title="Link to this heading">#</a></h2>
+<section id="types-of-missing-data">
+<h3>1. Types of Missing Data<a class="headerlink" href="#types-of-missing-data" title="Link to this heading">#</a></h3>
+<p>Think of this like taking attendance in a classroom:</p>
+<p><strong>Missing Completely at Random (MCAR)</strong></p>
+<ul class="simple">
+<li><p>Like students randomly absent due to various reasons</p></li>
+<li><p>Example:</p>
+<ul>
+<li><p>Survey responses where some people randomly skipped questions</p></li>
+<li><p>Temperature readings where sensor occasionally malfunctions</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Temperature Log:
+Monday: 75°F
+Tuesday: ??    (Sensor battery died)
+Wednesday: 72°F
+Thursday: 74°F
+</pre></div>
+</div>
+<p><strong>Missing at Random (MAR)</strong></p>
+<ul class="simple">
+<li><p>Like teenagers more likely to skip morning classes</p></li>
+<li><p>Missing values related to other variables</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Survey:
+Age: 25    | Income: $50k  | Luxury Brands: ??
+Age: 65    | Income: $70k  | Luxury Brands: Yes
+Age: 30    | Income: $40k  | Luxury Brands: No
+</pre></div>
+</div>
+<p><strong>Missing Not at Random (MNAR)</strong></p>
+<ul class="simple">
+<li><p>Like people avoiding salary questions in surveys</p></li>
+<li><p>The missing value itself is meaningful</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Salary</span> <span class="n">Survey</span><span class="p">:</span>
+<span class="n">Low</span> <span class="n">Income</span><span class="p">:</span> <span class="n">Answered</span>
+<span class="n">High</span> <span class="n">Income</span><span class="p">:</span> <span class="n">Often</span> <span class="n">Missing</span>
+<span class="n">Very</span> <span class="n">High</span> <span class="n">Income</span><span class="p">:</span> <span class="n">Usually</span> <span class="n">Missing</span>
+</pre></div>
+</div>
+</section>
+<section id="missing-patterns">
+<h3>2. Missing Patterns<a class="headerlink" href="#missing-patterns" title="Link to this heading">#</a></h3>
+<p>Think of this like patterns in student homework submission:</p>
+<p><strong>Univariate Pattern</strong></p>
+<ul class="simple">
+<li><p>Like one student always missing math assignments</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Student Data:
+Math: ??, ??, ??
+English: 85, 90, 88
+Science: 92, 87, 90
+</pre></div>
+</div>
+<p><strong>Multivariate Pattern</strong></p>
+<ul class="simple">
+<li><p>Like students missing both test and homework when sick</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sick Day Records:
+Test Score: ??    | Homework: ??    | Attendance: Absent
+Test Score: 85   | Homework: 90   | Attendance: Present
+</pre></div>
+</div>
+</section>
+<section id="impact-assessment">
+<h3>3. Impact Assessment<a class="headerlink" href="#impact-assessment" title="Link to this heading">#</a></h3>
+<p>Like checking how missing ingredients affect a recipe:</p>
+<p><strong>Critical Missing Data</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Recipe Example:
+Flour: 2 cups
+Sugar: ??
+Eggs: 2
+Impact: Can&#39;t bake without knowing sugar amount!
+</pre></div>
+</div>
+<p><strong>Non-Critical Missing Data</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Customer Profile:
+Name: John
+Age: ??
+Favorite Color: Blue
+Impact: Can still provide service without age
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Like keeping a kitchen incident log:</p>
+<p><strong>Good Documentation Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dataset</span><span class="p">:</span> <span class="n">Customer</span> <span class="n">Survey</span> <span class="mi">2023</span>
+<span class="n">Missing</span> <span class="n">Values</span> <span class="n">Log</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Income</span><span class="p">:</span> <span class="mi">15</span><span class="o">%</span> <span class="n">missing</span> <span class="p">(</span><span class="n">people</span> <span class="n">skipped</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Age</span><span class="p">:</span> <span class="mi">5</span><span class="o">%</span> <span class="n">missing</span> <span class="p">(</span><span class="n">form</span> <span class="n">errors</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Email</span><span class="p">:</span> <span class="mi">20</span><span class="o">%</span> <span class="n">missing</span> <span class="p">(</span><span class="n">optional</span> <span class="n">field</span><span class="p">)</span>
+
+<span class="n">Actions</span> <span class="n">Taken</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Income</span><span class="p">:</span> <span class="n">Used</span> <span class="n">median</span> <span class="n">by</span> <span class="n">profession</span>
+<span class="o">-</span> <span class="n">Age</span><span class="p">:</span> <span class="n">Used</span> <span class="n">mean</span> <span class="n">age</span>
+<span class="o">-</span> <span class="n">Email</span><span class="p">:</span> <span class="n">Marked</span> <span class="k">as</span> <span class="s1">&#39;Not Provided&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="real-world-solutions">
+<h2>Real-World Solutions<a class="headerlink" href="#real-world-solutions" title="Link to this heading">#</a></h2>
+<p><strong>Like Fixing a Recipe:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Original Recipe:
+- Sugar: 1 cup
+- Flour: ?? cups
+- Eggs: 2
+
+Solutions:
+1. Check similar recipes (Like looking at similar data points)
+2. Ask an expert (Domain knowledge)
+3. Use standard amount (Mean/median imputation)
+4. Skip recipe (Remove row)
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Missing values are like missing ingredients - sometimes you can substitute, sometimes you can’t</p></li>
+<li><p>Document your missing value strategy like a recipe modification</p></li>
+<li><p>Always consider why the data is missing before deciding how to handle it</p></li>
+</ul>
+</section>
+<section id="handling-missing-values-techniques">
+<h2>Handling Missing Values Techniques<a class="headerlink" href="#handling-missing-values-techniques" title="Link to this heading">#</a></h2>
+<section id="deletion-methods">
+<h3>1. Deletion Methods<a class="headerlink" href="#deletion-methods" title="Link to this heading">#</a></h3>
+<p>Think of this like cleaning up a messy photo album:</p>
+<p><strong>Complete Case Analysis (Listwise Deletion)</strong>
+Like removing group photos where someone blinked:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before:
+Photo 1: [👨 👩 😴 👶]  # Someone sleeping
+Photo 2: [👨 👩 👧 👶]  # Perfect photo
+Photo 3: [👨 ?? 👧 👶]  # Someone missing
+
+After:
+Keep only Photo 2
+</pre></div>
+</div>
+<p><strong>Pairwise Deletion</strong>
+Like using different photos for different purposes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Family Height Chart:
+Dad: 6&#39;0&quot;
+Mom: ??
+Son: 5&#39;0&quot;
+Daughter: 5&#39;2&quot;
+
+Use what you have:
+- Can still compare Dad and kids
+- Skip comparisons with Mom
+</pre></div>
+</div>
+</section>
+<section id="simple-imputation">
+<h3>2. Simple Imputation<a class="headerlink" href="#simple-imputation" title="Link to this heading">#</a></h3>
+<p>Think of this like substituting ingredients in cooking:</p>
+<p><strong>Mean Imputation</strong>
+Like using average cookie size when recipe doesn’t specify:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cookie Sizes:
+[3&quot;, 3.5&quot;, ??, 3&quot;, 4&quot;]
+Solution: Use average (3.375&quot;)
+</pre></div>
+</div>
+<p><strong>Mode Imputation</strong>
+Like picking the most common ice cream flavor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Orders:
+[Vanilla, ??, Chocolate, Vanilla, ??, Vanilla]
+Solution: Fill with Vanilla
+</pre></div>
+</div>
+<p><strong>Constant Imputation</strong>
+Like marking “Unknown” for missing names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Contact List:
+Name: John
+Phone: ??    → &quot;Not Provided&quot;
+Email: john@email.com
+</pre></div>
+</div>
+</section>
+<section id="statistical-imputation">
+<h3>3. Statistical Imputation<a class="headerlink" href="#statistical-imputation" title="Link to this heading">#</a></h3>
+<p>Like making educated guesses based on patterns:</p>
+<p><strong>Median Imputation</strong>
+Good for skewed data, like house prices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>House Prices:
+[$200k, $210k, ??, $220k, $1M]
+Better to use median than mean!
+</pre></div>
+</div>
+<p><strong>Regression Imputation</strong>
+Like guessing someone’s weight based on height:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Height</span> <span class="o">|</span> <span class="n">Weight</span>
+<span class="mi">5</span><span class="s1">&#39;0&quot;   | 110 lbs</span>
+<span class="mi">5</span><span class="s1">&#39;6&quot;   | ??</span>
+<span class="mi">6</span><span class="s1">&#39;0&quot;   | 180 lbs</span>
+<span class="n">Use</span> <span class="n">pattern</span> <span class="n">to</span> <span class="n">estimate</span> <span class="n">missing</span> <span class="n">weight</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-imputation">
+<h3>4. Advanced Imputation<a class="headerlink" href="#advanced-imputation" title="Link to this heading">#</a></h3>
+<p>Like sophisticated detective work:</p>
+<p><strong>K-Nearest Neighbors (KNN)</strong>
+Like asking similar people for answers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Movie Ratings:
+Person A: [5, 4, ??, 5]
+Similar viewers rated it 4
+→ Probably Person A would rate it 4
+</pre></div>
+</div>
+<p><strong>Multiple Imputation</strong>
+Like getting multiple opinions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Missing Salary:
+Estimate 1: $50k (based on age)
+Estimate 2: $52k (based on education)
+Estimate 3: $48k (based on experience)
+Final: Average of all estimates
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>When to Use Each Method<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Think of this like choosing tools for different home repairs:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Missing Data Situation</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Real-Life Analogy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Few missing values (&lt;5%)</p></td>
+<td><p>Deletion</p></td>
+<td><p>Removing few bad apples</p></td>
+</tr>
+<tr class="row-odd"><td><p>Random missing values</p></td>
+<td><p>Mean/Median</p></td>
+<td><p>Using average recipe portions</p></td>
+</tr>
+<tr class="row-even"><td><p>Categorical data</p></td>
+<td><p>Mode</p></td>
+<td><p>Most popular menu item</p></td>
+</tr>
+<tr class="row-odd"><td><p>Related variables exist</p></td>
+<td><p>Regression</p></td>
+<td><p>Guessing gift price from wrapping</p></td>
+</tr>
+<tr class="row-even"><td><p>Complex patterns</p></td>
+<td><p>Advanced</p></td>
+<td><p>Detective solving complex case</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Simple isn’t always worse (like basic recipes often work best)</p></li>
+<li><p>Consider the impact of your choice (like substituting ingredients)</p></li>
+<li><p>Document your methods (like writing down recipe modifications)</p></li>
+<li><p>Test your results (like tasting the food)</p></li>
+</ul>
+<p>Think of handling missing values like being a chef - sometimes you substitute ingredients (imputation), sometimes you modify the recipe (deletion), but always make sure the final dish makes sense!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="feature-selection">
+<h1>Feature Selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="feature-importance">
+<h2>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h2>
+<p>Think of this like picking players for a sports team:</p>
+<section id="statistical-methods">
+<h3>1. Statistical Methods<a class="headerlink" href="#statistical-methods" title="Link to this heading">#</a></h3>
+<p>Like measuring athletes’ performance statistics:</p>
+<p><strong>T-Test Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Basketball Players:
+Height Impact:
+Tall players: 20 pts average
+Short players: 10 pts average
+→ Height is statistically significant!
+
+Weight Impact:
+Heavy players: 15 pts average
+Light players: 14 pts average
+→ Weight might not matter much
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>2. Correlation Analysis<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Like finding which friends always hang out together:</p>
+<p><strong>Strong Correlation</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Sales vs Temperature:
+🌡️ 75°F → $100 sales
+🌡️ 85°F → $200 sales
+🌡️ 95°F → $300 sales
+(Strong positive correlation)
+</pre></div>
+</div>
+<p><strong>Weak Correlation</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Sales vs Day of Week:
+Monday: $150
+Tuesday: $200
+Wednesday: $100
+(No clear pattern)
+</pre></div>
+</div>
+</section>
+<section id="information-gain">
+<h3>3. Information Gain<a class="headerlink" href="#information-gain" title="Link to this heading">#</a></h3>
+<p>Like choosing questions for “20 Questions” game:</p>
+<p><strong>Good Questions (High Information Gain)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Animal Guessing Game:
+Q: &quot;Is it a mammal?&quot; 
+→ Eliminates 70% of possibilities!
+
+Bad Questions (Low Information Gain):
+Q: &quot;Is it purple?&quot;
+→ Rarely helps identify animal
+</pre></div>
+</div>
+</section>
+<section id="feature-rankings">
+<h3>2. Feature Rankings<a class="headerlink" href="#feature-rankings" title="Link to this heading">#</a></h3>
+<p>Like ranking kitchen tools by usefulness:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chef</span><span class="s1">&#39;s Tool Ranking:</span>
+<span class="mf">1.</span> <span class="n">Knife</span> <span class="p">(</span><span class="n">Used</span> <span class="ow">in</span> <span class="mi">90</span><span class="o">%</span> <span class="n">of</span> <span class="n">dishes</span><span class="p">)</span>
+<span class="mf">2.</span> <span class="n">Pan</span> <span class="p">(</span><span class="n">Used</span> <span class="ow">in</span> <span class="mi">70</span><span class="o">%</span> <span class="n">of</span> <span class="n">dishes</span><span class="p">)</span>
+<span class="mf">3.</span> <span class="n">Whisk</span> <span class="p">(</span><span class="n">Used</span> <span class="ow">in</span> <span class="mi">30</span><span class="o">%</span> <span class="n">of</span> <span class="n">dishes</span><span class="p">)</span>
+<span class="mf">4.</span> <span class="n">Melon</span> <span class="n">baller</span> <span class="p">(</span><span class="n">Used</span> <span class="ow">in</span> <span class="mi">1</span><span class="o">%</span> <span class="n">of</span> <span class="n">dishes</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="domain-knowledge">
+<h3>3. Domain Knowledge<a class="headerlink" href="#domain-knowledge" title="Link to this heading">#</a></h3>
+<p>Like an experienced chef knowing what matters:</p>
+<p><strong>Cooking Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Making</span> <span class="n">Pizza</span><span class="p">:</span>
+<span class="n">Important</span> <span class="n">Features</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Dough</span> <span class="n">quality</span>
+<span class="o">-</span> <span class="n">Oven</span> <span class="n">temperature</span>
+<span class="o">-</span> <span class="n">Cooking</span> <span class="n">time</span>
+
+<span class="n">Less</span> <span class="n">Important</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Brand</span> <span class="n">of</span> <span class="n">pan</span>
+<span class="o">-</span> <span class="n">Color</span> <span class="n">of</span> <span class="n">spatula</span>
+<span class="o">-</span> <span class="n">Kitchen</span> <span class="n">temperature</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="real-world-example-house-price-prediction">
+<h2>Real-World Example: House Price Prediction<a class="headerlink" href="#real-world-example-house-price-prediction" title="Link to this heading">#</a></h2>
+<p>Like a realtor knowing what affects house prices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Features Available:
+1. Square footage 🏠
+2. Location 📍
+3. Number of rooms 🚪
+4. Wall color 🎨
+5. House age 📅
+6. Door handle style 🔒
+
+Important (Keep):
+- Square footage (Strong correlation)
+- Location (High impact)
+- Number of rooms (Significant)
+
+Unimportant (Drop):
+- Wall color (Can change easily)
+- Door handle style (Irrelevant)
+</pre></div>
+</div>
+<section id="feature-selection-methods-comparison">
+<h3>Feature Selection Methods Comparison<a class="headerlink" href="#feature-selection-methods-comparison" title="Link to this heading">#</a></h3>
+<p>Think of this like choosing tools for different jobs:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Real-Life Analogy</p></th>
+<th class="head"><p>When to Use</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Statistical</p></td>
+<td><p>Sports tryouts</p></td>
+<td><p>Clear performance metrics</p></td>
+</tr>
+<tr class="row-odd"><td><p>Correlation</p></td>
+<td><p>Friend groups</p></td>
+<td><p>Finding relationships</p></td>
+</tr>
+<tr class="row-even"><td><p>Information Gain</p></td>
+<td><p>Game strategy</p></td>
+<td><p>Decision trees</p></td>
+</tr>
+<tr class="row-odd"><td><p>Domain Knowledge</p></td>
+<td><p>Expert advice</p></td>
+<td><p>Industry-specific problems</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="common-patterns-to-watch">
+<h2>Common Patterns to Watch<a class="headerlink" href="#common-patterns-to-watch" title="Link to this heading">#</a></h2>
+<p>Like reading recipe reviews:</p>
+<p><strong>Redundant Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Recipe Ingredients:
+- Butter
+- Margarine
+(Choose one, not both!)
+</pre></div>
+</div>
+<p><strong>Irrelevant Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Basketball</span> <span class="n">Performance</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Height</span> <span class="p">(</span><span class="n">Relevant</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Favorite</span> <span class="n">color</span> <span class="p">(</span><span class="n">Irrelevant</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Not all features are created equal (like ingredients in a recipe)</p></li>
+<li><p>More isn’t always better (like too many spices)</p></li>
+<li><p>Let the data speak (like taste-testing)</p></li>
+<li><p>Trust expert knowledge (like following chef’s advice)</p></li>
+</ul>
+<p>Think of feature selection like packing for a trip:</p>
+<ul class="simple">
+<li><p>Take what you need (important features)</p></li>
+<li><p>Leave what you don’t (irrelevant features)</p></li>
+<li><p>Consider the destination (your model’s purpose)</p></li>
+<li><p>Ask experienced travelers (domain experts)</p></li>
+</ul>
+</section>
+<section id="selection-methods">
+<h2>Selection Methods<a class="headerlink" href="#selection-methods" title="Link to this heading">#</a></h2>
+<section id="filter-methods">
+<h3>1. Filter Methods<a class="headerlink" href="#filter-methods" title="Link to this heading">#</a></h3>
+<p>Think of this like using tryout tests for a sports team:</p>
+<p><strong>Variance Threshold</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Basketball</span> <span class="n">Shooting</span> <span class="n">Test</span><span class="p">:</span>
+<span class="n">Player</span> <span class="n">A</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="n">points</span>
+<span class="n">Player</span> <span class="n">B</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span> <span class="n">points</span>
+<span class="n">Player</span> <span class="n">C</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span> <span class="n">points</span>
+
+<span class="n">Keep</span><span class="p">:</span> <span class="n">Player</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="p">(</span><span class="n">show</span> <span class="n">variety</span><span class="p">)</span>
+<span class="n">Drop</span><span class="p">:</span> <span class="n">Player</span> <span class="n">C</span> <span class="p">(</span><span class="n">no</span> <span class="n">variance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Correlation Filter</strong>
+Like choosing between similar players:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Two Players&#39; Stats:
+Points  | Rebounds
+Player1: [20, 10, 15]
+Player2: [19, 11, 14]
+
+Decision: Too similar - keep only one!
+</pre></div>
+</div>
+</section>
+<section id="wrapper-methods">
+<h3>2. Wrapper Methods<a class="headerlink" href="#wrapper-methods" title="Link to this heading">#</a></h3>
+<p>Like holding actual practice games to pick players:</p>
+<p><strong>Forward Selection</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Building</span> <span class="n">a</span> <span class="n">Soccer</span> <span class="n">Team</span><span class="p">:</span>
+<span class="n">Start</span><span class="p">:</span> <span class="n">Empty</span> <span class="n">team</span>
+<span class="n">Round</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Add</span> <span class="n">goalkeeper</span> <span class="p">(</span><span class="n">biggest</span> <span class="n">impact</span><span class="p">)</span>
+<span class="n">Round</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Add</span> <span class="n">striker</span> <span class="p">(</span><span class="nb">next</span> <span class="n">best</span><span class="p">)</span>
+<span class="n">Round</span> <span class="mi">3</span><span class="p">:</span> <span class="n">Add</span> <span class="n">defender</span>
+<span class="n">Keep</span> <span class="n">adding</span> <span class="n">until</span> <span class="n">team</span> <span class="n">performance</span> <span class="n">stops</span> <span class="n">improving</span>
+</pre></div>
+</div>
+<p><strong>Backward Elimination</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Orchestra</span> <span class="n">Selection</span><span class="p">:</span>
+<span class="n">Start</span><span class="p">:</span> <span class="n">Full</span> <span class="n">orchestra</span>
+<span class="n">Remove</span><span class="p">:</span> <span class="n">Triangle</span> <span class="n">player</span> <span class="p">(</span><span class="n">least</span> <span class="n">impact</span><span class="p">)</span>
+<span class="n">Remove</span><span class="p">:</span> <span class="n">Second</span> <span class="n">tambourine</span>
+<span class="n">Keep</span> <span class="n">removing</span> <span class="n">until</span> <span class="n">performance</span> <span class="n">drops</span>
+</pre></div>
+</div>
+</section>
+<section id="embedded-methods">
+<h3>3. Embedded Methods<a class="headerlink" href="#embedded-methods" title="Link to this heading">#</a></h3>
+<p>Like having a coach who evaluates players during the actual game:</p>
+<p><strong>LASSO Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Basketball Team:
+Player | Points | Defense | Team Spirit
+A      | High   | Low     | Medium
+B      | Medium | Medium  | Medium
+C      | Low    | Low     | Low
+
+LASSO automatically benches Player C!
+</pre></div>
+</div>
+</section>
+<section id="dimensionality-reduction">
+<h3>4. Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Link to this heading">#</a></h3>
+<p>Like combining similar skills into one rating:</p>
+<p><strong>PCA Example</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">Grades</span><span class="p">:</span>
+<span class="n">Math</span> <span class="n">Tests</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
+<span class="n">Algebra</span> <span class="n">Tests</span><span class="p">:</span> <span class="p">[</span><span class="mi">92</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+<span class="n">Geometry</span> <span class="n">Tests</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="n">Combine</span> <span class="n">into</span><span class="p">:</span> <span class="s2">&quot;Math Ability Score&quot;</span>
+</pre></div>
+</div>
+<p><strong>Real-World Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Restaurant</span> <span class="n">Rating</span><span class="p">:</span>
+<span class="n">Original</span> <span class="n">Features</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Food</span> <span class="n">Quality</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Taste</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Flavor</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Service</span> <span class="n">Speed</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Waiter</span> <span class="n">Friendliness</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">Reduced</span> <span class="n">to</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Food</span> <span class="n">Score</span> <span class="p">(</span><span class="n">combining</span> <span class="n">first</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Service</span> <span class="n">Score</span> <span class="p">(</span><span class="n">combining</span> <span class="n">last</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="feature-engineering-basics">
+<h3>5. Feature Engineering Basics<a class="headerlink" href="#feature-engineering-basics" title="Link to this heading">#</a></h3>
+<p>Like creating new sports metrics from existing stats:</p>
+<p><strong>Combining Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Patterns:
+Original:
+- Items bought: 5
+- Total cost: $100
+
+New Feature:
+- Cost per item: $20
+</pre></div>
+</div>
+<p><strong>Breaking Down Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">:</span> <span class="s2">&quot;2023-11-26&quot;</span>
+<span class="n">Becomes</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Year</span><span class="p">:</span> <span class="mi">2023</span>
+<span class="o">-</span> <span class="n">Month</span><span class="p">:</span> <span class="mi">11</span>
+<span class="o">-</span> <span class="n">Day</span><span class="p">:</span> <span class="mi">26</span>
+<span class="o">-</span> <span class="n">Is_Weekend</span><span class="p">:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="selection-method-comparison">
+<h2>Selection Method Comparison<a class="headerlink" href="#selection-method-comparison" title="Link to this heading">#</a></h2>
+<p>Think of this like different ways to build a team:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Real-Life Analogy</p></th>
+<th class="head"><p>Best For</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Filter</p></td>
+<td><p>Quick tryouts</p></td>
+<td><p>Large feature sets</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wrapper</p></td>
+<td><p>Practice games</p></td>
+<td><p>Small feature sets</p></td>
+</tr>
+<tr class="row-even"><td><p>Embedded</p></td>
+<td><p>In-game evaluation</p></td>
+<td><p>Complex relationships</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reduction</p></td>
+<td><p>Skill combining</p></td>
+<td><p>Many similar features</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-patterns">
+<h2>Common Patterns<a class="headerlink" href="#common-patterns" title="Link to this heading">#</a></h2>
+<p><strong>Feature Combinations</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Car</span> <span class="n">Performance</span><span class="p">:</span>
+<span class="n">Original</span> <span class="n">Features</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Distance</span><span class="p">:</span> <span class="mi">100</span> <span class="n">miles</span>
+<span class="o">-</span> <span class="n">Time</span><span class="p">:</span> <span class="mi">2</span> <span class="n">hours</span>
+
+<span class="n">New</span> <span class="n">Feature</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Speed</span><span class="p">:</span> <span class="mi">50</span> <span class="n">mph</span>
+</pre></div>
+</div>
+<p><strong>Time-Based Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sales</span> <span class="n">Data</span><span class="p">:</span>
+<span class="n">Original</span><span class="p">:</span> <span class="n">Purchase</span> <span class="n">DateTime</span>
+<span class="n">New</span> <span class="n">Features</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Hour</span> <span class="n">of</span> <span class="n">Day</span>
+<span class="o">-</span> <span class="n">Day</span> <span class="n">of</span> <span class="n">Week</span>
+<span class="o">-</span> <span class="n">Is</span> <span class="n">Holiday</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Start simple (like basic tryouts)</p></li>
+<li><p>Test combinations (like team chemistry)</p></li>
+<li><p>Consider computation costs (like training time)</p></li>
+<li><p>Use domain knowledge (like coach’s experience)</p></li>
+</ul>
+<p>Think of feature selection methods like different recruitment strategies:</p>
+<ul class="simple">
+<li><p>Filters: Quick initial screening</p></li>
+<li><p>Wrappers: Thorough tryouts</p></li>
+<li><p>Embedded: On-the-job evaluation</p></li>
+<li><p>Reduction: Combining roles</p></li>
+<li><p>Engineering: Creating new positions</p></li>
+</ul>
+<p>The goal is to build the best team (model) with the right players (features)!</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-visualization">
+<h1>Data Visualization<a class="headerlink" href="#data-visualization" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="basic-plots">
+<h2>Basic Plots<a class="headerlink" href="#basic-plots" title="Link to this heading">#</a></h2>
+<section id="histograms">
+<h3>1. Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing kids by height in a class photo:</p>
+<p><strong>Height Distribution Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kids</span><span class="s1">&#39; Heights:</span>
+<span class="mi">4</span><span class="s1">&#39;0&quot; - 4&#39;</span><span class="mi">2</span><span class="s2">&quot;: 🧍‍♂️🧍‍♂️ (2 kids)</span>
+<span class="mi">4</span><span class="s1">&#39;3&quot; - 4&#39;</span><span class="mi">5</span><span class="s2">&quot;: 🧍‍♂️🧍‍♂️🧍‍♂️🧍‍♂️ (4 kids)</span>
+<span class="mi">4</span><span class="s1">&#39;6&quot; - 4&#39;</span><span class="mi">8</span><span class="s2">&quot;: 🧍‍♂️🧍‍♂️🧍‍♂️ (3 kids)</span>
+<span class="mi">4</span><span class="s1">&#39;9&quot; - 4&#39;</span><span class="mi">11</span><span class="s2">&quot;: 🧍‍♂️ (1 kid)</span>
+</pre></div>
+</div>
+<p><strong>Real-Life Uses:</strong></p>
+<ul class="simple">
+<li><p>Test scores distribution</p></li>
+<li><p>Daily steps count</p></li>
+<li><p>Customer age groups</p></li>
+</ul>
+</section>
+<section id="box-plots">
+<h3>2. Box Plots<a class="headerlink" href="#box-plots" title="Link to this heading">#</a></h3>
+<p>Like summarizing a family’s height in one picture:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Family Heights:
+                    *  (Dad - Outlier)
+                    
+            ┌──┬──┐
+            │  │  │
+        ────┴──┴──┴────
+            
+Shortest (Mom) to Tallest (Kids)
+</pre></div>
+</div>
+<p><strong>Shows:</strong></p>
+<ul class="simple">
+<li><p>Minimum (Shortest family member)</p></li>
+<li><p>Maximum (Tallest regular member)</p></li>
+<li><p>Median (Middle height)</p></li>
+<li><p>Outliers (Unusually tall Dad)</p></li>
+</ul>
+</section>
+<section id="scatter-plots">
+<h3>3. Scatter Plots<a class="headerlink" href="#scatter-plots" title="Link to this heading">#</a></h3>
+<p>Like mapping where kids drop their toys:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Toy Location Map:
+   Kitchen
+     │
+     │  🧸  🎮
+     │    🎪
+     │      📱
+     │
+─────┼─────────────
+     │     Living Room
+</pre></div>
+</div>
+<p><strong>Real Examples:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Sales vs Temperature:
+Cold  ·
+     · ·
+Sales · · ·
+     · · · ·
+     · · · · ·
+     └──────────
+      Temperature
+</pre></div>
+</div>
+</section>
+<section id="line-plots">
+<h3>4. Line Plots<a class="headerlink" href="#line-plots" title="Link to this heading">#</a></h3>
+<p>Like tracking a child’s height over time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Growth Chart:
+Height
+   │    📏
+   │   📏
+   │  📏
+   │ 📏
+   │📏
+   └─────────
+    Age (years)
+</pre></div>
+</div>
+<p><strong>Perfect For:</strong></p>
+<ul class="simple">
+<li><p>Temperature changes</p></li>
+<li><p>Stock prices</p></li>
+<li><p>Weight loss progress</p></li>
+<li><p>Monthly sales</p></li>
+</ul>
+</section>
+<section id="bar-charts">
+<h3>5. Bar Charts<a class="headerlink" href="#bar-charts" title="Link to this heading">#</a></h3>
+<p>Like comparing kids’ candy collection after Halloween:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Candy Count:
+Alice  │██████ (6)
+Bob    │████████ (8)
+Charlie│███ (3)
+David  │█████ (5)
+</pre></div>
+</div>
+<p><strong>Real-World Uses:</strong></p>
+<ul class="simple">
+<li><p>Monthly expenses</p></li>
+<li><p>Product sales comparison</p></li>
+<li><p>Survey responses</p></li>
+<li><p>Sports scores</p></li>
+</ul>
+</section>
+</section>
+<section id="choosing-the-right-plot">
+<h2>Choosing the Right Plot<a class="headerlink" href="#choosing-the-right-plot" title="Link to this heading">#</a></h2>
+<p>Think of this like choosing the right camera lens:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>What You’re Showing</p></th>
+<th class="head"><p>Plot Type</p></th>
+<th class="head"><p>Real-Life Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Distribution</p></td>
+<td><p>Histogram</p></td>
+<td><p>Kids’ ages in school</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comparison</p></td>
+<td><p>Bar Chart</p></td>
+<td><p>Test scores by subject</p></td>
+</tr>
+<tr class="row-even"><td><p>Trend over time</p></td>
+<td><p>Line Plot</p></td>
+<td><p>Daily temperature</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relationships</p></td>
+<td><p>Scatter Plot</p></td>
+<td><p>Height vs Weight</p></td>
+</tr>
+<tr class="row-even"><td><p>Summary stats</p></td>
+<td><p>Box Plot</p></td>
+<td><p>Family heights</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="common-visualization-tips">
+<h2>Common Visualization Tips<a class="headerlink" href="#common-visualization-tips" title="Link to this heading">#</a></h2>
+<p><strong>Color Usage</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Good</span><span class="p">:</span>
+<span class="n">Temperature</span><span class="p">:</span> <span class="n">Blue</span> <span class="p">(</span><span class="n">cold</span><span class="p">)</span> <span class="n">to</span> <span class="n">Red</span> <span class="p">(</span><span class="n">hot</span><span class="p">)</span>
+
+<span class="n">Bad</span><span class="p">:</span>
+<span class="n">Rainbow</span> <span class="n">colors</span> <span class="k">for</span> <span class="n">categories</span>
+</pre></div>
+</div>
+<p><strong>Labels and Titles</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Good</span><span class="p">:</span>
+<span class="s2">&quot;Monthly Ice Cream Sales 2023&quot;</span>
+
+<span class="n">Bad</span><span class="p">:</span>
+<span class="s2">&quot;Graph 1&quot;</span>
+</pre></div>
+</div>
+<p><strong>Scale Considerations</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Good</span><span class="p">:</span>
+<span class="n">Starting</span> <span class="n">bar</span> <span class="n">charts</span> <span class="n">at</span> <span class="n">zero</span>
+
+<span class="n">Bad</span><span class="p">:</span>
+<span class="n">Cutting</span> <span class="n">off</span> <span class="n">bars</span> <span class="n">to</span> <span class="n">exaggerate</span> <span class="n">differences</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Keep it simple (like a family photo)</p></li>
+<li><p>Tell a story (like a photo album)</p></li>
+<li><p>Be honest (no photoshopping!)</p></li>
+<li><p>Consider your audience (like showing photos to grandma)</p></li>
+</ul>
+<p>Think of data visualization like being a photographer:</p>
+<ul class="simple">
+<li><p>Choose the right angle (plot type)</p></li>
+<li><p>Frame it well (axes and scales)</p></li>
+<li><p>Make it clear (labels and colors)</p></li>
+<li><p>Tell the story (context and explanation)</p></li>
+</ul>
+</section>
+<section id="advanced-visualization">
+<h2>Advanced Visualization<a class="headerlink" href="#advanced-visualization" title="Link to this heading">#</a></h2>
+<section id="correlation-heatmaps">
+<h3>1. Correlation Heatmaps<a class="headerlink" href="#correlation-heatmaps" title="Link to this heading">#</a></h3>
+<p>Think of this like a friendship map in a classroom:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Friend Groups:
+     Alice  Bob  Charlie  David
+Alice  🔴    🟡    🟢      🟡
+Bob    🟡    🔴    🟡      🟢
+Charlie🟢    🟡    🔴      🟡
+David  🟡    🟢    🟡      🔴
+
+🔴 = Best Friends
+🟢 = Good Friends
+🟡 = Sometimes Play Together
+⚪ = Don&#39;t Interact
+</pre></div>
+</div>
+<p><strong>Real-World Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Menu Item Combinations:
+        Coffee  Tea   Cake  Sandwich
+Coffee    🔴     🟡    🟢     ⚪
+Tea       🟡     🔴    🟢     ⚪
+Cake      🟢     🟢    🔴     🟡
+Sandwich  ⚪     ⚪    🟡     🔴
+
+Shows what customers buy together!
+</pre></div>
+</div>
+</section>
+<section id="pair-plots">
+<h3>2. Pair Plots<a class="headerlink" href="#pair-plots" title="Link to this heading">#</a></h3>
+<p>Like taking photos of every possible pair at a party:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Student Metrics Grid:
+     Study│Grade│Sleep
+Study ━━━━│  📊 │  📊
+Grade  📊 │━━━━│  📊
+Sleep  📊 │  📊 │━━━━
+</pre></div>
+</div>
+<p><strong>Real Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Car Features:
+     Speed│MPG │Price
+Speed ━━━━│ 📉 │ 📉
+MPG   📉  │━━━━│ 📈
+Price 📉  │ 📈 │━━━━
+</pre></div>
+</div>
+</section>
+<section id="distribution-plots">
+<h3>3. Distribution Plots<a class="headerlink" href="#distribution-plots" title="Link to this heading">#</a></h3>
+<p>Like showing how kids spread out in a playground:</p>
+<p><strong>Kernel Density Plot</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Height Distribution:
+      ╭─────╮
+      │     │
+   ╭──┤     ├──╮
+___╱  │     │  ╰___
+   Short  Med  Tall
+</pre></div>
+</div>
+<p><strong>Violin Plot</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Test Scores by Class:
+Class A:  )│(  Wide spread
+Class B:  )─(  Normal spread
+Class C:  )•(  Tight spread
+</pre></div>
+</div>
+</section>
+<section id="time-series-plots">
+<h3>4. Time Series Plots<a class="headerlink" href="#time-series-plots" title="Link to this heading">#</a></h3>
+<p>Like making a flip-book of your growing garden:</p>
+<p><strong>Multiple Time Series</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Plant Growth:
+Height│   🌳
+     │  🌲🌳
+     │ 🌲🌳
+     │🌲
+     └─────────
+      Week 1-4
+</pre></div>
+</div>
+<p><strong>Seasonal Patterns</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ice Cream Sales:
+Sales│    🍦
+     │🍦    🍦
+     │  🍦
+     │
+     └─────────
+      Win Spr Sum Fall
+</pre></div>
+</div>
+</section>
+<section id="interactive-visualizations">
+<h3>5. Interactive Visualizations<a class="headerlink" href="#interactive-visualizations" title="Link to this heading">#</a></h3>
+<p>Like a digital photo frame that responds to touch:</p>
+<p><strong>Hover Effects</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sales Dashboard:
+Bar Chart:
+│██████ (Hover→&quot;$600&quot;)
+│████ (Hover→&quot;$400&quot;)
+│███████ (Hover→&quot;$700&quot;)
+</pre></div>
+</div>
+<p><strong>Zoom Features</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Stock Price:
+Overview:
+└─────────────
+
+Zoomed In:
+   ╭╮
+──╯ ╰────
+</pre></div>
+</div>
+</section>
+</section>
+<section id="choosing-advanced-plots">
+<h2>Choosing Advanced Plots<a class="headerlink" href="#choosing-advanced-plots" title="Link to this heading">#</a></h2>
+<p>Think of this like choosing photo effects:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>What You’re Showing</p></th>
+<th class="head"><p>Plot Type</p></th>
+<th class="head"><p>Real-Life Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Relationships</p></td>
+<td><p>Heatmap</p></td>
+<td><p>Friend groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multiple variables</p></td>
+<td><p>Pair Plot</p></td>
+<td><p>Student performance</p></td>
+</tr>
+<tr class="row-even"><td><p>Complex distributions</p></td>
+<td><p>Violin Plot</p></td>
+<td><p>Age groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>Patterns over time</p></td>
+<td><p>Time Series</p></td>
+<td><p>Weight loss journey</p></td>
+</tr>
+<tr class="row-even"><td><p>Detailed exploration</p></td>
+<td><p>Interactive</p></td>
+<td><p>Digital yearbook</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id3">
+<h2>Best Practices<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><strong>Color Schemes</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Professional:
+Low → High
+⚪ 🟡 🟠 🔴
+
+Avoid:
+Rainbow colors
+</pre></div>
+</div>
+<p><strong>Interactivity Level</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Good</span><span class="p">:</span>
+<span class="n">Click</span> <span class="k">for</span> <span class="n">details</span>
+<span class="n">Hover</span> <span class="k">for</span> <span class="n">values</span>
+
+<span class="n">Avoid</span><span class="p">:</span>
+<span class="n">Too</span> <span class="n">many</span> <span class="n">animations</span>
+</pre></div>
+</div>
+<p><strong>Layout</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good:
+┌─────┬─────┐
+│ 1   │  2  │
+├─────┼─────┤
+│ 3   │  4  │
+└─────┴─────┘
+
+Bad:
+Cluttered, random placement
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Keep it informative (like a well-organized photo album)</p></li>
+<li><p>Make it intuitive (like natural gestures)</p></li>
+<li><p>Enable exploration (like flipping through pages)</p></li>
+<li><p>Maintain clarity (like good lighting in photos)</p></li>
+</ul>
+<p>Think of advanced visualization like being a professional photographer:</p>
+<ul class="simple">
+<li><p>Use the right tools (plot types)</p></li>
+<li><p>Create the right composition (layout)</p></li>
+<li><p>Add appropriate effects (interactivity)</p></li>
+<li><p>Tell a complete story (multiple views)</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -539,6 +2658,165 @@ Data Visualization</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 2 - Data Fundamentals</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types-and-structures">Data Types and Structures</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-data-types">Basic Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data">1. Numerical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data">2. Categorical Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-data">3. Binary Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-data">4. Time Series Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data">5. Text Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-data-types-and-structures">Exercise: Understanding Data Types and Structures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-in-python">Data Structures in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">1. NumPy Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframes-series">2. Pandas DataFrames &amp; Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensors">3. Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-ml-dataset-formats">4. Common ML Dataset Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis">Exploratory Data Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-summary">Statistical Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-median-and-mode">1. Mean, Median, and Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-deviation">2. Standard Deviation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quartiles-and-iqr">3. Quartiles and IQR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-analysis">4. Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-analysis">5. Distribution Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-quality-checks">Data Quality Checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-duplicates">1. Identifying Duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-outliers">2. Detecting Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-data-balance">3. Checking Data Balance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-data-anomalies">4. Finding Data Anomalies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-data-types">5. Verifying Data Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">Data Preprocessing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">1. Removing Duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-inconsistent-values">2. Handling Inconsistent Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-cleaning">3. String Cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-time-formatting">4. Date/Time Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-data-types">5. Fixing Data Types</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformation">Data Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-hot-encoding">1. One-Hot Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-encoding">2. Label Encoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-numerical-data">3. Binning Numerical Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-transformation">4. Log Transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-transformation">5. Power Transformation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature Scaling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-methods">Scaling Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-scaling">1. Min-Max Scaling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-scaling-z-score">2. Standard Scaling (Z-score)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-scaling">3. Robust Scaling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization">4. Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each-method">When to Use Each Method?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-order-in-pipeline">1. Scaling Order in Pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-new-data">Handling New Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-categorical-data">Scaling Categorical Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">Handling Missing Values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value-analysis">Missing Value Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-missing-data">1. Types of Missing Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-patterns">2. Missing Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impact-assessment">3. Impact Assessment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-solutions">Real-World Solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values-techniques">Handling Missing Values Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deletion-methods">1. Deletion Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-imputation">2. Simple Imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-imputation">3. Statistical Imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-imputation">4. Advanced Imputation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">When to Use Each Method</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature Selection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-methods">1. Statistical Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. Correlation Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-gain">3. Information Gain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-rankings">2. Feature Rankings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-knowledge">3. Domain Knowledge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-house-price-prediction">Real-World Example: House Price Prediction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection-methods-comparison">Feature Selection Methods Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns-to-watch">Common Patterns to Watch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-methods">Selection Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-methods">1. Filter Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper-methods">2. Wrapper Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedded-methods">3. Embedded Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">4. Dimensionality Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-engineering-basics">5. Feature Engineering Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-method-comparison">Selection Method Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns">Common Patterns</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">Data Visualization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plots">Basic Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">1. Histograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plots">2. Box Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots">3. Scatter Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots">4. Line Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-charts">5. Bar Charts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-plot">Choosing the Right Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-visualization-tips">Common Visualization Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-visualization">Advanced Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-heatmaps">1. Correlation Heatmaps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plots">2. Pair Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-plots">3. Distribution Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-plots">4. Time Series Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-visualizations">5. Interactive Visualizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-advanced-plots">Choosing Advanced Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
