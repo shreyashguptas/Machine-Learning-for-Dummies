@@ -229,26 +229,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning Fundamentals</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter%205%20-%20Neural%20Networks%20Basics.html">Chapter 5 - Neural Networks Basics</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Chapter%206%20-%20Deep%20Learning%20Tools.html">Chapter 6 - Deep Learning Tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Deep Learning</span></p>
@@ -506,6 +486,8 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-types">3. Prediction Types</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression">Exercise: Understanding Classification and Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression-new">Exercise: Understanding Classification and Regression (new)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
@@ -676,49 +658,49 @@
 <h2>Understanding the Difference<a class="headerlink" href="#understanding-the-difference" title="Link to this heading">#</a></h2>
 <section id="predicting-categories-vs-numbers">
 <h3>1. Predicting Categories vs Numbers<a class="headerlink" href="#predicting-categories-vs-numbers" title="Link to this heading">#</a></h3>
-<p><strong>Classification</strong> is like being a sorting hat at Hogwarts:</p>
+<p><strong>Classification</strong> can be likened to the role of the sorting hat at Hogwarts:</p>
 <ul class="simple">
-<li><p>You look at a student’s traits</p></li>
-<li><p>You place them in specific houses (categories)</p></li>
-<li><p>The output is always a group or category</p></li>
+<li><p>You assess a student’s characteristics and traits.</p></li>
+<li><p>Based on this assessment, you categorize them into specific houses.</p></li>
+<li><p>The result is always a distinct group or category.</p></li>
 </ul>
-<p><strong>Regression</strong> is like predicting how tall a child will grow:</p>
+<p><strong>Regression</strong>, on the other hand, resembles the task of predicting a child’s future height:</p>
 <ul class="simple">
-<li><p>You look at parents’ height, nutrition, age</p></li>
-<li><p>You predict a specific number</p></li>
-<li><p>The output is a continuous value</p></li>
+<li><p>You analyze factors such as the heights of the parents, their nutrition, and the child’s age.</p></li>
+<li><p>This analysis allows you to forecast a specific numerical value.</p></li>
+<li><p>The output is a continuous value, representing a range of possible heights.</p></li>
 </ul>
 </section>
 <section id="real-world-examples">
 <h3>2. Real-world Examples<a class="headerlink" href="#real-world-examples" title="Link to this heading">#</a></h3>
-<p><strong>Classification Examples:</strong></p>
+<p><strong>Examples of Classification:</strong></p>
 <ul class="simple">
-<li><p>Email: Spam or Not Spam</p></li>
-<li><p>Medical: Sick or Healthy</p></li>
-<li><p>Images: Cat, Dog, or Bird</p></li>
-<li><p>Weather: Sunny, Rainy, or Cloudy</p></li>
+<li><p><strong>Email Filtering</strong>: Classifying emails as Spam or Not Spam.</p></li>
+<li><p><strong>Medical Diagnosis</strong>: Determining if a patient is Sick or Healthy.</p></li>
+<li><p><strong>Image Recognition</strong>: Identifying images as Cat, Dog, or Bird.</p></li>
+<li><p><strong>Weather Forecasting</strong>: Categorizing weather as Sunny, Rainy, or Cloudy.</p></li>
 </ul>
-<p><strong>Regression Examples:</strong></p>
+<p><strong>Examples of Regression:</strong></p>
 <ul class="simple">
-<li><p>House Prices: <span class="math notranslate nohighlight">\(100,000, \)</span>200,000, etc.</p></li>
-<li><p>Temperature: 72°F, 75°F, etc.</p></li>
-<li><p>Sales: $5,000 per month</p></li>
-<li><p>Height: 5.8 feet</p></li>
+<li><p><strong>Real Estate</strong>: Predicting House Prices, such as <span class="math notranslate nohighlight">\(100,000 or \)</span>200,000.</p></li>
+<li><p><strong>Meteorology</strong>: Forecasting Temperature, like 72°F or 75°F.</p></li>
+<li><p><strong>Sales Projections</strong>: Estimating monthly Sales, e.g., $5,000.</p></li>
+<li><p><strong>Height Estimation</strong>: Predicting a child’s Height, such as 5.8 feet.</p></li>
 </ul>
 </section>
 <section id="when-to-use-each">
 <h3>3. When to Use Each<a class="headerlink" href="#when-to-use-each" title="Link to this heading">#</a></h3>
 <p>Use <strong>Classification</strong> when:</p>
 <ul class="simple">
-<li><p>You’re answering Yes/No questions</p></li>
-<li><p>You’re putting things into categories</p></li>
-<li><p>You need to make discrete choices</p></li>
+<li><p>You’re answering Yes/No questions, such as determining whether a patient has a disease or not.</p></li>
+<li><p>You’re putting things into categories, like sorting emails into Spam or Not Spam based on their content.</p></li>
+<li><p>You need to make discrete choices, for instance, deciding which product category a new item belongs to.</p></li>
 </ul>
 <p>Use <strong>Regression</strong> when:</p>
 <ul class="simple">
-<li><p>You’re predicting a specific number</p></li>
-<li><p>You’re forecasting amounts</p></li>
-<li><p>You need continuous outputs</p></li>
+<li><p>You’re predicting a specific number, such as estimating the future sales revenue for a business.</p></li>
+<li><p>You’re forecasting amounts, like predicting the total expenses for the upcoming month based on historical data.</p></li>
+<li><p>You need continuous outputs, such as calculating the expected temperature for a given day.</p></li>
 </ul>
 </section>
 <section id="input-vs-output-types">
@@ -789,9 +771,219 @@
 <li><p>“What will the temperature be tomorrow?”</p></li>
 <li><p>“How many customers will visit today?”</p></li>
 </ul>
-<p>Remember: The key difference is whether you’re putting things in categories (classification) or predicting a specific number (regression). It’s like the difference between sorting your books by genre (classification) versus arranging them by page count (regression)!</p>
+<blockquote>
+<div><p>The key difference is whether you’re putting things in categories (classification) or predicting a specific number (regression). It’s like the difference between sorting your books by genre (classification) versus arranging them by page count (regression)!</p>
+</div></blockquote>
 </section>
 </section>
+<section id="exercise-understanding-classification-and-regression">
+<h2>Exercise: Understanding Classification and Regression<a class="headerlink" href="#exercise-understanding-classification-and-regression" title="Link to this heading">#</a></h2>
+<p>Let’s practice identifying different types of machine learning problems. For each scenario, select whether it’s Classification or Regression:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Your Answer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Predicting tomorrow’s stock price</p></td>
+<td><p><select onchange="checkAnswer(this, 'Regression')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Determining if an email is spam</p></td>
+<td><p><select onchange="checkAnswer(this, 'Classification')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Estimating a person’s age from a photo</p></td>
+<td><p><select onchange="checkAnswer(this, 'Regression')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Categorizing news articles by topic</p></td>
+<td><p><select onchange="checkAnswer(this, 'Classification')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Forecasting monthly sales revenue</p></td>
+<td><p><select onchange="checkAnswer(this, 'Regression')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Identifying animal species in photos</p></td>
+<td><p><select onchange="checkAnswer(this, 'Classification')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Predicting a student’s test score</p></td>
+<td><p><select onchange="checkAnswer(this, 'Regression')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Detecting fraudulent transactions</p></td>
+<td><p><select onchange="checkAnswer(this, 'Classification')" class="ml-select"><option value="">Select type…</option><option value="Classification">Classification</option><option value="Regression">Regression</option></select><span class="feedback"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct! ' + getExplanation(correctAnswer, selectElement.parentElement.parentElement.cells[0].textContent);
+        feedbackSpan.style.color = 'green';
+    } else if (selectedValue) {
+        feedbackSpan.innerHTML = ' ❌ Try again. Think about whether you\'re predicting a specific number or categorizing.';
+        feedbackSpan.style.color = 'red';
+    }
+}
+
+function getExplanation(type, scenario) {
+    if (type === 'Classification') {
+        return 'This is classification because we\'re categorizing into distinct groups.';
+    } else {
+        return 'This is regression because we\'re predicting a specific number.';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    width: 70%;
+}
+td:last-child {
+    width: 30%;
+}
+</style></section>
+<section id="exercise-understanding-classification-and-regression-new">
+<h2>Exercise: Understanding Classification and Regression (new)<a class="headerlink" href="#exercise-understanding-classification-and-regression-new" title="Link to this heading">#</a></h2>
+<p>Let’s practice identifying different types of machine learning problems. For each scenario, select whether it’s Classification or Regression:</p>
+<table>
+    <tr>
+        <th>Scenario</th>
+        <th>Your Answer</th>
+    </tr>
+    <tr>
+        <td>Predicting tomorrow's stock price</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Determining if an email is spam</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Estimating a person's age from a photo</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Categorizing news articles by topic</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Forecasting monthly sales revenue</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Identifying animal species in photos</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Predicting a student's test score</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Detecting fraudulent transactions</td>
+        <td>
+            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
+                <option value="">Select type...</option>
+                <option value="Classification">Classification</option>
+                <option value="Regression">Regression</option>
+            </select>
+            <span class="feedback"></span>
+        </td>
+    </tr>
+</table>
+<script>
+function checkAnswer(selectElement, correctAnswer) {
+    const feedbackSpan = selectElement.nextElementSibling;
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === correctAnswer) {
+        feedbackSpan.innerHTML = ' ✅ Correct!';
+        feedbackSpan.style.color = 'green';
+    } else if (selectedValue) {
+        feedbackSpan.innerHTML = ' ❌ Try again';
+        feedbackSpan.style.color = 'red';
+    }
+}
+</script>
+<style>
+.ml-select {
+    margin-left: 10px;
+}
+.feedback {
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+</style></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
 <h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
@@ -3048,6 +3240,8 @@ Skill │    *
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prediction-types">3. Prediction Types</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression">Exercise: Understanding Classification and Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression-new">Exercise: Understanding Classification and Regression (new)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
