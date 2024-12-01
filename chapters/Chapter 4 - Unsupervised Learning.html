@@ -218,6 +218,11 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 4 - Unsupervised Learning</a></li>
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Learning Fundamentals</span></p>
 <ul class="nav bd-sidenav">
@@ -461,7 +466,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -477,6 +484,149 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 4 - Unsupervised Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-algorithms">Clustering Algorithms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-clustering">Types of Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-Means Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">Hierarchical Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan">DBSCAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each-type">When to Use Each Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-deep-dive">K-Means Deep Dive</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-k-means-works">How K-Means Works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-k-value">Choosing K Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centroid-concept">Centroid Concept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elbow-method">Elbow Method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering-basics">Hierarchical Clustering Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dendrogram-understanding">Dendrogram Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bottom-up-vs-top-down">Bottom-up vs Top-down</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics">Distance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linkage-methods">Linkage Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-essentials">DBSCAN Essentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-based-clustering">Density-Based Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-points">Core Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border-points">Border Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-points">Noise Points</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality Reduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts">Basic Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curse-of-dimensionality">Curse of Dimensionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-space">Feature Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-compression">Data Compression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-preservation">Information Preservation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-techniques">Reduction Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-vs-non-linear">Linear vs Non-linear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">Feature Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold-learning">Manifold Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-fundamentals">PCA Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-components">Principal Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-explained">Variance Explained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plots">Scree Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-selection">Component Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-sne-basics">t-SNE Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-dimensional-data">High-Dimensional Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity-parameter">Perplexity Parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#association-rules">Association Rules</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#market-basket-analysis">Market Basket Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item-sets">Item Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence">Confidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lift">Lift</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-generation">Rule Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apriori-algorithm">Apriori Algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequent-patterns">Frequent Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-evaluation">Rule Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-strategies">Pruning Strategies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-support">Minimum Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-confidence">Minimum Confidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-selection">Rule Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">Performance Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis">Principal Component Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors">Eigenvectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues">Eigenvalues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance-matrix">Covariance Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-process">PCA Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standardization">Data Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-calculation">Component Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-explanation">Variance Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-selection">Dimensionality Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot-understanding">Biplot Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-plots">Loading Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#score-plots">Score Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-uses">Real-World Uses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customer-segmentation">Customer Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-compression">Image Compression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-detection">Anomaly Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#document-clustering">Document Clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industry-examples">Industry Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retail-analytics">Retail Analytics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medical-diagnosis">Medical Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#social-network-analysis">Social Network Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendation-systems">Recommendation Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-tuning">Parameter Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods">Evaluation Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#result-interpretation">Result Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -488,7 +638,2220 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-unsupervised-learning">
 <h1>Chapter 4 - Unsupervised Learning<a class="headerlink" href="#chapter-4-unsupervised-learning" title="Link to this heading">#</a></h1>
+</section>
 <hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="clustering-algorithms">
+<h1>Clustering Algorithms<a class="headerlink" href="#clustering-algorithms" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<p>Think of clustering like organizing your closet - you group similar items together without anyone telling you the exact categories!</p>
+<section id="types-of-clustering">
+<h2>Types of Clustering<a class="headerlink" href="#types-of-clustering" title="Link to this heading">#</a></h2>
+<section id="k-means-clustering">
+<h3>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Link to this heading">#</a></h3>
+<p>Think of K-Means like organizing M&amp;Ms by color:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before:
+🔴🔵🟡🔵🔴🟡
+🟡🔴🔵🔴🟡🔵
+
+After (K=3):
+🔴🔴🔴 | 🔵🔵🔵 | 🟡🟡🟡
+</pre></div>
+</div>
+<p>Like having three bowls and:</p>
+<ul class="simple">
+<li><p>Picking 3 random M&amp;Ms as centers</p></li>
+<li><p>Putting each M&amp;M in the bowl with the most similar color</p></li>
+<li><p>Adjusting the “typical” color for each bowl</p></li>
+<li><p>Repeating until satisfied</p></li>
+</ul>
+</section>
+<section id="hierarchical-clustering">
+<h3>Hierarchical Clustering<a class="headerlink" href="#hierarchical-clustering" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing your family tree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>       Extended Family
+     ╱              ╲
+ Family A         Family B
+  ╱    ╲          ╱    ╲
+Mom&#39;s  Dad&#39;s    Aunt&#39;s Uncle&#39;s
+Side   Side     Side   Side
+</pre></div>
+</div>
+<p>Like organizing books:</p>
+<ul class="simple">
+<li><p>Start with each book alone</p></li>
+<li><p>Combine most similar pairs</p></li>
+<li><p>Keep combining until you have categories</p></li>
+<li><p>Can stop at any level (chapters, genres, authors)</p></li>
+</ul>
+</section>
+<section id="dbscan">
+<h3>DBSCAN<a class="headerlink" href="#dbscan" title="Link to this heading">#</a></h3>
+<p>Think of this like finding groups at a party:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Party Layout:
+👥👥👥    👤    👥👥
+👥👥👥    
+         👤
+   👥👥👥👥
+   👥👥👥👥
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Dense groups = Friend circles</p></li>
+<li><p>Scattered people = Loners</p></li>
+<li><p>People between groups = Connectors</p></li>
+</ul>
+</section>
+<section id="when-to-use-each-type">
+<h3>When to Use Each Type<a class="headerlink" href="#when-to-use-each-type" title="Link to this heading">#</a></h3>
+<p><strong>K-Means</strong>: Like organizing a store</p>
+<ul class="simple">
+<li><p>When you know how many sections you want</p></li>
+<li><p>Clear, separate groups</p></li>
+<li><p>Similar-sized groups</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Store</span> <span class="n">Sections</span><span class="p">:</span>
+<span class="p">[</span><span class="n">Fruits</span><span class="p">]</span> <span class="p">[</span><span class="n">Vegetables</span><span class="p">]</span> <span class="p">[</span><span class="n">Meats</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Hierarchical</strong>: Like organizing a library</p>
+<ul class="simple">
+<li><p>When you want different levels of organization</p></li>
+<li><p>When relationships matter</p></li>
+<li><p>When you need a tree structure</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Library:
+Fiction → Mystery → Cozy Mystery
+</pre></div>
+</div>
+<p><strong>DBSCAN</strong>: Like finding neighborhoods in a city</p>
+<ul class="simple">
+<li><p>When groups have different sizes</p></li>
+<li><p>When some items don’t belong anywhere</p></li>
+<li><p>When groups have irregular shapes</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>City Map:
+🏘️🏘️🏘️  🌳  🏢🏢
+🏘️🏘️🏘️      🏢🏢
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>K-Means: When you know number of groups</p></li>
+<li><p>Hierarchical: When you want levels of groups</p></li>
+<li><p>DBSCAN: When groups are irregular or noisy</p></li>
+</ul>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>K-Means: Sorting candy by color</p></li>
+<li><p>Hierarchical: Making family tree</p></li>
+<li><p>DBSCAN: Finding friend groups at party</p></li>
+</ul>
+<p>The key is choosing the right method for your data, just like choosing the right organization method for your closet!</p>
+</section>
+</section>
+<section id="k-means-deep-dive">
+<h2>K-Means Deep Dive<a class="headerlink" href="#k-means-deep-dive" title="Link to this heading">#</a></h2>
+<section id="how-k-means-works">
+<h3>How K-Means Works<a class="headerlink" href="#how-k-means-works" title="Link to this heading">#</a></h3>
+<p>Think of K-Means like organizing a messy room with storage boxes:</p>
+<p><strong>Step 1: Place Empty Boxes (Initial Centroids)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Room Layout:
+📦(Box 1)    📦(Box 2)
+    
+🧦👕👖   👗👔👚
+  👕👖     👗👚
+    
+📦(Box 3)
+</pre></div>
+</div>
+<p><strong>Step 2: Sort Items (Assign to Nearest)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Casual</span> <span class="n">Clothes</span>
+<span class="n">Box</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Formal</span> <span class="n">Clothes</span>
+<span class="n">Box</span> <span class="mi">3</span><span class="p">:</span> <span class="n">Accessories</span>
+</pre></div>
+</div>
+<p><strong>Step 3: Rearrange Boxes (Update Centroids)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Move</span> <span class="n">boxes</span> <span class="n">to</span> <span class="n">center</span> <span class="n">of</span> <span class="n">each</span> <span class="n">pile</span>
+<span class="n">Repeat</span> <span class="n">sorting</span> <span class="k">if</span> <span class="n">needed</span>
+</pre></div>
+</div>
+<p>Like playing musical chairs with your clothes until everything finds its perfect spot!</p>
+</section>
+<section id="choosing-k-value">
+<h3>Choosing K Value<a class="headerlink" href="#choosing-k-value" title="Link to this heading">#</a></h3>
+<p>Think of this like deciding how many drawers you need:</p>
+<p><strong>Too Few Drawers (K=2)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Drawer 1: All Clothes
+Drawer 2: All Accessories
+(Too mixed up!)
+</pre></div>
+</div>
+<p><strong>Too Many Drawers (K=10)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Drawer 1: Red Shirts
+Drawer 2: Blue Shirts
+Drawer 3: Green Shirts
+(Too specific!)
+</pre></div>
+</div>
+<p><strong>Just Right (K=4)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Drawer</span> <span class="mi">1</span><span class="p">:</span> <span class="n">Shirts</span>
+<span class="n">Drawer</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Pants</span>
+<span class="n">Drawer</span> <span class="mi">3</span><span class="p">:</span> <span class="n">Dresses</span>
+<span class="n">Drawer</span> <span class="mi">4</span><span class="p">:</span> <span class="n">Accessories</span>
+</pre></div>
+</div>
+</section>
+<section id="centroid-concept">
+<h3>Centroid Concept<a class="headerlink" href="#centroid-concept" title="Link to this heading">#</a></h3>
+<p>Think of centroids like team captains in playground sports:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Basketball Court:
+    👤(Captain 1)
+🏃‍♂️🏃‍♂️  
+  🏃‍♂️    👤(Captain 2)
+       🏃‍♂️🏃‍♂️
+         🏃‍♂️
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Captains (Centroids) represent their team</p></li>
+<li><p>Players join nearest captain</p></li>
+<li><p>Captains move to center of their team</p></li>
+<li><p>Process repeats until teams are stable</p></li>
+</ul>
+</section>
+<section id="elbow-method">
+<h3>Elbow Method<a class="headerlink" href="#elbow-method" title="Link to this heading">#</a></h3>
+<p>Think of this like finding the right number of pizza slices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Satisfaction vs Slices:
+Happy │    *
+      │   *
+      │  *
+      │ *     *     *
+      └─────────────────
+        2  4  6  8  10
+        Number of Slices
+</pre></div>
+</div>
+<p>Like pizza cutting:</p>
+<ul class="simple">
+<li><p>2 slices: Too big</p></li>
+<li><p>4 slices: Better</p></li>
+<li><p>6 slices: Perfect! (Elbow point)</p></li>
+<li><p>8+ slices: Not much improvement</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Mall Sections:
+K=2: Too broad (Just clothes/food)
+K=3: Better (Clothes/food/entertainment)
+K=4: Perfect! (Clothes/food/entertainment/services)
+K=5+: Starts splitting logical groups
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>K-Means is like organizing your room</p></li>
+<li><p>Centroids are like section markers</p></li>
+<li><p>Choosing K is like deciding number of sections</p></li>
+<li><p>Elbow method helps find the sweet spot</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Starting with empty boxes</p></li>
+<li><p>Putting items in nearest box</p></li>
+<li><p>Moving boxes to center of items</p></li>
+<li><p>Repeating until everything fits perfectly</p></li>
+</ul>
+<p>The goal is to find natural groups, just like organizing your closet into logical sections!</p>
+</section>
+</section>
+<section id="hierarchical-clustering-basics">
+<h2>Hierarchical Clustering Basics<a class="headerlink" href="#hierarchical-clustering-basics" title="Link to this heading">#</a></h2>
+<section id="dendrogram-understanding">
+<h3>Dendrogram Understanding<a class="headerlink" href="#dendrogram-understanding" title="Link to this heading">#</a></h3>
+<p>Think of a dendrogram like a family tree or an upside-down tree:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>           <span class="n">All</span> <span class="n">Animals</span>
+         <span class="o">/</span>           \
+    <span class="n">Pets</span>              <span class="n">Wild</span>
+   <span class="o">/</span>    \            <span class="o">/</span>    \
+<span class="n">Cats</span>    <span class="n">Dogs</span>    <span class="n">Lions</span>    <span class="n">Bears</span>
+<span class="o">/</span> \     <span class="o">/</span> \     <span class="o">/</span> \      <span class="o">/</span> \
+<span class="n">A</span> <span class="n">B</span>    <span class="n">C</span>   <span class="n">D</span>    <span class="n">E</span>  <span class="n">F</span>    <span class="n">G</span>   <span class="n">H</span>
+</pre></div>
+</div>
+<p>Like organizing a bookshelf:</p>
+<ul class="simple">
+<li><p>Individual books at bottom</p></li>
+<li><p>Similar books group together</p></li>
+<li><p>Groups combine into larger groups</p></li>
+<li><p>Finally, one big library</p></li>
+</ul>
+</section>
+<section id="bottom-up-vs-top-down">
+<h3>Bottom-up vs Top-down<a class="headerlink" href="#bottom-up-vs-top-down" title="Link to this heading">#</a></h3>
+<p><strong>Bottom-up (Agglomerative)</strong>
+Like building a pyramid with LEGO:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Start:  🔵 🔴 🟡 🟢 (Individual pieces)
+Step 1: [🔵🔴] 🟡 🟢 (Combine closest)
+Step 2: [🔵🔴] [🟡🟢] (Keep combining)
+Final: [🔵🔴🟡🟢] (One group)
+</pre></div>
+</div>
+<p><strong>Top-down (Divisive)</strong>
+Like cutting a cake into smaller pieces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Start:  [🔵🔴🟡🟢] (One big group)
+Step 1: [🔵🔴] [🟡🟢] (Split)
+Step 2: [🔵] [🔴] [🟡] [🟢] (Keep splitting)
+</pre></div>
+</div>
+</section>
+<section id="distance-metrics">
+<h3>Distance Metrics<a class="headerlink" href="#distance-metrics" title="Link to this heading">#</a></h3>
+<p>Think of this like measuring how similar two things are:</p>
+<p><strong>Euclidean Distance</strong>
+Like measuring with a ruler:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Point A •
+         \
+          \ (Direct line)
+           \
+            • Point B
+</pre></div>
+</div>
+<p><strong>Manhattan Distance</strong>
+Like driving through city blocks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A →→→→→→
+       ↓
+       ↓  (City blocks)
+       ↓
+       B
+</pre></div>
+</div>
+<p><strong>Cosine Similarity</strong>
+Like comparing directions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>North     Similar directions:
+  ↑         ↗  ↖
+  A         B  C
+</pre></div>
+</div>
+</section>
+<section id="linkage-methods">
+<h3>Linkage Methods<a class="headerlink" href="#linkage-methods" title="Link to this heading">#</a></h3>
+<p>Think of these like different ways to measure distance between groups:</p>
+<p><strong>Single Linkage</strong>
+Like measuring distance between closest neighbors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Group 1: 👥👥
+         Shortest→
+Group 2:    👥👥
+</pre></div>
+</div>
+<p><strong>Complete Linkage</strong>
+Like measuring distance between furthest neighbors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Group 1: 👥👥
+         Longest→
+Group 2:    👥👥
+</pre></div>
+</div>
+<p><strong>Average Linkage</strong>
+Like measuring average distance between all members:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Group 1: 👥👥
+         All paths→
+Group 2:    👥👥
+</pre></div>
+</div>
+<p><strong>Ward’s Method</strong>
+Like minimizing spread within groups:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good Split:     Bad Split:
+[👥👥] [👥👥]   [👥  👥] [👥  👥]
+(Tight)         (Spread out)
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Dendrograms show relationships</p></li>
+<li><p>Bottom-up builds from pieces</p></li>
+<li><p>Top-down splits whole into parts</p></li>
+<li><p>Distance metrics measure similarity</p></li>
+<li><p>Linkage methods decide group distances</p></li>
+</ul>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Building family tree (Dendrogram)</p></li>
+<li><p>Building with LEGO vs cutting cake (Bottom-up vs Top-down)</p></li>
+<li><p>Different ways to measure distance (Distance Metrics)</p></li>
+<li><p>Different ways to compare groups (Linkage Methods)</p></li>
+</ul>
+<p>The goal is to find natural hierarchies in your data, just like organizing a family photo album!</p>
+</section>
+</section>
+<section id="dbscan-essentials">
+<h2>DBSCAN Essentials<a class="headerlink" href="#dbscan-essentials" title="Link to this heading">#</a></h2>
+<p>Think of DBSCAN like finding groups at a busy park or mall - some areas are crowded, some have scattered people, and some areas are empty!</p>
+<section id="density-based-clustering">
+<h3>Density-Based Clustering<a class="headerlink" href="#density-based-clustering" title="Link to this heading">#</a></h3>
+<p>Imagine looking at a mall from above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dense Areas (Stores):
+🧍‍♂️🧍‍♀️🧍‍♂️  
+🧍‍♀️🧍‍♂️🧍‍♀️   🧍‍♂️🧍‍♀️🧍‍♂️
+🧍‍♂️🧍‍♀️🧍‍♂️   🧍‍♀️🧍‍♂️🧍‍♀️
+
+Scattered:    Empty:
+  🧍‍♂️   🧍‍♀️    
+    🧍‍♂️        ⬜⬜⬜
+  🧍‍♀️            
+</pre></div>
+</div>
+<p>Like finding popular spots:</p>
+<ul class="simple">
+<li><p>Food courts (dense clusters)</p></li>
+<li><p>Shopping aisles (scattered people)</p></li>
+<li><p>Empty corridors (noise)</p></li>
+</ul>
+</section>
+<section id="core-points">
+<h3>Core Points<a class="headerlink" href="#core-points" title="Link to this heading">#</a></h3>
+<p>Think of core points like popular kids at school:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Popular Kid (Core Point):
+       👤
+     ↙ ↓ ↘
+   👥  👥  👥
+     ↘ ↓ ↙
+       👥
+(Has many friends nearby)
+</pre></div>
+</div>
+<p>Characteristics:</p>
+<ul class="simple">
+<li><p>Like party hosts</p></li>
+<li><p>Many people around them</p></li>
+<li><p>Center of activity</p></li>
+<li><p>Influence their area</p></li>
+</ul>
+</section>
+<section id="border-points">
+<h3>Border Points<a class="headerlink" href="#border-points" title="Link to this heading">#</a></h3>
+<p>Think of border points like the quiet friends in a group:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Core Point → 👤  👥 ← Border Point
+             ↓
+            👥
+(Has some friends but not many)
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>People at edge of crowd</p></li>
+<li><p>Students at edge of friend group</p></li>
+<li><p>Houses at edge of neighborhood</p></li>
+</ul>
+</section>
+<section id="noise-points">
+<h3>Noise Points<a class="headerlink" href="#noise-points" title="Link to this heading">#</a></h3>
+<p>Think of noise points like lone wolves:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Groups:
+👥👥👥    👤    👥👥
+👥👥👥    ↑     👥👥
+         Noise
+         Point
+</pre></div>
+</div>
+<p>Like:</p>
+<ul class="simple">
+<li><p>Single shopper between stores</p></li>
+<li><p>Lone student at recess</p></li>
+<li><p>House far from neighborhood</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>City Map:
+🏘️🏘️🏘️ (Core: Downtown)
+🏘️🏘️🏘️
+  🏠   (Border: Suburbs)
+    🏠 (Noise: Rural)
+</pre></div>
+</div>
+<p>Remember DBSCAN is like:</p>
+<ul class="simple">
+<li><p>Finding popular hangout spots (Dense Areas)</p></li>
+<li><p>Identifying social butterflies (Core Points)</p></li>
+<li><p>Recognizing casual friends (Border Points)</p></li>
+<li><p>Spotting loners (Noise Points)</p></li>
+</ul>
+<p>Key Concepts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Core</span> <span class="n">Points</span><span class="p">:</span>    <span class="n">Have</span> <span class="n">many</span> <span class="n">neighbors</span>
+<span class="n">Border</span> <span class="n">Points</span><span class="p">:</span>  <span class="n">Near</span> <span class="n">core</span> <span class="n">points</span> <span class="n">but</span> <span class="n">fewer</span> <span class="n">neighbors</span>
+<span class="n">Noise</span> <span class="n">Points</span><span class="p">:</span>   <span class="n">Few</span> <span class="ow">or</span> <span class="n">no</span> <span class="n">neighbors</span>
+</pre></div>
+</div>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Looking for natural groups</p></li>
+<li><p>Not forcing specific shapes</p></li>
+<li><p>Allowing for outliers</p></li>
+<li><p>Finding density-based patterns</p></li>
+</ul>
+<p>Perfect for:</p>
+<ul class="simple">
+<li><p>Finding natural clusters</p></li>
+<li><p>Handling irregular shapes</p></li>
+<li><p>Identifying outliers</p></li>
+<li><p>Discovering patterns in crowded data</p></li>
+</ul>
+<p>Just like in real life, some things naturally group together, some stay at the edges, and some stand alone!</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dimensionality-reduction">
+<h1>Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="basic-concepts">
+<h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Link to this heading">#</a></h2>
+<section id="curse-of-dimensionality">
+<h3>Curse of Dimensionality<a class="headerlink" href="#curse-of-dimensionality" title="Link to this heading">#</a></h3>
+<p>Think of this like trying to find your friend in different places:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1D: Finding someone on a street
+    ←———————————→ (Easy!)
+
+2D: Finding in a mall
+    ↑
+    |
+    |  (Harder...)
+    ↓
+    ←———————————→
+
+3D: Finding in a skyscraper
+    🏢
+    Much harder!
+</pre></div>
+</div>
+<p>Like hiding a key:</p>
+<ul class="simple">
+<li><p>In a line: Easy to find</p></li>
+<li><p>In a room: Harder</p></li>
+<li><p>In a building: Very hard</p></li>
+<li><p>In a city: Nearly impossible!</p></li>
+</ul>
+</section>
+<section id="feature-space">
+<h3>Feature Space<a class="headerlink" href="#feature-space" title="Link to this heading">#</a></h3>
+<p>Think of feature space like describing a pizza:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simple</span> <span class="n">Description</span> <span class="p">(</span><span class="mi">2</span><span class="n">D</span><span class="p">):</span>
+<span class="o">-</span> <span class="n">Size</span>
+<span class="o">-</span> <span class="n">Price</span>
+
+<span class="n">Detailed</span> <span class="n">Description</span> <span class="p">(</span><span class="n">Many</span> <span class="n">D</span><span class="p">):</span>
+<span class="o">-</span> <span class="n">Size</span>
+<span class="o">-</span> <span class="n">Price</span>
+<span class="o">-</span> <span class="n">Toppings</span>
+<span class="o">-</span> <span class="n">Crust</span> <span class="nb">type</span>
+<span class="o">-</span> <span class="n">Sauce</span> <span class="n">amount</span>
+<span class="o">-</span> <span class="n">Cheese</span> <span class="nb">type</span>
+<span class="o">-</span> <span class="n">Cook</span> <span class="n">time</span>
+<span class="o">-</span> <span class="n">Temperature</span>
+</pre></div>
+</div>
+<p>Like describing a person:</p>
+<ul class="simple">
+<li><p>Basic: Height and weight</p></li>
+<li><p>Detailed: Height, weight, age, hair color, eye color, shoe size…</p></li>
+</ul>
+</section>
+<section id="data-compression">
+<h3>Data Compression<a class="headerlink" href="#data-compression" title="Link to this heading">#</a></h3>
+<p>Think of this like packing for a trip:</p>
+<p><strong>Before Compression:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Full Suitcase:
+👕 👖 👔 👗 👚
+🧦 👟 👞 👢 👠
+🧢 🧣 🧤 🧥 👜
+</pre></div>
+</div>
+<p><strong>After Compression:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Travel Bag:
+👕 👖 👟
+(Just essentials!)
+</pre></div>
+</div>
+<p>Like summarizing a movie:</p>
+<ul class="simple">
+<li><p>Full version: 2 hours</p></li>
+<li><p>Summary: 2 minutes</p></li>
+<li><p>Keep main plot, skip details</p></li>
+</ul>
+</section>
+<section id="information-preservation">
+<h3>Information Preservation<a class="headerlink" href="#information-preservation" title="Link to this heading">#</a></h3>
+<p>Think of this like making a smoothie:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Original Fruit:
+🍎 🍌 🍓 🫐
+
+Smoothie:
+🥤 (Still has nutrition, 
+    different form!)
+</pre></div>
+</div>
+<p>Like photo compression:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="p">(</span><span class="n">High</span><span class="o">-</span><span class="n">res</span><span class="p">):</span>
+<span class="p">[</span><span class="n">Detailed</span> <span class="n">Photo</span><span class="p">]</span>
+<span class="mi">10</span><span class="n">MB</span>
+
+<span class="n">Compressed</span> <span class="p">(</span><span class="n">Lower</span><span class="o">-</span><span class="n">res</span><span class="p">):</span>
+<span class="p">[</span><span class="n">Still</span> <span class="n">recognizable</span><span class="p">]</span>
+<span class="mi">1</span><span class="n">MB</span>
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Restaurant</span> <span class="n">Rating</span><span class="p">:</span>
+<span class="n">Full</span> <span class="n">Details</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Food</span> <span class="n">quality</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Service</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Ambiance</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Price</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Location</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">Compressed</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Overall</span> <span class="n">Rating</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">(</span><span class="n">One</span> <span class="n">number</span> <span class="n">capturing</span> <span class="n">essence</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>More dimensions = Harder analysis (Curse)</p></li>
+<li><p>Features = Ways to describe data (Space)</p></li>
+<li><p>Compression = Keep important stuff (Reduction)</p></li>
+<li><p>Preservation = Don’t lose meaning (Balance)</p></li>
+</ul>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Finding things (Curse of Dimensionality)</p></li>
+<li><p>Describing things (Feature Space)</p></li>
+<li><p>Packing efficiently (Data Compression)</p></li>
+<li><p>Keeping what matters (Information Preservation)</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Simplify without losing meaning</p></li>
+<li><p>Keep important patterns</p></li>
+<li><p>Make analysis easier</p></li>
+<li><p>Save resources</p></li>
+</ul>
+<p>Just like packing for a trip - take what you need, leave what you don’t!</p>
+</section>
+</section>
+<section id="reduction-techniques">
+<h2>Reduction Techniques<a class="headerlink" href="#reduction-techniques" title="Link to this heading">#</a></h2>
+<section id="linear-vs-non-linear">
+<h3>Linear vs Non-linear<a class="headerlink" href="#linear-vs-non-linear" title="Link to this heading">#</a></h3>
+<p>Think of this like folding paper:</p>
+<p><strong>Linear (Like folding a straight line)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Before</span><span class="p">:</span>
+<span class="o">------------</span>
+
+<span class="n">After</span><span class="p">:</span>
+<span class="o">------</span>
+</pre></div>
+</div>
+<p>Like summarizing height and weight into BMI:</p>
+<ul class="simple">
+<li><p>Simple straight-line relationships</p></li>
+<li><p>Easy to understand</p></li>
+<li><p>Can’t handle complex patterns</p></li>
+</ul>
+<p><strong>Non-linear (Like folding origami)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before:
+🗒️ Flat paper
+
+After:
+🦢 Complex swan
+</pre></div>
+</div>
+<p>Like converting 3D globe to 2D map:</p>
+<ul class="simple">
+<li><p>Can handle curved relationships</p></li>
+<li><p>More flexible</p></li>
+<li><p>Better for complex patterns</p></li>
+</ul>
+</section>
+<section id="feature-selection">
+<h3>Feature Selection<a class="headerlink" href="#feature-selection" title="Link to this heading">#</a></h3>
+<p>Think of this like packing for a vacation:</p>
+<p><strong>Important Features (Pack these)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Beach Trip Essentials:
+✓ Swimsuit
+✓ Sunscreen
+✓ Beach towel
+</pre></div>
+</div>
+<p><strong>Unimportant Features (Leave these)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Won&#39;t Need:
+✗ Winter coat
+✗ Snow boots
+✗ Umbrella
+</pre></div>
+</div>
+<p>Like choosing ingredients for a recipe:</p>
+<ul class="simple">
+<li><p>Keep: Salt, main ingredients</p></li>
+<li><p>Remove: Optional garnish, rare spices</p></li>
+</ul>
+</section>
+<section id="feature-extraction">
+<h3>Feature Extraction<a class="headerlink" href="#feature-extraction" title="Link to this heading">#</a></h3>
+<p>Think of this like making juice from fruits:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Fruits:
+🍎 🍊 🍇 → 🥤
+(Many ingredients into one drink)
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Student Grades:
+Math: 90
+Science: 85    →  GPA: 3.8
+English: 95
+History: 90
+</pre></div>
+</div>
+<p>Like creating a smoothie:</p>
+<ul class="simple">
+<li><p>Combine multiple ingredients</p></li>
+<li><p>Create new meaningful blend</p></li>
+<li><p>Preserve essential nutrients</p></li>
+</ul>
+</section>
+<section id="manifold-learning">
+<h3>Manifold Learning<a class="headerlink" href="#manifold-learning" title="Link to this heading">#</a></h3>
+<p>Think of this like understanding a rolled-up poster:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Rolled Poster:
+📜 (Looks 3D)
+But really is:
+📄 (2D when unrolled)
+</pre></div>
+</div>
+<p>Like discovering hidden simplicity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Complex</span> <span class="n">Dance</span> <span class="n">Move</span><span class="p">:</span>
+<span class="n">Looks</span> <span class="n">like</span><span class="p">:</span> <span class="n">Many</span> <span class="n">coordinates</span>
+<span class="n">Actually</span><span class="p">:</span> <span class="n">Simple</span> <span class="n">path</span> <span class="n">on</span> <span class="n">dance</span> <span class="n">floor</span>
+</pre></div>
+</div>
+<p>Real-World Examples:</p>
+<ol class="arabic simple">
+<li><p>Face Recognition</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Seems</span> <span class="n">Complex</span><span class="p">:</span>
+<span class="n">Thousands</span> <span class="n">of</span> <span class="n">pixels</span>
+
+<span class="n">Actually</span> <span class="n">Simple</span><span class="p">:</span>
+<span class="n">Few</span> <span class="n">key</span> <span class="n">features</span> <span class="p">(</span><span class="n">eyes</span><span class="p">,</span> <span class="n">nose</span><span class="p">,</span> <span class="n">mouth</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Writing Styles</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Looks</span> <span class="n">Complicated</span><span class="p">:</span>
+<span class="n">Millions</span> <span class="n">of</span> <span class="n">possible</span> <span class="n">letters</span>
+
+<span class="n">Actually</span> <span class="n">Simple</span><span class="p">:</span>
+<span class="n">Few</span> <span class="n">personal</span> <span class="n">writing</span> <span class="n">patterns</span>
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Linear vs Non-linear is like straight vs curved paths</p></li>
+<li><p>Feature Selection is like choosing what to pack</p></li>
+<li><p>Feature Extraction is like making juice</p></li>
+<li><p>Manifold Learning is like unrolling a poster</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Finding simple patterns (Linear/Non-linear)</p></li>
+<li><p>Keeping important stuff (Selection)</p></li>
+<li><p>Combining meaningfully (Extraction)</p></li>
+<li><p>Discovering hidden simplicity (Manifold)</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Simplify complex data</p></li>
+<li><p>Keep important patterns</p></li>
+<li><p>Create meaningful combinations</p></li>
+<li><p>Find hidden structure</p></li>
+</ul>
+<p>Just like organizing a messy room - there’s usually a simpler way to arrange everything!</p>
+</section>
+</section>
+<section id="pca-fundamentals">
+<h2>PCA Fundamentals<a class="headerlink" href="#pca-fundamentals" title="Link to this heading">#</a></h2>
+<section id="principal-components">
+<h3>Principal Components<a class="headerlink" href="#principal-components" title="Link to this heading">#</a></h3>
+<p>Think of principal components like taking photos of a building:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Building Views:
+Front View (Most Important)
+│█████████│
+│  □   □  │
+│    □    │
+│   ───   │
+
+Side View (Less Important)
+│█████│
+│  □  │
+│  □  │
+</pre></div>
+</div>
+<p>Like taking the best angles:</p>
+<ul class="simple">
+<li><p>First component: Best view (most information)</p></li>
+<li><p>Second component: Next best view</p></li>
+<li><p>Each view shows different important aspects</p></li>
+</ul>
+</section>
+<section id="variance-explained">
+<h3>Variance Explained<a class="headerlink" href="#variance-explained" title="Link to this heading">#</a></h3>
+<p>Think of this like explaining a pizza’s taste:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Pizza Characteristics:
+1. Cheese (50% of taste)
+    ████████████
+2. Sauce (30% of taste)
+    ███████
+3. Crust (15% of taste)
+    ████
+4. Herbs (5% of taste)
+    █
+</pre></div>
+</div>
+<p>Like explaining a movie:</p>
+<ul class="simple">
+<li><p>Main plot (60% of story)</p></li>
+<li><p>Subplot (25% of story)</p></li>
+<li><p>Minor details (15% of story)</p></li>
+</ul>
+</section>
+<section id="scree-plots">
+<h3>Scree Plots<a class="headerlink" href="#scree-plots" title="Link to this heading">#</a></h3>
+<p>Think of this like measuring importance of ingredients in a recipe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Importance
+   │
+   │███
+   │  ██
+   │    █    █   █
+   └──────────────
+     1  2  3  4  5
+   Components
+</pre></div>
+</div>
+<p>Like TV show ratings across seasons:</p>
+<ul class="simple">
+<li><p>Season 1: Huge impact</p></li>
+<li><p>Season 2: Good impact</p></li>
+<li><p>Seasons 3-5: Minor impact</p></li>
+</ul>
+</section>
+<section id="component-selection">
+<h3>Component Selection<a class="headerlink" href="#component-selection" title="Link to this heading">#</a></h3>
+<p>Think of this like packing a suitcase efficiently:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">What</span> <span class="n">to</span> <span class="n">Pack</span><span class="p">:</span>
+<span class="n">Essential</span> <span class="p">(</span><span class="mi">80</span><span class="o">%</span> <span class="n">importance</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Clothes</span>
+<span class="o">-</span> <span class="n">Toiletries</span>
+
+<span class="n">Good</span> <span class="n">to</span> <span class="n">Have</span> <span class="p">(</span><span class="mi">15</span><span class="o">%</span> <span class="n">importance</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Books</span>
+<span class="o">-</span> <span class="n">Snacks</span>
+
+<span class="n">Optional</span> <span class="p">(</span><span class="mi">5</span><span class="o">%</span> <span class="n">importance</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Extra</span> <span class="n">shoes</span>
+<span class="o">-</span> <span class="n">Games</span>
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Student</span> <span class="n">Performance</span><span class="p">:</span>
+<span class="n">Major</span> <span class="n">Factors</span> <span class="p">(</span><span class="n">Keep</span> <span class="n">these</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Study</span> <span class="n">time</span> <span class="p">(</span><span class="mi">40</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Attendance</span> <span class="p">(</span><span class="mi">35</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Sleep</span> <span class="p">(</span><span class="mi">15</span><span class="o">%</span><span class="p">)</span>
+
+<span class="n">Minor</span> <span class="n">Factors</span> <span class="p">(</span><span class="n">Can</span> <span class="n">skip</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Desk</span> <span class="n">color</span> <span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Pencil</span> <span class="n">brand</span> <span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember PCA is like:</p>
+<ul class="simple">
+<li><p>Taking best photos (Principal Components)</p></li>
+<li><p>Understanding importance (Variance Explained)</p></li>
+<li><p>Seeing importance drop-off (Scree Plot)</p></li>
+<li><p>Choosing what matters (Component Selection)</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Finding main ingredients in recipe</p></li>
+<li><p>Keeping important views of object</p></li>
+<li><p>Understanding what matters most</p></li>
+<li><p>Deciding what to keep</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Find most important aspects</p></li>
+<li><p>Measure their importance</p></li>
+<li><p>See where importance drops</p></li>
+<li><p>Keep just enough components</p></li>
+</ul>
+<p>Just like a good summary:</p>
+<ul class="simple">
+<li><p>Capture main points</p></li>
+<li><p>Skip minor details</p></li>
+<li><p>Keep what’s important</p></li>
+<li><p>Make it simpler but accurate!</p></li>
+</ul>
+</section>
+</section>
+<section id="t-sne-basics">
+<h2>t-SNE Basics<a class="headerlink" href="#t-sne-basics" title="Link to this heading">#</a></h2>
+<section id="high-dimensional-data">
+<h3>High-Dimensional Data<a class="headerlink" href="#high-dimensional-data" title="Link to this heading">#</a></h3>
+<p>Think of this like describing a person:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simple</span> <span class="n">Description</span> <span class="p">(</span><span class="mi">2</span><span class="n">D</span><span class="p">):</span>
+<span class="o">-</span> <span class="n">Height</span>
+<span class="o">-</span> <span class="n">Weight</span>
+
+<span class="n">Complex</span> <span class="n">Description</span> <span class="p">(</span><span class="n">High</span><span class="o">-</span><span class="n">D</span><span class="p">):</span>
+<span class="o">-</span> <span class="n">Height</span>
+<span class="o">-</span> <span class="n">Weight</span>
+<span class="o">-</span> <span class="n">Age</span>
+<span class="o">-</span> <span class="n">Hair</span> <span class="n">color</span>
+<span class="o">-</span> <span class="n">Eye</span> <span class="n">color</span>
+<span class="o">-</span> <span class="n">Voice</span> <span class="n">pitch</span>
+<span class="o">-</span> <span class="n">Walking</span> <span class="n">speed</span>
+<span class="o">-</span> <span class="n">Favorite</span> <span class="n">foods</span>
+<span class="o">-</span> <span class="n">Music</span> <span class="n">taste</span>
+<span class="o">-</span> <span class="n">And</span> <span class="n">many</span> <span class="n">more</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Like trying to describe a cake:</p>
+<ul class="simple">
+<li><p>Basic: Sweet and round</p></li>
+<li><p>Detailed: Every ingredient, texture, temperature, cooking time, etc.</p></li>
+</ul>
+</section>
+<section id="visualization">
+<h3>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h3>
+<p>Think of t-SNE like creating a yearbook photo layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before (Messy):
+📸📸📸📸
+📸📸📸📸 (Random photos)
+📸📸📸📸
+
+After (Organized):
+👥👥 (Similar friends together)
+  👥👥
+    👥👥
+</pre></div>
+</div>
+<p>Like organizing a party:</p>
+<ul class="simple">
+<li><p>People naturally cluster with friends</p></li>
+<li><p>Similar groups stay close</p></li>
+<li><p>Different groups spread apart</p></li>
+</ul>
+</section>
+<section id="perplexity-parameter">
+<h3>Perplexity Parameter<a class="headerlink" href="#perplexity-parameter" title="Link to this heading">#</a></h3>
+<p>Think of this like adjusting your social circle size:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Small Perplexity (Close Friends):
+👤 ← looks at 5-10 nearest people
+[Small, tight groups]
+
+Medium Perplexity (Social Circle):
+👤 ← looks at 30-50 people
+[Medium-sized groups]
+
+Large Perplexity (Community):
+👤 ← looks at 100+ people
+[Large, loose groups]
+</pre></div>
+</div>
+<p>Like choosing party planning:</p>
+<ul class="simple">
+<li><p>Small dinner party (intimate)</p></li>
+<li><p>Medium gathering (balanced)</p></li>
+<li><p>Large celebration (broader connections)</p></li>
+</ul>
+</section>
+<section id="use-cases">
+<h3>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h3>
+<p><strong>1. Image Organization</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Photo Library:
+Before:
+🌅🐱🌃🐶🌄🐰
+
+After (Grouped):
+Nature: 🌅🌄🌃
+Pets: 🐱🐶🐰
+</pre></div>
+</div>
+<p><strong>2. Document Clustering</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>News Articles:
+Sports   Politics
+  📰       📰
+📰 📰   📰 📰
+  📰       📰
+</pre></div>
+</div>
+<p><strong>3. Gene Expression</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cell Types:
+Type A: ⭐⭐⭐
+Type B: ✨✨✨
+Type C: 💫💫💫
+(Similar cells cluster together)
+</pre></div>
+</div>
+<p>Remember t-SNE is like:</p>
+<ul class="simple">
+<li><p>Organizing a huge party (High-D Data)</p></li>
+<li><p>Arranging people by similarity (Visualization)</p></li>
+<li><p>Deciding group sizes (Perplexity)</p></li>
+<li><p>Finding natural clusters (Use Cases)</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Taking complex descriptions</p></li>
+<li><p>Making them visually meaningful</p></li>
+<li><p>Adjusting how we group things</p></li>
+<li><p>Finding natural patterns</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Simplify complex data</p></li>
+<li><p>Show relationships clearly</p></li>
+<li><p>Maintain important patterns</p></li>
+<li><p>Make sense of chaos</p></li>
+</ul>
+<p>Just like organizing a huge family photo:</p>
+<ul class="simple">
+<li><p>Keep related people together</p></li>
+<li><p>Show relationships clearly</p></li>
+<li><p>Decide on group sizes</p></li>
+<li><p>Make it visually meaningful!</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="association-rules">
+<h1>Association Rules<a class="headerlink" href="#association-rules" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="market-basket-analysis">
+<h2>Market Basket Analysis<a class="headerlink" href="#market-basket-analysis" title="Link to this heading">#</a></h2>
+<p>Think of this like being a super-observant grocery store manager who notices what customers buy together!</p>
+<section id="item-sets">
+<h3>Item Sets<a class="headerlink" href="#item-sets" title="Link to this heading">#</a></h3>
+<p>Think of item sets like common shopping combinations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Common Pairs:
+🍔 + 🍟 (Burger + Fries)
+🥛 + 🍪 (Milk + Cookies)
+🍝 + 🍷 (Pasta + Wine)
+
+Common Triples:
+🥪 + 🥤 + 🍌 (Lunch Combo)
+🌮 + 🍚 + 🥑 (Mexican Dinner)
+</pre></div>
+</div>
+<p>Like observing natural groupings:</p>
+<ul class="simple">
+<li><p>Breakfast items</p></li>
+<li><p>Baking ingredients</p></li>
+<li><p>Party supplies</p></li>
+</ul>
+</section>
+<section id="support">
+<h3>Support<a class="headerlink" href="#support" title="Link to this heading">#</a></h3>
+<p>Think of support like popularity rating:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Item</span> <span class="n">Popularity</span><span class="p">:</span>
+<span class="n">Total</span> <span class="n">Baskets</span><span class="p">:</span> <span class="mi">100</span>
+
+<span class="n">Bread</span><span class="p">:</span> <span class="mi">60</span> <span class="n">baskets</span>
+<span class="n">Support</span> <span class="o">=</span> <span class="mi">60</span><span class="o">/</span><span class="mi">100</span> <span class="o">=</span> <span class="mi">60</span><span class="o">%</span>
+
+<span class="n">Bread</span> <span class="o">+</span> <span class="n">Butter</span><span class="p">:</span> <span class="mi">40</span> <span class="n">baskets</span>
+<span class="n">Support</span> <span class="o">=</span> <span class="mi">40</span><span class="o">/</span><span class="mi">100</span> <span class="o">=</span> <span class="mi">40</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>Like measuring how common something is:</p>
+<ul class="simple">
+<li><p>How many people buy ice cream</p></li>
+<li><p>How often pairs appear together</p></li>
+<li><p>Percentage of common combinations</p></li>
+</ul>
+</section>
+<section id="confidence">
+<h3>Confidence<a class="headerlink" href="#confidence" title="Link to this heading">#</a></h3>
+<p>Think of confidence like prediction accuracy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">If</span> <span class="n">someone</span> <span class="n">buys</span> <span class="n">chips</span> <span class="p">(</span><span class="mi">100</span> <span class="n">people</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">80</span> <span class="n">also</span> <span class="n">buy</span> <span class="n">soda</span>
+<span class="n">Confidence</span> <span class="o">=</span> <span class="mi">80</span><span class="o">%</span>
+
+<span class="n">If</span> <span class="n">someone</span> <span class="n">buys</span> <span class="n">hotdogs</span> <span class="p">(</span><span class="mi">50</span> <span class="n">people</span><span class="p">):</span>
+<span class="o">-</span> <span class="mi">45</span> <span class="n">also</span> <span class="n">buy</span> <span class="n">buns</span>
+<span class="n">Confidence</span> <span class="o">=</span> <span class="mi">90</span><span class="o">%</span>
+</pre></div>
+</div>
+<p>Like making predictions:</p>
+<ul class="simple">
+<li><p>If it rains, will people buy umbrellas?</p></li>
+<li><p>If someone buys flour, will they buy sugar?</p></li>
+<li><p>If someone buys pasta, will they buy sauce?</p></li>
+</ul>
+</section>
+<section id="lift">
+<h3>Lift<a class="headerlink" href="#lift" title="Link to this heading">#</a></h3>
+<p>Think of lift like measuring true relationships:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Regular Shopping:
+Bread bought by: 60%
+Butter bought by: 50%
+Together: 40%
+
+Expected together: 30% (60% × 50%)
+Actual together: 40%
+Lift = 40%/30% = 1.33
+</pre></div>
+</div>
+<p>Like discovering real connections:</p>
+<ul class="simple">
+<li><p>Higher than 1: True relationship</p></li>
+<li><p>Equal to 1: Just coincidence</p></li>
+<li><p>Less than 1: Avoid each other</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Diaper and Beer Story:
+Diapers bought by: 30%
+Beer bought by: 40%
+Together: 20%
+
+Expected: 12% (30% × 40%)
+Actual: 20%
+Lift = 1.67 (Strong relationship!)
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Item Sets: What goes together</p></li>
+<li><p>Support: How common it is</p></li>
+<li><p>Confidence: How reliable the pattern is</p></li>
+<li><p>Lift: How real the relationship is</p></li>
+</ul>
+<p>Think of it like:</p>
+<ul class="simple">
+<li><p>Item Sets: Recipe ingredients</p></li>
+<li><p>Support: Recipe popularity</p></li>
+<li><p>Confidence: Recipe success rate</p></li>
+<li><p>Lift: Recipe uniqueness</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Find natural combinations</p></li>
+<li><p>Measure their frequency</p></li>
+<li><p>Predict buying patterns</p></li>
+<li><p>Discover true relationships</p></li>
+</ul>
+<p>Just like a good chef knows:</p>
+<ul class="simple">
+<li><p>Which ingredients go together</p></li>
+<li><p>How popular dishes are</p></li>
+<li><p>What customers will order</p></li>
+<li><p>Which combinations are special!</p></li>
+</ul>
+</section>
+</section>
+<section id="rule-generation">
+<h2>Rule Generation<a class="headerlink" href="#rule-generation" title="Link to this heading">#</a></h2>
+<section id="apriori-algorithm">
+<h3>Apriori Algorithm<a class="headerlink" href="#apriori-algorithm" title="Link to this heading">#</a></h3>
+<p>Think of this like a smart grocery store manager learning shopping patterns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Cart Analysis:
+Step 1: Find Common Items
+🥖 Bread (80% of carts)
+🥛 Milk (75% of carts)
+🥚 Eggs (70% of carts)
+
+Step 2: Find Common Pairs
+🥖+🥛 (70% together)
+🥛+🥚 (65% together)
+🥖+🥚 (60% together)
+
+Step 3: Find Common Trios
+🥖+🥛+🥚 (55% together)
+</pre></div>
+</div>
+<p>Like detective work:</p>
+<ul class="simple">
+<li><p>Start with obvious clues</p></li>
+<li><p>Look for connections</p></li>
+<li><p>Build bigger patterns</p></li>
+</ul>
+</section>
+<section id="frequent-patterns">
+<h3>Frequent Patterns<a class="headerlink" href="#frequent-patterns" title="Link to this heading">#</a></h3>
+<p>Think of this like finding habits in daily routines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Morning Routine Patterns:
+Common:
+Wake → Coffee → Breakfast (80%)
+Wake → Shower → Dress (75%)
+
+Less Common:
+Wake → Exercise → Shower (30%)
+Wake → News → Coffee (25%)
+</pre></div>
+</div>
+<p>Like spotting patterns in a restaurant:</p>
+<ul class="simple">
+<li><p>Weekend crowds</p></li>
+<li><p>Lunch rush items</p></li>
+<li><p>Weather-related orders</p></li>
+</ul>
+</section>
+<section id="rule-evaluation">
+<h3>Rule Evaluation<a class="headerlink" href="#rule-evaluation" title="Link to this heading">#</a></h3>
+<p>Think of this like understanding friendship strengths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Support (How common):
+&quot;How many people buy both items?&quot;
+🍔+🍟 = 70% of orders
+
+Confidence (How reliable):
+&quot;If they buy 🍔, how often do they add 🍟?&quot;
+🍔 → 🍟 = 90% chance
+
+Lift (How special):
+&quot;Is this combination special or just random?&quot;
+&gt; 1: Special connection
+= 1: Random occurrence
+&lt; 1: Negative connection
+</pre></div>
+</div>
+</section>
+<section id="pruning-strategies">
+<h3>Pruning Strategies<a class="headerlink" href="#pruning-strategies" title="Link to this heading">#</a></h3>
+<p>Think of this like cleaning up a messy closet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before Pruning:
+👕+👖 = Common
+👕+👖+👟 = Common
+👕+👖+👟+🧦 = Rare
+👕+🎩 = Very Rare
+
+After Pruning:
+Keep: 👕+👖, 👕+👖+👟
+Remove: Rare combinations
+</pre></div>
+</div>
+<p>Like organizing a menu:</p>
+<ul class="simple">
+<li><p>Keep popular combinations</p></li>
+<li><p>Remove rarely ordered items</p></li>
+<li><p>Focus on strong patterns</p></li>
+</ul>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Apriori is like smart shopping analysis</p></li>
+<li><p>Patterns are like daily habits</p></li>
+<li><p>Evaluation is like measuring friendships</p></li>
+<li><p>Pruning is like closet organization</p></li>
+</ul>
+<p>Think of it as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Finding</span> <span class="n">Patterns</span><span class="p">:</span>
+<span class="n">Good</span><span class="p">:</span> <span class="n">Bread</span> <span class="o">+</span> <span class="n">Butter</span> <span class="p">(</span><span class="n">Keep</span><span class="p">)</span>
+<span class="n">OK</span><span class="p">:</span> <span class="n">Bread</span> <span class="o">+</span> <span class="n">Jam</span> <span class="p">(</span><span class="n">Maybe</span> <span class="n">Keep</span><span class="p">)</span>
+<span class="n">Rare</span><span class="p">:</span> <span class="n">Bread</span> <span class="o">+</span> <span class="n">Shampoo</span> <span class="p">(</span><span class="n">Remove</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Find meaningful patterns</p></li>
+<li><p>Measure their strength</p></li>
+<li><p>Keep useful ones</p></li>
+<li><p>Remove noise</p></li>
+</ul>
+<p>Just like a good store manager:</p>
+<ul class="simple">
+<li><p>Notices what sells together</p></li>
+<li><p>Understands customer habits</p></li>
+<li><p>Makes smart recommendations</p></li>
+<li><p>Removes unpopular items</p></li>
+</ul>
+</section>
+</section>
+<section id="implementation-considerations">
+<h2>Implementation Considerations<a class="headerlink" href="#implementation-considerations" title="Link to this heading">#</a></h2>
+<section id="minimum-support">
+<h3>Minimum Support<a class="headerlink" href="#minimum-support" title="Link to this heading">#</a></h3>
+<p>Think of this like deciding what’s “popular” in a school:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>School Club Membership:
+Chess Club:   50/500 students (10%)
+Drama Club:   100/500 students (20%)
+Sports Team:  200/500 students (40%)
+
+If Minimum Support = 15%:
+❌ Chess Club (too small)
+✓ Drama Club (included)
+✓ Sports Team (included)
+</pre></div>
+</div>
+<p>Like a grocery store deciding what to stock:</p>
+<ul class="simple">
+<li><p>Must sell at least 100 units/month</p></li>
+<li><p>Must be bought by at least 10% of customers</p></li>
+<li><p>Must appear in at least 50 transactions/week</p></li>
+</ul>
+</section>
+<section id="minimum-confidence">
+<h3>Minimum Confidence<a class="headerlink" href="#minimum-confidence" title="Link to this heading">#</a></h3>
+<p>Think of this like making predictions about friends:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Friend Behavior Rules:
+&quot;If Amy goes to the movies, she buys popcorn&quot;
+- Movies visits: 10
+- Popcorn purchases: 8
+- Confidence: 8/10 = 80%
+
+If Minimum Confidence = 75%:
+✓ Amy &amp; Popcorn (80% - Keep rule)
+❌ Amy &amp; Soda (60% - Ignore rule)
+</pre></div>
+</div>
+<p>Like restaurant recommendations:</p>
+<ul class="simple">
+<li><p>“If you liked pasta, you’ll like pizza” (90% confidence)</p></li>
+<li><p>“If you ordered salad, you might want dessert” (40% confidence)</p></li>
+</ul>
+</section>
+<section id="rule-selection">
+<h3>Rule Selection<a class="headerlink" href="#rule-selection" title="Link to this heading">#</a></h3>
+<p>Think of this like creating a cookbook:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Recipe Combinations:
+Strong Rules:
+🍝 Pasta → 🧀 Parmesan (95%)
+🌮 Tacos → 🥑 Guacamole (90%)
+
+Weak Rules:
+🍕 Pizza → 🥤 Soda (45%)
+🥗 Salad → 🍞 Bread (30%)
+</pre></div>
+</div>
+<p>Selection Criteria:</p>
+<ol class="arabic simple">
+<li><p>High confidence rules</p></li>
+<li><p>Logical connections</p></li>
+<li><p>Actionable insights</p></li>
+</ol>
+</section>
+<section id="performance-tips">
+<h3>Performance Tips<a class="headerlink" href="#performance-tips" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing a supermarket efficiently:</p>
+<p><strong>1. Smart Scanning</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Good Strategy:
+Start with popular items
+↓
+Check their combinations
+↓
+Ignore rare items
+
+Like:
+📦 Bread (Common)
+  ↓
+🥛 Milk (Check)
+  ↓
+🦞 Lobster (Skip - too rare)
+</pre></div>
+</div>
+<p><strong>2. Memory Management</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Smart Storage:
+Frequent Items:   📦 (Keep in front)
+Regular Items:    📦 (Middle shelves)
+Rare Items:      📦 (Back storage)
+</pre></div>
+</div>
+<p><strong>3. Efficient Processing</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Cart Analysis:
+Round 1: Count single items
+[🍞, 🥛, 🧀]
+
+Round 2: Check pairs
+[🍞+🥛], [🍞+🧀], [🥛+🧀]
+
+Round 3: Check triplets
+[🍞+🥛+🧀]
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Minimum Support = Is it common enough?</p></li>
+<li><p>Minimum Confidence = Is it reliable?</p></li>
+<li><p>Rule Selection = Is it useful?</p></li>
+<li><p>Performance = Is it efficient?</p></li>
+</ul>
+<p>Think of it like running a store:</p>
+<ul class="simple">
+<li><p>Stock popular items (Support)</p></li>
+<li><p>Make reliable recommendations (Confidence)</p></li>
+<li><p>Choose useful promotions (Selection)</p></li>
+<li><p>Organize efficiently (Performance)</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Find meaningful patterns</p></li>
+<li><p>Make reliable predictions</p></li>
+<li><p>Choose useful rules</p></li>
+<li><p>Process efficiently</p></li>
+</ul>
+<p>Just like a good store manager:</p>
+<ul class="simple">
+<li><p>Knows what’s popular</p></li>
+<li><p>Makes good recommendations</p></li>
+<li><p>Chooses smart promotions</p></li>
+<li><p>Runs operations efficiently!</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="principal-component-analysis">
+<h1>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="core-concepts">
+<h2>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h2>
+<section id="eigenvectors">
+<h3>Eigenvectors<a class="headerlink" href="#eigenvectors" title="Link to this heading">#</a></h3>
+<p>Think of eigenvectors like the main directions in a gym:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Gym Equipment Layout:
+      ↑ 
+      │ Treadmills
+←─────┼─────→ Weight Machines
+      │
+      ↓
+</pre></div>
+</div>
+<p>Like the main aisles in a supermarket:</p>
+<ul class="simple">
+<li><p>One aisle for produce</p></li>
+<li><p>Another for dairy</p></li>
+<li><p>Each aisle represents a main direction</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>The “natural” ways things are organized</p></li>
+<li><p>The primary directions of movement</p></li>
+<li><p>The most important paths through data</p></li>
+</ul>
+</section>
+<section id="eigenvalues">
+<h3>Eigenvalues<a class="headerlink" href="#eigenvalues" title="Link to this heading">#</a></h3>
+<p>Think of eigenvalues like importance ratings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Mall Directory:
+Main Street: ⭐⭐⭐⭐⭐ (High value)
+Side Alley: ⭐⭐ (Lower value)
+Back Path:  ⭐ (Lowest value)
+</pre></div>
+</div>
+<p>Like TV show ratings:</p>
+<ul class="simple">
+<li><p>Season 1: 10 million viewers (important)</p></li>
+<li><p>Season 2: 5 million viewers (less important)</p></li>
+<li><p>Season 3: 1 million viewers (least important)</p></li>
+</ul>
+</section>
+<section id="covariance-matrix">
+<h3>Covariance Matrix<a class="headerlink" href="#covariance-matrix" title="Link to this heading">#</a></h3>
+<p>Think of this like a friendship map:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Friend Relations:
+         Amy  Bob  Cal
+Amy      😊   😐   🙁
+Bob      😐   😊   😊
+Cal      🙁   😊   😊
+
+😊 = Strong relationship
+😐 = Moderate relationship
+🙁 = Weak relationship
+</pre></div>
+</div>
+<p>Like tracking how things move together:</p>
+<ul class="simple">
+<li><p>Ice cream sales &amp; temperature (strong relationship)</p></li>
+<li><p>Umbrella sales &amp; sunshine (negative relationship)</p></li>
+<li><p>Shoe sales &amp; rainfall (no relationship)</p></li>
+</ul>
+</section>
+<section id="orthogonality">
+<h3>Orthogonality<a class="headerlink" href="#orthogonality" title="Link to this heading">#</a></h3>
+<p>Think of orthogonality like organizing a closet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Closet Organization:
+↑ Height of clothes
+→ Type of clothes
+
+Can&#39;t mix these directions!
+</pre></div>
+</div>
+<p>Like TV remote controls:</p>
+<ul class="simple">
+<li><p>Volume (up/down)</p></li>
+<li><p>Channel (left/right)</p></li>
+<li><p>Completely independent controls</p></li>
+</ul>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Car Features:
+Speed   ↑
+        │
+        │
+        └──────→ Weight
+(Independent measurements)
+</pre></div>
+</div>
+<p>Remember PCA concepts are like:</p>
+<ul class="simple">
+<li><p>Eigenvectors = Main streets in a city</p></li>
+<li><p>Eigenvalues = Street importance</p></li>
+<li><p>Covariance = How things relate</p></li>
+<li><p>Orthogonality = Independent directions</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Finding main paths (Eigenvectors)</p></li>
+<li><p>Rating their importance (Eigenvalues)</p></li>
+<li><p>Understanding relationships (Covariance)</p></li>
+<li><p>Keeping things independent (Orthogonality)</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Find natural directions in data</p></li>
+<li><p>Measure their importance</p></li>
+<li><p>Understand relationships</p></li>
+<li><p>Keep measurements independent</p></li>
+</ul>
+<p>Just like organizing a room:</p>
+<ul class="simple">
+<li><p>Find main layout directions</p></li>
+<li><p>Decide what’s important</p></li>
+<li><p>See how things relate</p></li>
+<li><p>Keep categories separate</p></li>
+</ul>
+<p>It’s all about finding the natural structure in your data!</p>
+</section>
+</section>
+<section id="pca-process">
+<h2>PCA Process<a class="headerlink" href="#pca-process" title="Link to this heading">#</a></h2>
+<section id="data-standardization">
+<h3>Data Standardization<a class="headerlink" href="#data-standardization" title="Link to this heading">#</a></h3>
+<p>Think of this like standardizing recipe measurements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="n">Recipe</span><span class="p">:</span>
+<span class="mi">2</span> <span class="n">cups</span> <span class="n">flour</span>
+<span class="mi">3</span> <span class="n">tablespoons</span> <span class="n">sugar</span>
+<span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="n">teaspoon</span> <span class="n">salt</span>
+
+<span class="n">Standardized</span> <span class="p">(</span><span class="n">Everything</span> <span class="ow">in</span> <span class="n">grams</span><span class="p">):</span>
+<span class="mi">240</span><span class="n">g</span> <span class="n">flour</span>
+<span class="mi">45</span><span class="n">g</span> <span class="n">sugar</span>
+<span class="mi">3</span><span class="n">g</span> <span class="n">salt</span>
+</pre></div>
+</div>
+<p>Like comparing students’ scores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Raw</span> <span class="n">Scores</span><span class="p">:</span>
+<span class="n">Math</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">100</span>
+<span class="n">Reading</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">5</span>
+<span class="n">Writing</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">10</span>
+
+<span class="n">Standardized</span><span class="p">:</span>
+<span class="n">All</span> <span class="n">subjects</span><span class="p">:</span> <span class="mi">0</span><span class="o">-</span><span class="mi">1</span> <span class="n">scale</span>
+</pre></div>
+</div>
+</section>
+<section id="component-calculation">
+<h3>Component Calculation<a class="headerlink" href="#component-calculation" title="Link to this heading">#</a></h3>
+<p>Think of this like finding the best angle for a group photo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>First Angle (1st Component):
+👥👥👥  Get maximum
+👥👥👥  people in frame
+👥👥👥
+
+Second Angle (2nd Component):
+   ↗️
+→️👥←️  Capture height
+   ↙️    differences
+</pre></div>
+</div>
+<p>Like organizing books on shelves:</p>
+<ul class="simple">
+<li><p>First shelf: By height (main difference)</p></li>
+<li><p>Second shelf: By width (next biggest difference)</p></li>
+<li><p>Third shelf: By color (remaining variation)</p></li>
+</ul>
+</section>
+<section id="variance-explanation">
+<h3>Variance Explanation<a class="headerlink" href="#variance-explanation" title="Link to this heading">#</a></h3>
+<p>Think of this like explaining why students pass/fail:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Success Factors:
+Study Time:     50% │████████
+Sleep:          30% │██████
+Diet:           15% │███
+Room Color:      5% │█
+
+Total Explained: 100%
+</pre></div>
+</div>
+<p>Like recipe importance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cake Success:
+Ingredients: 60% │██████
+Temperature: 25% │███
+Mixing Time: 10% │██
+Pan Type:     5% │█
+</pre></div>
+</div>
+</section>
+<section id="dimensionality-selection">
+<h3>Dimensionality Selection<a class="headerlink" href="#dimensionality-selection" title="Link to this heading">#</a></h3>
+<p>Think of this like packing for a trip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Importance Scale:
+Essential │████████ (Must Pack)
+Useful    │██████   (Consider)
+Optional  │███      (Maybe)
+Trivial   │█        (Leave)
+</pre></div>
+</div>
+<p>Real-World Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Movie</span> <span class="n">Rating</span> <span class="n">Factors</span><span class="p">:</span>
+<span class="n">Keep</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Plot</span> <span class="p">(</span><span class="mi">40</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Acting</span> <span class="p">(</span><span class="mi">30</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Effects</span> <span class="p">(</span><span class="mi">20</span><span class="o">%</span><span class="p">)</span>
+
+<span class="n">Skip</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">Poster</span> <span class="n">Design</span> <span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="p">)</span>
+<span class="o">-</span> <span class="n">Credits</span> <span class="n">Font</span> <span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember PCA Process is like:</p>
+<ul class="simple">
+<li><p>Converting to same units (Standardization)</p></li>
+<li><p>Finding best views (Component Calculation)</p></li>
+<li><p>Understanding importance (Variance Explanation)</p></li>
+<li><p>Choosing what matters (Dimensionality Selection)</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Making things comparable</p></li>
+<li><p>Finding main patterns</p></li>
+<li><p>Measuring importance</p></li>
+<li><p>Keeping what matters</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Level the playing field</p></li>
+<li><p>Find key patterns</p></li>
+<li><p>Understand importance</p></li>
+<li><p>Simplify wisely</p></li>
+</ul>
+<p>Just like organizing a messy room:</p>
+<ol class="arabic simple">
+<li><p>Sort items by type</p></li>
+<li><p>Find main organization methods</p></li>
+<li><p>Understand what takes most space</p></li>
+<li><p>Keep important categories</p></li>
+</ol>
+<p>It’s all about finding the simplest way to explain complex things!</p>
+</section>
+</section>
+<section id="id1">
+<h2>Visualization<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="biplot-understanding">
+<h3>Biplot Understanding<a class="headerlink" href="#biplot-understanding" title="Link to this heading">#</a></h3>
+<p>Think of a biplot like a map of a high school cafeteria:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cafeteria Map:
+       Sports Kids
+           ↑
+Nerds ←---+--→ Popular Kids
+           ↓
+       Art Students
+
+Each arrow shows influence:
+→ Social influence
+↑ Athletic ability
+↗ Popularity direction
+</pre></div>
+</div>
+<p>Like a weather map showing:</p>
+<ul class="simple">
+<li><p>Wind direction (arrows)</p></li>
+<li><p>Temperature patterns (points)</p></li>
+<li><p>How different factors relate</p></li>
+</ul>
+</section>
+<section id="loading-plots">
+<h3>Loading Plots<a class="headerlink" href="#loading-plots" title="Link to this heading">#</a></h3>
+<p>Think of loading plots like recipe ingredient importance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Pizza Recipe Influence:
+      ↑ Cheese
+   ↗    
+Sauce   ↖
+   ↘    Toppings
+      ↓ Crust
+
+Length of arrows = Importance
+Direction = Relationship
+</pre></div>
+</div>
+<p>Like a TV show’s character influence:</p>
+<ul class="simple">
+<li><p>Main character (long arrow)</p></li>
+<li><p>Supporting roles (medium arrows)</p></li>
+<li><p>Background characters (short arrows)</p></li>
+</ul>
+</section>
+<section id="score-plots">
+<h3>Score Plots<a class="headerlink" href="#score-plots" title="Link to this heading">#</a></h3>
+<p>Think of score plots like plotting students on a report card:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Student Performance:
+Math │    • •
+     │  •   •
+     │ •  •
+     │•   •
+     └─────────
+      Science
+</pre></div>
+</div>
+<p>Like mapping cities by:</p>
+<ul class="simple">
+<li><p>Temperature vs. Population</p></li>
+<li><p>Cost vs. Quality of life</p></li>
+<li><p>Size vs. Tourist appeal</p></li>
+</ul>
+</section>
+<section id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<p>Think of interpretation like reading a treasure map:</p>
+<p><strong>1. Direction Meaning</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Same Direction (→→):
+- Like friends who always hang out
+- Positively related
+
+Opposite Direction (→←):
+- Like cats and dogs
+- Negatively related
+
+Perpendicular (↑→):
+- Like height and shoe size
+- Not related
+</pre></div>
+</div>
+<p><strong>2. Distance Meaning</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Close Points:
+👤👤 Similar characteristics
+   
+Far Points:
+👤      👤 Very different
+</pre></div>
+</div>
+<p><strong>3. Pattern Recognition</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Clusters:
+Group 1: •••
+Group 2:    •••
+Group 3:       •••
+
+Like:
+- Friend groups in school
+- Types of movies
+- Customer segments
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Biplots = Map with directions</p></li>
+<li><p>Loading Plots = Ingredient importance</p></li>
+<li><p>Score Plots = Point positions</p></li>
+<li><p>Interpretation = Reading the story</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Creating a map of your data</p></li>
+<li><p>Showing important influences</p></li>
+<li><p>Plotting relationships</p></li>
+<li><p>Understanding patterns</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>See relationships clearly</p></li>
+<li><p>Understand importance</p></li>
+<li><p>Find patterns</p></li>
+<li><p>Tell the data’s story</p></li>
+</ul>
+<p>Just like reading a map:</p>
+<ul class="simple">
+<li><p>Know where things are</p></li>
+<li><p>Understand relationships</p></li>
+<li><p>See patterns</p></li>
+<li><p>Navigate the information!</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="practical-applications">
+<h1>Practical Applications<a class="headerlink" href="#practical-applications" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="real-world-uses">
+<h2>Real-World Uses<a class="headerlink" href="#real-world-uses" title="Link to this heading">#</a></h2>
+<section id="customer-segmentation">
+<h3>Customer Segmentation<a class="headerlink" href="#customer-segmentation" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing a party for different friend groups:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Party Planning Groups:
+👥 Adventure Seekers
+- Young, active
+- Love outdoors
+- High energy activities
+
+👥 Luxury Lovers
+- High spenders
+- Brand conscious
+- Premium services
+
+👥 Budget Watchers
+- Deal hunters
+- Value shoppers
+- Practical choices
+</pre></div>
+</div>
+<p>Like a restaurant with different menus:</p>
+<ul class="simple">
+<li><p>Fine dining section</p></li>
+<li><p>Family dining area</p></li>
+<li><p>Quick service counter</p></li>
+</ul>
+</section>
+<section id="image-compression">
+<h3>Image Compression<a class="headerlink" href="#image-compression" title="Link to this heading">#</a></h3>
+<p>Think of this like summarizing a painting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Original Painting:
+🎨 Detailed landscape
+1000 colors
+10MB size
+
+Compressed Version:
+🖼️ Similar landscape
+50 main colors
+1MB size
+</pre></div>
+</div>
+<p>Like telling a story:</p>
+<ul class="simple">
+<li><p>Detailed version: Every tiny detail</p></li>
+<li><p>Compressed version: Main points</p></li>
+<li><p>Still recognizable but smaller</p></li>
+</ul>
+</section>
+<section id="anomaly-detection">
+<h3>Anomaly Detection<a class="headerlink" href="#anomaly-detection" title="Link to this heading">#</a></h3>
+<p>Think of this like a parent spotting unusual behavior:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Normal Kid Behavior:
+- Eats breakfast 🥣
+- Goes to school 🎒
+- Plays with friends 👥
+
+Unusual Patterns:
+❗ Skips meals
+❗ Stays alone
+❗ Sleeps all day
+</pre></div>
+</div>
+<p>Like a bank watching transactions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Normal:
+☕ Coffee: $5
+🛒 Groceries: $100
+⛽ Gas: $40
+
+Suspicious:
+❗ $5000 at 3 AM
+❗ Multiple countries same day
+❗ Unusual locations
+</pre></div>
+</div>
+</section>
+<section id="document-clustering">
+<h3>Document Clustering<a class="headerlink" href="#document-clustering" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing a messy bookshelf:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Before:
+📚📗📘📙 (Mixed books)
+
+After:
+Fiction Shelf:
+📚📚 (Stories)
+
+Science Shelf:
+📗📗 (Technical)
+
+History Shelf:
+📘📘 (Historical)
+</pre></div>
+</div>
+<p>Like organizing emails:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Inbox Categories:
+📧 Work Related
+- Meetings
+- Projects
+- Reports
+
+📧 Personal
+- Family
+- Friends
+- Social
+
+📧 Shopping
+- Orders
+- Deals
+- Receipts
+</pre></div>
+</div>
+<p>Remember these applications are like:</p>
+<ul class="simple">
+<li><p>Party planning (Segmentation)</p></li>
+<li><p>Story summarizing (Compression)</p></li>
+<li><p>Parent watching (Anomaly Detection)</p></li>
+<li><p>Bookshelf organizing (Clustering)</p></li>
+</ul>
+<p>Real Business Impact:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Customer Segmentation:
+→ Better marketing
+→ Personalized service
+→ Higher satisfaction
+
+Image Compression:
+→ Faster websites
+→ Less storage needed
+→ Lower costs
+
+Anomaly Detection:
+→ Fraud prevention
+→ Quality control
+→ Security monitoring
+
+Document Clustering:
+→ Better organization
+→ Easier search
+→ Time savings
+</pre></div>
+</div>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Finding natural groups</p></li>
+<li><p>Reducing size while keeping meaning</p></li>
+<li><p>Spotting what’s unusual</p></li>
+<li><p>Organizing similar things together</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Understand patterns</p></li>
+<li><p>Save resources</p></li>
+<li><p>Prevent problems</p></li>
+<li><p>Create order</p></li>
+</ul>
+<p>Just like organizing your life:</p>
+<ul class="simple">
+<li><p>Group similar things</p></li>
+<li><p>Simplify when possible</p></li>
+<li><p>Notice what’s odd</p></li>
+<li><p>Keep related items together!</p></li>
+</ul>
+</section>
+</section>
+<section id="industry-examples">
+<h2>Industry Examples<a class="headerlink" href="#industry-examples" title="Link to this heading">#</a></h2>
+<section id="retail-analytics">
+<h3>Retail Analytics<a class="headerlink" href="#retail-analytics" title="Link to this heading">#</a></h3>
+<p>Think of this like organizing a smart supermarket:</p>
+<p><strong>Customer Segmentation:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Patterns:
+🛍️ Bargain Hunters
+- Buy on sale
+- Use coupons
+- Shop during discounts
+
+💼 Business People
+- Quick lunch items
+- Ready-to-eat meals
+- Shop during lunch break
+
+👨‍👩‍👧‍👦 Family Shoppers
+- Bulk purchases
+- Weekend shopping
+- Kid-friendly items
+</pre></div>
+</div>
+<p><strong>Product Placement:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Store Layout:
+[Bread] ↔ [Milk]  (Common pairs)
+   ↕
+[Eggs]   [Chips]  (Less related)
+</pre></div>
+</div>
+</section>
+<section id="medical-diagnosis">
+<h3>Medical Diagnosis<a class="headerlink" href="#medical-diagnosis" title="Link to this heading">#</a></h3>
+<p>Like a smart doctor looking for patterns:</p>
+<p><strong>Disease Patterns:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Symptom Groups:
+Group A:
+- Fever
+- Cough
+- Fatigue
+→ Likely Flu
+
+Group B:
+- Headache
+- Nausea
+- Dizziness
+→ Possible Migraine
+</pre></div>
+</div>
+<p><strong>Patient Clustering:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Risk Categories:
+🟢 Low Risk
+- Young
+- Healthy lifestyle
+- No conditions
+
+🟡 Medium Risk
+- Middle-aged
+- Some health issues
+- Family history
+
+🔴 High Risk
+- Elderly
+- Multiple conditions
+- Poor health markers
+</pre></div>
+</div>
+</section>
+<section id="social-network-analysis">
+<h3>Social Network Analysis<a class="headerlink" href="#social-network-analysis" title="Link to this heading">#</a></h3>
+<p>Think of this like mapping friendship groups:</p>
+<p><strong>Community Detection:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>School Social Groups:
+[Sports Team]──[Cheerleaders]
+      │             │
+[Band Kids]    [Drama Club]
+      │             │
+  [Chess Club]──[Art Club]
+
+Lines show connections
+</pre></div>
+</div>
+<p><strong>Influence Mapping:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Social Media Impact:
+⭐ Major Influencer
+ ↙ ↓ ↘
+👤 👤 👤 (Followers)
+ ↙ ↓ ↘
+👥 👥 👥 (Secondary Connections)
+</pre></div>
+</div>
+</section>
+<section id="recommendation-systems">
+<h3>Recommendation Systems<a class="headerlink" href="#recommendation-systems" title="Link to this heading">#</a></h3>
+<p>Like a smart friend making suggestions:</p>
+<p><strong>Product Recommendations:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Shopping Patterns:
+Bought: 📱 Phone
+Suggests:
+- 🎧 Headphones
+- 📱 Phone Case
+- 🔌 Charger
+
+Because others bought similar items
+</pre></div>
+</div>
+<p><strong>Content Suggestions:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Movie Recommendations:
+Watched: Action Movies
+        ↓
+Suggests:
+🎬 Similar Genre
+🎬 Same Actors
+🎬 Related Themes
+</pre></div>
+</div>
+<p>Remember these applications work like:</p>
+<ul class="simple">
+<li><p>Retail: Smart store manager</p></li>
+<li><p>Medical: Experienced doctor</p></li>
+<li><p>Social: Friend group observer</p></li>
+<li><p>Recommendations: Helpful friend</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Finding natural groups</p></li>
+<li><p>Spotting patterns</p></li>
+<li><p>Making connections</p></li>
+<li><p>Suggesting related items</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Improve customer experience</p></li>
+<li><p>Aid decision making</p></li>
+<li><p>Understand relationships</p></li>
+<li><p>Make smart suggestions</p></li>
+</ul>
+<p>Just like having:</p>
+<ul class="simple">
+<li><p>A knowledgeable store clerk</p></li>
+<li><p>An intuitive doctor</p></li>
+<li><p>A social butterfly friend</p></li>
+<li><p>A well-read movie buff</p></li>
+</ul>
+<p>All working to make better, data-driven decisions!</p>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<section id="algorithm-selection">
+<h3>Algorithm Selection<a class="headerlink" href="#algorithm-selection" title="Link to this heading">#</a></h3>
+<p>Think of this like choosing the right tool for home repair:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Task → Tool Selection:
+Hanging Picture → Hammer
+   Simple, direct task
+   Clear solution
+
+Fixing Plumbing → Multiple Tools
+   Complex problem
+   Needs different approaches
+</pre></div>
+</div>
+<p><strong>Selection Guide:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Simple Problems:
+- Like making sandwich → Basic tools
+- Clear patterns → Simple algorithms
+- Straightforward data → Linear methods
+
+Complex Problems:
+- Like cooking feast → Many tools
+- Hidden patterns → Advanced algorithms
+- Messy data → Complex methods
+</pre></div>
+</div>
+</section>
+<section id="parameter-tuning">
+<h3>Parameter Tuning<a class="headerlink" href="#parameter-tuning" title="Link to this heading">#</a></h3>
+<p>Think of this like adjusting your car settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Car Settings:
+Speed Control:
+Too Fast → Dangerous
+Too Slow → Inefficient
+Just Right → Optimal
+
+Like ML Parameters:
+Too Complex → Overfitting
+Too Simple → Underfitting
+Just Right → Good fit
+</pre></div>
+</div>
+<p><strong>Tuning Process:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Start Conservative:
+└─→ Test Performance
+    └─→ Adjust Slightly
+        └─→ Retest
+            └─→ Repeat
+</pre></div>
+</div>
+</section>
+<section id="evaluation-methods">
+<h3>Evaluation Methods<a class="headerlink" href="#evaluation-methods" title="Link to this heading">#</a></h3>
+<p>Think of this like tasting food while cooking:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Testing</span> <span class="n">Stages</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Initial</span> <span class="n">Taste</span> <span class="p">(</span><span class="n">Training</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Basic</span> <span class="n">flavors</span>
+   <span class="o">-</span> <span class="n">Main</span> <span class="n">ingredients</span>
+
+<span class="mf">2.</span> <span class="n">Friend</span><span class="s1">&#39;s Opinion (Validation)</span>
+   <span class="o">-</span> <span class="n">Different</span> <span class="n">perspective</span>
+   <span class="o">-</span> <span class="n">Unbiased</span> <span class="n">feedback</span>
+
+<span class="mf">3.</span> <span class="n">Customer</span> <span class="n">Review</span> <span class="p">(</span><span class="n">Testing</span><span class="p">)</span>
+   <span class="o">-</span> <span class="n">Real</span><span class="o">-</span><span class="n">world</span> <span class="n">feedback</span>
+   <span class="o">-</span> <span class="kc">True</span> <span class="n">performance</span>
+</pre></div>
+</div>
+<p><strong>Key Metrics:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Like Restaurant Reviews:
+Food Quality    → Accuracy
+Service Speed   → Performance
+Customer Return → Reliability
+Overall Rating  → Total Score
+</pre></div>
+</div>
+</section>
+<section id="result-interpretation">
+<h3>Result Interpretation<a class="headerlink" href="#result-interpretation" title="Link to this heading">#</a></h3>
+<p>Think of this like reading weather forecasts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Weather Prediction:
+90% chance of rain → Very likely
+50% chance of rain → Uncertain
+10% chance of rain → Unlikely
+
+Like ML Results:
+High Confidence → Trust
+Medium Confidence → Caution
+Low Confidence → Skeptical
+</pre></div>
+</div>
+<p><strong>Interpretation Framework:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Check Results Like Doctor:
+1. What&#39;s Normal?
+   └─→ Baseline expectations
+
+2. What&#39;s Different?
+   └─→ Unusual patterns
+
+3. Why Different?
+   └─→ Root causes
+
+4. What Action?
+   └─→ Next steps
+</pre></div>
+</div>
+<p>Remember:</p>
+<ul class="simple">
+<li><p>Algorithm Selection = Choose right tool</p></li>
+<li><p>Parameter Tuning = Adjust settings</p></li>
+<li><p>Evaluation = Test thoroughly</p></li>
+<li><p>Interpretation = Understand results</p></li>
+</ul>
+<p>Think of it as:</p>
+<ul class="simple">
+<li><p>Picking tools for job</p></li>
+<li><p>Fine-tuning equipment</p></li>
+<li><p>Testing quality</p></li>
+<li><p>Understanding outcomes</p></li>
+</ul>
+<p>Best Practices Summary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Selection
+   Right tool → Right job
+
+2. Tuning
+   Adjust → Test → Repeat
+
+3. Evaluation
+   Test → Validate → Verify
+
+4. Interpretation
+   Understand → Explain → Act
+</pre></div>
+</div>
+<p>Just like cooking a perfect meal:</p>
+<ul class="simple">
+<li><p>Choose right ingredients</p></li>
+<li><p>Adjust seasoning</p></li>
+<li><p>Taste test</p></li>
+<li><p>Understand feedback</p></li>
+</ul>
+<p>The goal is to:</p>
+<ul class="simple">
+<li><p>Make smart choices</p></li>
+<li><p>Fine-tune properly</p></li>
+<li><p>Test thoroughly</p></li>
+<li><p>Understand clearly</p></li>
+</ul>
+<p>Success comes from:</p>
+<ul class="simple">
+<li><p>Right choices</p></li>
+<li><p>Careful adjustment</p></li>
+<li><p>Proper testing</p></li>
+<li><p>Clear understanding</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -545,6 +2908,157 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 4 - Unsupervised Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-algorithms">Clustering Algorithms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-clustering">Types of Clustering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-Means Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering">Hierarchical Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan">DBSCAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-each-type">When to Use Each Type</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-deep-dive">K-Means Deep Dive</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-k-means-works">How K-Means Works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-k-value">Choosing K Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centroid-concept">Centroid Concept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elbow-method">Elbow Method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-clustering-basics">Hierarchical Clustering Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dendrogram-understanding">Dendrogram Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bottom-up-vs-top-down">Bottom-up vs Top-down</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics">Distance Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linkage-methods">Linkage Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbscan-essentials">DBSCAN Essentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-based-clustering">Density-Based Clustering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-points">Core Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border-points">Border Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-points">Noise Points</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality Reduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-concepts">Basic Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curse-of-dimensionality">Curse of Dimensionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-space">Feature Space</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-compression">Data Compression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-preservation">Information Preservation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduction-techniques">Reduction Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-vs-non-linear">Linear vs Non-linear</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-selection">Feature Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction">Feature Extraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold-learning">Manifold Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-fundamentals">PCA Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-components">Principal Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-explained">Variance Explained</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-plots">Scree Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-selection">Component Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#t-sne-basics">t-SNE Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-dimensional-data">High-Dimensional Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity-parameter">Perplexity Parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cases">Use Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#association-rules">Association Rules</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#market-basket-analysis">Market Basket Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item-sets">Item Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence">Confidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lift">Lift</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-generation">Rule Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apriori-algorithm">Apriori Algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequent-patterns">Frequent Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-evaluation">Rule Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-strategies">Pruning Strategies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-considerations">Implementation Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-support">Minimum Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-confidence">Minimum Confidence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-selection">Rule Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-tips">Performance Tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-component-analysis">Principal Component Analysis</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvectors">Eigenvectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues">Eigenvalues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance-matrix">Covariance Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonality">Orthogonality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-process">PCA Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-standardization">Data Standardization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#component-calculation">Component Calculation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-explanation">Variance Explanation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-selection">Dimensionality Selection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biplot-understanding">Biplot Understanding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-plots">Loading Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#score-plots">Score Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-uses">Real-World Uses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customer-segmentation">Customer Segmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-compression">Image Compression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-detection">Anomaly Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#document-clustering">Document Clustering</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#industry-examples">Industry Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retail-analytics">Retail Analytics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medical-diagnosis">Medical Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#social-network-analysis">Social Network Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendation-systems">Recommendation Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-selection">Algorithm Selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-tuning">Parameter Tuning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods">Evaluation Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#result-interpretation">Result Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
