@@ -1,10 +1,6 @@
 format: jb-book
 root: README.md
 parts:
-  - caption: Introduction to the course
-    chapters:
-      - file: chapters/Introduction.ipynb
-        title: Introduction
   - caption: Foundations of Machine Learning
     chapters:
       - file: "chapters/Chapter 1 - Introduction to Machine Learning.ipynb"
