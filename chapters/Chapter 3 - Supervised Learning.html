@@ -487,7 +487,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression">Exercise: Understanding Classification and Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression-new">Exercise: Understanding Classification and Regression (new)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
@@ -495,7 +494,6 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-line-fitting">1. Simple Line Fitting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#house-price-example">2. House Price Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-form">3. Equation Form</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-best-fit">4. Line of Best Fit</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
@@ -857,133 +855,6 @@ td:last-child {
     width: 30%;
 }
 </style></section>
-<section id="exercise-understanding-classification-and-regression-new">
-<h2>Exercise: Understanding Classification and Regression (new)<a class="headerlink" href="#exercise-understanding-classification-and-regression-new" title="Link to this heading">#</a></h2>
-<p>Let’s practice identifying different types of machine learning problems. For each scenario, select whether it’s Classification or Regression:</p>
-<table>
-    <tr>
-        <th>Scenario</th>
-        <th>Your Answer</th>
-    </tr>
-    <tr>
-        <td>Predicting tomorrow's stock price</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Determining if an email is spam</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Estimating a person's age from a photo</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Categorizing news articles by topic</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Forecasting monthly sales revenue</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Identifying animal species in photos</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Predicting a student's test score</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Regression')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Detecting fraudulent transactions</td>
-        <td>
-            <select onchange="checkAnswer(this, 'Classification')" class="ml-select">
-                <option value="">Select type...</option>
-                <option value="Classification">Classification</option>
-                <option value="Regression">Regression</option>
-            </select>
-            <span class="feedback"></span>
-        </td>
-    </tr>
-</table>
-<script>
-function checkAnswer(selectElement, correctAnswer) {
-    const feedbackSpan = selectElement.nextElementSibling;
-    const selectedValue = selectElement.value;
-    
-    if (selectedValue === correctAnswer) {
-        feedbackSpan.innerHTML = ' ✅ Correct!';
-        feedbackSpan.style.color = 'green';
-    } else if (selectedValue) {
-        feedbackSpan.innerHTML = ' ❌ Try again';
-        feedbackSpan.style.color = 'red';
-    }
-}
-</script>
-<style>
-.ml-select {
-    margin-left: 10px;
-}
-.feedback {
-    margin-left: 10px;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-td, th {
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-</style></section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
 <h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
@@ -993,16 +864,10 @@ td, th {
 <section id="simple-line-fitting">
 <h3>1. Simple Line Fitting<a class="headerlink" href="#simple-line-fitting" title="Link to this heading">#</a></h3>
 <p>Think of linear regression like playing connect the dots, but with a twist. Instead of connecting every dot, you’re trying to draw ONE straight line that best represents all dots.</p>
-<p>Imagine plotting your ice cream sales:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sales │    •
-($)   │  •  •
-      │ •    
-      │•   •
-      └─────────
-        Temperature (°F)
-</pre></div>
-</div>
+<p>Imagine plotting your ice cream sales:
+<img alt="linear-regression-chart" src="../_images/linear-regression-chart.png" /></p>
 <p>The line you draw shows the relationship: as temperature goes up, so do ice cream sales!</p>
+<p>The “best fit” line is like finding the fairest way to show the relationship between study time and scores. It won’t hit every point perfectly, but it shows the general trend.</p>
 </section>
 <section id="house-price-example">
 <h3>2. House Price Example<a class="headerlink" href="#house-price-example" title="Link to this heading">#</a></h3>
@@ -1030,25 +895,6 @@ x = what we know (house size)
 b = starting point (base price)
 </pre></div>
 </div>
-</section>
-<section id="line-of-best-fit">
-<h3>4. Line of Best Fit<a class="headerlink" href="#line-of-best-fit" title="Link to this heading">#</a></h3>
-<p>Imagine you’re a teacher looking at study time vs. test scores:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Score │    •
-      │  •   •
-      │ •  •
-      │•    •
-      └─────────
-        Study Hours
-</pre></div>
-</div>
-<p>The “best fit” line is like finding the fairest way to show the relationship between study time and scores. It won’t hit every point perfectly, but it shows the general trend.</p>
-<p>Think of it like this:</p>
-<ul class="simple">
-<li><p>Too high: Some points feel left out below</p></li>
-<li><p>Too low: Some points feel left out above</p></li>
-<li><p>Just right: Balances all points fairly</p></li>
-</ul>
 <p>Remember: Linear regression is like finding the “golden rule” in your data - it might not be perfect for every single case, but it gives you a reliable way to make predictions based on patterns you’ve seen before!</p>
 </section>
 </section>
@@ -1081,10 +927,9 @@ b = starting point (base price)
 </section>
 <section id="features-and-targets">
 <h3>2. Features and Targets<a class="headerlink" href="#features-and-targets" title="Link to this heading">#</a></h3>
-<p>Think of this like baking a cake:</p>
 <ul class="simple">
-<li><p><strong>Features</strong> are your ingredients (eggs, flour, sugar)</p></li>
-<li><p><strong>Target</strong> is what you’re trying to make (the cake)</p></li>
+<li><p><strong>Features</strong> are the characteristics or attributes of the data that are used to predict the target variable.</p></li>
+<li><p><strong>Targets</strong>, on the other hand, are the outcomes or responses that we are trying to predict.</p></li>
 </ul>
 <p><strong>Real-World Example:</strong>
 House Price Prediction:</p>
@@ -1106,7 +951,7 @@ House Price Prediction:</p>
 </section>
 <section id="assumptions">
 <h3>3. Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h3>
-<p>Like rules for a fair game, linear regression has some assumptions:</p>
+<p>Linear regression relies on certain assumptions to ensure the model is reliable and accurate. These assumptions are essential to validate before interpreting the results or making predictions.</p>
 <p><strong>1. Linearity</strong></p>
 <ul class="simple">
 <li><p>Like a rubber band stretched between points</p></li>
@@ -1134,7 +979,7 @@ y │ • •  y │ •
 </section>
 <section id="limitations">
 <h3>4. Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h3>
-<p>Like knowing when a recipe won’t work well:</p>
+<p>Understanding the limitations of linear regression is crucial, just like recognizing when a recipe might not turn out as expected.</p>
 <p><strong>1. Can’t Handle Curves</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price │    •
       │  •
@@ -1150,7 +995,7 @@ y │ • •  y │ •
 </ul>
 <p><strong>2. Sensitive to Outliers</strong></p>
 <ul class="simple">
-<li><p>Like one giant mansion affecting all house prices</p></li>
+<li><p>For instance, a single luxurious mansion can skew the average house price</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price │        •
       │
@@ -3241,7 +3086,6 @@ Skill │    *
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression">Exercise: Understanding Classification and Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-understanding-classification-and-regression-new">Exercise: Understanding Classification and Regression (new)</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression">Linear Regression</a><ul class="visible nav section-nav flex-column">
@@ -3249,7 +3093,6 @@ Skill │    *
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-line-fitting">1. Simple Line Fitting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#house-price-example">2. House Price Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation-form">3. Equation Form</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-best-fit">4. Line of Best Fit</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a><ul class="nav section-nav flex-column">
