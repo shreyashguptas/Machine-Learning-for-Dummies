@@ -1,5 +1,5 @@
 format: jb-book
-root: README.md
+root: chapters/Introduction.ipynb
 parts:
   - caption: Introduction to the course
     chapters:
