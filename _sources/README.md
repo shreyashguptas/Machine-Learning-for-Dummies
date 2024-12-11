@@ -1,6 +1,6 @@
 # Introduction
 
-A beginner-friendly guide to Machine Learning and Deep Learning using simple analogies and practical code examples.
+A beginner-friendly guide to Machine Learning and Deep Learning using real world examples and practical code to help you understand the concepts.
 
 ## About This Course
 
@@ -23,7 +23,7 @@ This course makes complex Machine Learning concepts easy to understand through:
    - Interactive code examples runnable in Google Colab (click rocket icon)
    - Real-world analogies explaining complex concepts
    - Practical exercises to reinforce learning
-   - Clear explanations without heavy mathematics
+   - Clear explanations without mathematical equations
 
 ## Learning Tips
 
@@ -33,6 +33,10 @@ This course makes complex Machine Learning concepts easy to understand through:
 4. Create new code cells to experiment with concepts
 5. Report issues or suggestions in the [GitHub repo](https://github.com/shreyashguptas/Machine-Learning-for-Dummies)
 
+## Feedback
+
+If you come across any issues or have suggestions to improve this open-source project email me at shreyash.gupta@shreyashg.com
+
 ## Contributing
 
 We welcome contributions to improve this open-source project:
@@ -41,6 +45,12 @@ We welcome contributions to improve this open-source project:
 - Fix technical errors or unclear explanations
 - Share your learning experience to help others
 - Improve documentation and explanations
+
+## FAQ
+
+- How do I run the code in Google Colab?
+  - Click on the rocket icon in the top right corner of the code cell to run it in Google Colab.
+   - ![Google Colab](images/google-colab.png)
 
 ## Support
 

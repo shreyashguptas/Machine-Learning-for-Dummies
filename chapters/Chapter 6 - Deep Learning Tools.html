@@ -224,8 +224,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Chapter%205%20-%20Neural%20Networks%20Basics.html">Chapter 5 - Neural Networks Basics</a></li>
 
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6 - Deep Learning Tools</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Deep Learning</span></p>
 <ul class="nav bd-sidenav">
@@ -444,7 +444,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -460,6 +462,43 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 6 - Deep Learning Tools</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chapter 6: Deep Learning Tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch">Introduction to PyTorch</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pytorch">What is PyTorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-basics">PyTorch Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tensors">Working with Tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-fundamentals">Tensor Fundamentals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-operations">Tensor Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-neural-networks">Building Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-components">Network Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architecture">Model Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-and-evaluation">Model Training and Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-process">Training Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods">Evaluation Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-acceleration">GPU Acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-basics">GPU Basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -472,6 +511,132 @@
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-deep-learning-tools">
 <h1>Chapter 6 - Deep Learning Tools<a class="headerlink" href="#chapter-6-deep-learning-tools" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
+<p>Let me break down Chapter 6 into beginner-friendly subtopics:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Chapter 6: Deep Learning Tools<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="introduction-to-pytorch">
+<h2>Introduction to PyTorch<a class="headerlink" href="#introduction-to-pytorch" title="Link to this heading">#</a></h2>
+<section id="what-is-pytorch">
+<h3>What is PyTorch<a class="headerlink" href="#what-is-pytorch" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open Source Framework Overview</p></li>
+<li><p>Comparison with Other Frameworks</p></li>
+<li><p>Key Features and Benefits</p></li>
+<li><p>Installation and Setup</p></li>
+</ul>
+</section>
+<section id="pytorch-basics">
+<h3>PyTorch Basics<a class="headerlink" href="#pytorch-basics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Python Integration</p></li>
+<li><p>Dynamic Computation Graphs</p></li>
+<li><p>Basic Operations</p></li>
+<li><p>Development Environment</p></li>
+</ul>
+</section>
+</section>
+<section id="working-with-tensors">
+<h2>Working with Tensors<a class="headerlink" href="#working-with-tensors" title="Link to this heading">#</a></h2>
+<section id="tensor-fundamentals">
+<h3>Tensor Fundamentals<a class="headerlink" href="#tensor-fundamentals" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Creating Tensors</p></li>
+<li><p>Basic Operations</p></li>
+<li><p>Shape Manipulation</p></li>
+<li><p>Data Types</p></li>
+</ul>
+</section>
+<section id="tensor-operations">
+<h3>Tensor Operations<a class="headerlink" href="#tensor-operations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Mathematical Operations</p></li>
+<li><p>Indexing and Slicing</p></li>
+<li><p>Device Management (CPU/GPU)</p></li>
+<li><p>Memory Management</p></li>
+</ul>
+</section>
+</section>
+<section id="building-neural-networks">
+<h2>Building Neural Networks<a class="headerlink" href="#building-neural-networks" title="Link to this heading">#</a></h2>
+<section id="network-components">
+<h3>Network Components<a class="headerlink" href="#network-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Layers and Modules</p></li>
+<li><p>Activation Functions</p></li>
+<li><p>Loss Functions</p></li>
+<li><p>Optimizers</p></li>
+</ul>
+</section>
+<section id="model-architecture">
+<h3>Model Architecture<a class="headerlink" href="#model-architecture" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Sequential Models</p></li>
+<li><p>Custom Networks</p></li>
+<li><p>Pre-built Models</p></li>
+<li><p>Model Parameters</p></li>
+</ul>
+</section>
+</section>
+<section id="model-training-and-evaluation">
+<h2>Model Training and Evaluation<a class="headerlink" href="#model-training-and-evaluation" title="Link to this heading">#</a></h2>
+<section id="training-process">
+<h3>Training Process<a class="headerlink" href="#training-process" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Data Loading</p></li>
+<li><p>Batch Processing</p></li>
+<li><p>Forward/Backward Propagation</p></li>
+<li><p>Loss Calculation</p></li>
+</ul>
+</section>
+<section id="evaluation-methods">
+<h3>Evaluation Methods<a class="headerlink" href="#evaluation-methods" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Validation Techniques</p></li>
+<li><p>Performance Metrics</p></li>
+<li><p>Model Saving/Loading</p></li>
+<li><p>Debugging Strategies</p></li>
+</ul>
+</section>
+</section>
+<section id="gpu-acceleration">
+<h2>GPU Acceleration<a class="headerlink" href="#gpu-acceleration" title="Link to this heading">#</a></h2>
+<section id="gpu-basics">
+<h3>GPU Basics<a class="headerlink" href="#gpu-basics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>CPU vs GPU Computing</p></li>
+<li><p>CUDA Integration</p></li>
+<li><p>Memory Management</p></li>
+<li><p>Performance Optimization</p></li>
+</ul>
+</section>
+<section id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Moving Models to GPU</p></li>
+<li><p>Data Transfer</p></li>
+<li><p>Multi-GPU Training</p></li>
+<li><p>Best Practices</p></li>
+</ul>
+<p>Remember for each topic:</p>
+<ul class="simple">
+<li><p>Start with simple analogies</p></li>
+<li><p>Use real-world examples</p></li>
+<li><p>Include practical applications</p></li>
+<li><p>Focus on PyTorch-specific features</p></li>
+<li><p>Keep explanations beginner-friendly</p></li>
+</ul>
+<p>Think of this chapter like teaching someone to:</p>
+<ul class="simple">
+<li><p>Use a new powerful tool (PyTorch)</p></li>
+<li><p>Handle data efficiently (Tensors)</p></li>
+<li><p>Create learning systems (Neural Networks)</p></li>
+<li><p>Train effectively (Model Training)</p></li>
+<li><p>Speed up learning (GPU Acceleration)</p></li>
+</ul>
+<p>Each section should build upon the previous one, creating a natural progression from basic concepts to practical implementation.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -528,6 +693,51 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 6 - Deep Learning Tools</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chapter 6: Deep Learning Tools</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-pytorch">Introduction to PyTorch</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-pytorch">What is PyTorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-basics">PyTorch Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tensors">Working with Tensors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-fundamentals">Tensor Fundamentals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-operations">Tensor Operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-neural-networks">Building Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-components">Network Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-architecture">Model Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-training-and-evaluation">Model Training and Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-process">Training Process</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-methods">Evaluation Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-acceleration">GPU Acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-basics">GPU Basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
