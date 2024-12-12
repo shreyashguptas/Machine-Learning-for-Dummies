@@ -230,6 +230,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Deep Learning</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7 - Convolutional Neural Networks</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Chapter%208%20-%20Sequential%20Data%20and%20RNNs.html">Chapter 8 - Sequential Data and RNNs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chapter%209%20-%20Modern%20Deep%20Learning.html">Chapter 9 - Modern Deep Learning</a></li>
 </ul>
@@ -444,7 +445,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -460,6 +463,47 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 7 - Convolutional Neural Networks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chapter 7: Convolutional Neural Networks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-processing-basics">Image Processing Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-digital-images">Understanding Digital Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-properties">Image Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-architecture">CNN Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-components">Basic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-organization">Layer Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-concepts">Advanced Concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-and-padding">Pooling and Padding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-methods">Pooling Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#padding-techniques">Padding Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality">Dimensionality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-models">Pre-trained Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-vision-applications">Computer Vision Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-classification">Image Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-detection">Object Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-applications">Advanced Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -472,6 +516,168 @@
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-convolutional-neural-networks">
 <h1>Chapter 7 - Convolutional Neural Networks<a class="headerlink" href="#chapter-7-convolutional-neural-networks" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
+<p>Let me break down Chapter 7 into beginner-friendly subtopics:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Chapter 7: Convolutional Neural Networks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="image-processing-basics">
+<h2>Image Processing Basics<a class="headerlink" href="#image-processing-basics" title="Link to this heading">#</a></h2>
+<section id="understanding-digital-images">
+<h3>Understanding Digital Images<a class="headerlink" href="#understanding-digital-images" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Pixels and Colors</p></li>
+<li><p>RGB Channels</p></li>
+<li><p>Image Resolution</p></li>
+<li><p>Color Depth</p></li>
+</ul>
+</section>
+<section id="image-properties">
+<h3>Image Properties<a class="headerlink" href="#image-properties" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Feature Detection</p></li>
+<li><p>Edge Recognition</p></li>
+<li><p>Pattern Identification</p></li>
+<li><p>Image Preprocessing</p></li>
+</ul>
+</section>
+</section>
+<section id="cnn-architecture">
+<h2>CNN Architecture<a class="headerlink" href="#cnn-architecture" title="Link to this heading">#</a></h2>
+<section id="basic-components">
+<h3>Basic Components<a class="headerlink" href="#basic-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Convolutional Layers</p></li>
+<li><p>Filters/Kernels</p></li>
+<li><p>Feature Maps</p></li>
+<li><p>Stride and Dilation</p></li>
+</ul>
+</section>
+<section id="layer-organization">
+<h3>Layer Organization<a class="headerlink" href="#layer-organization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Input Layer</p></li>
+<li><p>Hidden Layers</p></li>
+<li><p>Fully Connected Layers</p></li>
+<li><p>Output Layer</p></li>
+</ul>
+</section>
+<section id="advanced-concepts">
+<h3>Advanced Concepts<a class="headerlink" href="#advanced-concepts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Receptive Field</p></li>
+<li><p>Channel Depth</p></li>
+<li><p>Parameter Sharing</p></li>
+<li><p>Local Connectivity</p></li>
+</ul>
+</section>
+</section>
+<section id="pooling-and-padding">
+<h2>Pooling and Padding<a class="headerlink" href="#pooling-and-padding" title="Link to this heading">#</a></h2>
+<section id="pooling-methods">
+<h3>Pooling Methods<a class="headerlink" href="#pooling-methods" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Max Pooling</p></li>
+<li><p>Average Pooling</p></li>
+<li><p>Global Pooling</p></li>
+<li><p>When to Use Each</p></li>
+</ul>
+</section>
+<section id="padding-techniques">
+<h3>Padding Techniques<a class="headerlink" href="#padding-techniques" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Valid Padding</p></li>
+<li><p>Same Padding</p></li>
+<li><p>Types of Padding</p></li>
+<li><p>Impact on Output</p></li>
+</ul>
+</section>
+<section id="dimensionality">
+<h3>Dimensionality<a class="headerlink" href="#dimensionality" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Input Size Changes</p></li>
+<li><p>Feature Map Size</p></li>
+<li><p>Output Dimensions</p></li>
+<li><p>Size Calculations</p></li>
+</ul>
+</section>
+</section>
+<section id="transfer-learning">
+<h2>Transfer Learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h2>
+<section id="pre-trained-models">
+<h3>Pre-trained Models<a class="headerlink" href="#pre-trained-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Popular Architectures</p></li>
+<li><p>Model Zoo</p></li>
+<li><p>Weight Transfer</p></li>
+<li><p>Fine-tuning</p></li>
+</ul>
+</section>
+<section id="implementation">
+<h3>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Feature Extraction</p></li>
+<li><p>Layer Freezing</p></li>
+<li><p>Model Adaptation</p></li>
+<li><p>Training Strategies</p></li>
+</ul>
+</section>
+<section id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>When to Use</p></li>
+<li><p>Model Selection</p></li>
+<li><p>Performance Tips</p></li>
+<li><p>Common Pitfalls</p></li>
+</ul>
+</section>
+</section>
+<section id="computer-vision-applications">
+<h2>Computer Vision Applications<a class="headerlink" href="#computer-vision-applications" title="Link to this heading">#</a></h2>
+<section id="image-classification">
+<h3>Image Classification<a class="headerlink" href="#image-classification" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Single Label</p></li>
+<li><p>Multi-Label</p></li>
+<li><p>Hierarchical Classification</p></li>
+<li><p>Real-world Examples</p></li>
+</ul>
+</section>
+<section id="object-detection">
+<h3>Object Detection<a class="headerlink" href="#object-detection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bounding Boxes</p></li>
+<li><p>Object Localization</p></li>
+<li><p>Multiple Objects</p></li>
+<li><p>Detection Networks</p></li>
+</ul>
+</section>
+<section id="advanced-applications">
+<h3>Advanced Applications<a class="headerlink" href="#advanced-applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Face Recognition</p></li>
+<li><p>Image Segmentation</p></li>
+<li><p>Style Transfer</p></li>
+<li><p>Video Processing</p></li>
+</ul>
+<p>Remember for each topic:</p>
+<ul class="simple">
+<li><p>Start with simple analogies</p></li>
+<li><p>Use real-world examples</p></li>
+<li><p>Include visual explanations</p></li>
+<li><p>Keep mathematical complexity low</p></li>
+<li><p>Focus on practical understanding</p></li>
+</ul>
+<p>Think of this chapter like teaching someone to:</p>
+<ul class="simple">
+<li><p>Understand images (Image Processing)</p></li>
+<li><p>Build image recognition systems (CNN)</p></li>
+<li><p>Handle different image sizes (Pooling/Padding)</p></li>
+<li><p>Use existing knowledge (Transfer Learning)</p></li>
+<li><p>Solve real problems (Applications)</p></li>
+</ul>
+<p>Each section should build upon the previous one, creating a natural progression from basic concepts to practical applications in computer vision.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -528,6 +734,55 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 7 - Convolutional Neural Networks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Chapter 7: Convolutional Neural Networks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-processing-basics">Image Processing Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-digital-images">Understanding Digital Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-properties">Image Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-architecture">CNN Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-components">Basic Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-organization">Layer Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-concepts">Advanced Concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-and-padding">Pooling and Padding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-methods">Pooling Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#padding-techniques">Padding Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality">Dimensionality</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained-models">Pre-trained Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-vision-applications">Computer Vision Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-classification">Image Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-detection">Object Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-applications">Advanced Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
