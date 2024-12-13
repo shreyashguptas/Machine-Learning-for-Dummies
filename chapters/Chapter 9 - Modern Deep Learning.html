@@ -445,7 +445,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -461,6 +463,43 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-architecture">Basic Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-models">Popular Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms">Attention Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-attention">Understanding Attention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-details">Implementation Details</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-basics">Generative AI Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-generation">Types of Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-techniques">Popular Techniques</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-deployment">Model Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-preparation">Deployment Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-options">Deployment Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-maintenance">Monitoring and Maintenance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development">Model Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#production-considerations">Production Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-considerations">Ethical Considerations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -473,6 +512,156 @@
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-9-modern-deep-learning">
 <h1>Chapter 9 - Modern Deep Learning<a class="headerlink" href="#chapter-9-modern-deep-learning" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
+<section id="transformers">
+<h2>Transformers<a class="headerlink" href="#transformers" title="Link to this heading">#</a></h2>
+<section id="basic-architecture">
+<h3>Basic Architecture<a class="headerlink" href="#basic-architecture" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Encoder-Decoder Structure</p></li>
+<li><p>Self-Attention Mechanism</p></li>
+<li><p>Position Encoding</p></li>
+<li><p>Feed-Forward Networks</p></li>
+</ul>
+</section>
+<section id="key-components">
+<h3>Key Components<a class="headerlink" href="#key-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Multi-Head Attention</p></li>
+<li><p>Layer Normalization</p></li>
+<li><p>Residual Connections</p></li>
+<li><p>Output Generation</p></li>
+</ul>
+</section>
+<section id="popular-models">
+<h3>Popular Models<a class="headerlink" href="#popular-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>BERT</p></li>
+<li><p>GPT Series</p></li>
+<li><p>T5</p></li>
+<li><p>Implementation Examples</p></li>
+</ul>
+</section>
+</section>
+<section id="attention-mechanisms">
+<h2>Attention Mechanisms<a class="headerlink" href="#attention-mechanisms" title="Link to this heading">#</a></h2>
+<section id="understanding-attention">
+<h3>Understanding Attention<a class="headerlink" href="#understanding-attention" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Basic Concept</p></li>
+<li><p>Types of Attention</p></li>
+<li><p>Importance Weighting</p></li>
+<li><p>Context Learning</p></li>
+</ul>
+</section>
+<section id="implementation-details">
+<h3>Implementation Details<a class="headerlink" href="#implementation-details" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Query-Key-Value</p></li>
+<li><p>Attention Scores</p></li>
+<li><p>Softmax Application</p></li>
+<li><p>Output Computation</p></li>
+</ul>
+</section>
+<section id="practical-applications">
+<h3>Practical Applications<a class="headerlink" href="#practical-applications" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Machine Translation</p></li>
+<li><p>Text Summarization</p></li>
+<li><p>Question Answering</p></li>
+<li><p>Image Captioning</p></li>
+</ul>
+</section>
+</section>
+<section id="generative-ai-basics">
+<h2>Generative AI Basics<a class="headerlink" href="#generative-ai-basics" title="Link to this heading">#</a></h2>
+<section id="types-of-generation">
+<h3>Types of Generation<a class="headerlink" href="#types-of-generation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Text Generation</p></li>
+<li><p>Image Generation</p></li>
+<li><p>Audio Synthesis</p></li>
+<li><p>Video Creation</p></li>
+</ul>
+</section>
+<section id="core-concepts">
+<h3>Core Concepts<a class="headerlink" href="#core-concepts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Latent Space</p></li>
+<li><p>Sampling Methods</p></li>
+<li><p>Temperature Control</p></li>
+<li><p>Beam Search</p></li>
+</ul>
+</section>
+<section id="popular-techniques">
+<h3>Popular Techniques<a class="headerlink" href="#popular-techniques" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Diffusion Models</p></li>
+<li><p>GANs</p></li>
+<li><p>Autoregressive Models</p></li>
+<li><p>Hybrid Approaches</p></li>
+</ul>
+</section>
+</section>
+<section id="model-deployment">
+<h2>Model Deployment<a class="headerlink" href="#model-deployment" title="Link to this heading">#</a></h2>
+<section id="deployment-preparation">
+<h3>Deployment Preparation<a class="headerlink" href="#deployment-preparation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Model Optimization</p></li>
+<li><p>Version Control</p></li>
+<li><p>Documentation</p></li>
+<li><p>Testing Strategies</p></li>
+</ul>
+</section>
+<section id="deployment-options">
+<h3>Deployment Options<a class="headerlink" href="#deployment-options" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cloud Services</p></li>
+<li><p>Edge Devices</p></li>
+<li><p>Mobile Applications</p></li>
+<li><p>Web Integration</p></li>
+</ul>
+</section>
+<section id="monitoring-and-maintenance">
+<h3>Monitoring and Maintenance<a class="headerlink" href="#monitoring-and-maintenance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Performance Tracking</p></li>
+<li><p>Error Handling</p></li>
+<li><p>Updates and Versioning</p></li>
+<li><p>Resource Management</p></li>
+</ul>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<section id="model-development">
+<h3>Model Development<a class="headerlink" href="#model-development" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Architecture Selection</p></li>
+<li><p>Hyperparameter Tuning</p></li>
+<li><p>Training Strategies</p></li>
+<li><p>Validation Methods</p></li>
+</ul>
+</section>
+<section id="production-considerations">
+<h3>Production Considerations<a class="headerlink" href="#production-considerations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Scalability</p></li>
+<li><p>Security</p></li>
+<li><p>Cost Optimization</p></li>
+<li><p>Maintenance</p></li>
+</ul>
+</section>
+<section id="ethical-considerations">
+<h3>Ethical Considerations<a class="headerlink" href="#ethical-considerations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bias Detection</p></li>
+<li><p>Fairness Metrics</p></li>
+<li><p>Privacy Concerns</p></li>
+<li><p>Responsible AI</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -520,6 +709,51 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformers">Transformers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-architecture">Basic Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-components">Key Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-models">Popular Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-mechanisms">Attention Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-attention">Understanding Attention</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-details">Implementation Details</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-ai-basics">Generative AI Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-generation">Types of Generation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-concepts">Core Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-techniques">Popular Techniques</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-deployment">Model Deployment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-preparation">Deployment Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deployment-options">Deployment Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-maintenance">Monitoring and Maintenance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-development">Model Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#production-considerations">Production Considerations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-considerations">Ethical Considerations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
